@@ -146,3 +146,41 @@ a:hover {
         transform: translateY(0);
     }
 }
+
+/* ---- Timeline ---- */
+.timeline-container {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 40px;
+  border-left: 4px solid #ff7f50;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -12px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background: #ff7f50;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px rgba(255,127,80,0.3);
+}
+
+.timeline-content {
+  background: #fffaf5;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.timeline-content h3 {
+  color: #e67300;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
