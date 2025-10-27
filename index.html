@@ -1,69 +1,157 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de SORGHO Brayan Jovani</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> SORGHO Brayan Jovani Aboubacar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: #ff7f50; transition: 0.3s; }
+    a:hover { color: #e67300; }
+    header {
+      background: #fff8f0;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      font-size: 3em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #666;
+    }
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      border-left: 6px solid #ff7f50;
+      padding-left: 12px;
+      color: #333;
+    }
+    .about p, .projects p, .achievements li { margin-bottom: 15px; color: #555; }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .skill {
+      background: #ff7f50;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .skill:hover { transform: translateY(-4px); background: #e67300; }
+    .project {
+      margin-bottom: 25px;
+      background: #fffaf5;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .project:hover { transform: translateY(-5px); }
+    .project strong { font-size: 1.2em; color: #ff7f50; }
+    .contest-list li { margin-bottom: 10px; }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #fff8f0;
+      color: #777;
+      margin-top: 60px;
+      font-size: 0.9em;
+    }
+    /* Animation */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 1s forwards; }
+    .fade-in:nth-child(1){ animation-delay: 0.2s; }
+    .fade-in:nth-child(2){ animation-delay: 0.4s; }
+    .fade-in:nth-child(3){ animation-delay: 0.6s; }
+    @keyframes fadeIn { to { opacity:1; transform: translateY(0); } }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>SORGHO Brayan Jovani</h1>
-        <p>Étudiant en MPI au 2iE | Passionné par la technologie, la voix et l’innovation</p>
-    </header>
+  <header>
+    <h1 class="fade-in">SORGHO Brayan Jovani</h1>
+    <p class="fade-in">Étudiant en MPI au 2iE | Passionné par la technologie, la voix et l’innovation</p>
+    <p class="fade-in">💼 <a href="https://www.linkedin.com/in/tonlinkedin" target="_blank">Mon LinkedIn</a> | 📧 <a href="mailto:brayan@example.com">brayan@example.com</a></p>
+  </header>
 
-    <section id="about">
-        <h2>À propos de moi</h2>
-        <img src="tonImage.jpg" alt="Brayan" class="profile-img">
-        <p>Je suis un étudiant en classe préparatoire MPI au 2iE, passionné par l'innovation technologique et l'agriculture durable. Mon projet phare, YILGA SmartLayers, vise à aider les agriculteurs à optimiser leurs cultures grâce à l'intelligence artificielle.</p>
-    </section>
+  <section class="about fade-in">
+    <h2>À propos de moi</h2>
+    <p>Je suis un étudiant en MPI au 2iE, après un parcours en MP2I. Curieux, rigoureux et passionné, j’aime comprendre, créer et transmettre. Mon ambition est de concevoir des solutions alliant logique, impact social et durabilité.</p>
+    <p>J’ai été président du club d’art oratoire et je fais partie des <strong>2iE Volunteers</strong>, contribuant à l’organisation et à la gestion des événements étudiants.</p>
+    <p>Mon parcours s’articule autour de trois piliers : la science, la créativité et l’humain.</p>
+  </section>
 
-    <section id="projects">
-        <h2>Mes projets</h2>
-        <div class="project">
-            <h3>SG-Koom</h3>
-            <p>Une application mobile dédiée à la gestion des cultures agricoles.</p>
-        </div>
-        <div class="project">
-            <h3>YILGA SmartLayers</h3>
-            <p>Une plateforme basée sur l'IA pour conseiller les agriculteurs en temps réel.</p>
-        </div>
-        <div class="project">
-            <h3>Créations Vocales</h3>
-            <p>Un projet artistique mêlant musique et technologie vocale.</p>
-        </div>
-    </section>
+  <section class="skills-section fade-in">
+    <h2>Compétences</h2>
+    <div class="skills">
+      <span class="skill">Programmation (Python, OCaml, C++)</span>
+      <span class="skill">Analyse scientifique & modélisation</span>
+      <span class="skill">Domotique & énergies renouvelables</span>
+      <span class="skill">Innovation agrotech (SG-Koom, YILGA)</span>
+      <span class="skill">Leadership & gestion d’équipe</span>
+      <span class="skill">Gestion de projet & prototypage</span>
+      <span class="skill">Communication & art oratoire</span>
+      <span class="skill">Écriture & storytelling</span>
+      <span class="skill">Veille technologique & créativité musicale</span>
+    </div>
+  </section>
 
-    <section id="skills">
-        <h2>Compétences</h2>
-        <ul>
-            <li>Développement web (HTML, CSS, JavaScript)</li>
-            <li>Intelligence Artificielle</li>
-            <li>Communication orale et écrite</li>
-            <li>Leadership et gestion de projets</li>
-        </ul>
-    </section>
+  <section class="projects fade-in">
+    <h2>Projets</h2>
+    <div class="project">
+      <strong>🌍 SG-Koom</strong><br>
+      Système de traitement des eaux grises domestiques, solaire et intelligent, conçu pour améliorer l’accès à l’eau propre au Burkina Faso. Solution durable et biomimétique, intégrant capteurs et automatisation.
+    </div>
+    <div class="project">
+      <strong>🧠 YILGA SmartLayers</strong><br>
+      Application et IA pour aider les agriculteurs à optimiser les cultures, analyser les sols et suivre les besoins des plantes en temps réel.
+    </div>
+    <div class="project">
+      <strong>🎵 Créations Vocales</strong><br>
+      Exploration vocale artistique avec superpositions harmoniques, travail sur la technique, la justesse et l’expression.
+    </div>
+  </section>
 
-    <section id="awards">
-        <h2>Concours & Distinctions</h2>
-        <ul>
-            <li>Demi-finaliste du concours Mots et Maths</li>
-            <li>Demi-finaliste du concours d'Art Oratoire National</li>
-            <li>Premier prix au concours Ingenova</li>
-            <li>Concours Parcours Entrepreneur (en cours)</li>
-            <li>Gagnant du concours Eco-Green (catégorie conte)</li>
-        </ul>
-    </section>
+  <section class="achievements fade-in">
+    <h2>Concours & Distinctions</h2>
+    <ul class="contest-list">
+      <li>🏆 Concours Ingenova — Premier prix au challenge des 72h des CPGE(projet YILGA)</li>
+      <li>🧠 Concour Genie en herbe - Troisième prix<li>
+      <li>🎙️ Concours d’Art Oratoire National — Demi-finaliste & ancien président du club</li>
+      <li>🧮 Concours Mots et Maths — Demi-finaliste</li>
+      <li>🚀 Parcours Entrepreneur — En compétition (projet SG-Koom)</li>
+      <li>🌱 Concours Eco-Green — Lauréat (catégorie Conte)</li>
+    </ul>
+  </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email : <a href="mailto:brayan@example.com">brayan@example.com</a></p>
-        <p>GitHub : <a href="https://github.com/tonPseudo" target="_blank">tonPseudo</a></p>
-        <p>LinkedIn : <a href="https://www.linkedin.com/in/tonLinkedIn" target="_blank">tonLinkedIn</a></p>
-    </section>
+  <section class="contact fade-in">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:sorghobrayan60@gmail.com">sorghobrayan60@gmail.com</a></p>
+    <p>💼 <a href="https://github.com/Sorghobrayan-dotcom" target="_blank">Sorghobrayan-dotcom</a></p>
+    <p>📘 <a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Mon LinkedIn</a></p>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 SORGHO Brayan Jovani</p>
-    </footer>
+  <footer>
+    © 2025 SORGHO Brayan Jovani
+  </footer>
 </body>
 </html>
