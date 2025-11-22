@@ -3,176 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> SORGHO Brayan Jovani Aboubacar </title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Brayan SORGHO - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: #ff7f50; transition: 0.3s; }
-    a:hover { color: #e67300; }
-    header {
-      background: #fff8f0;
-      padding: 60px 20px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      position: relative;
-      overflow: hidden;
-    }
-    header h1 {
-      font-size: 3em;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2em;
-      color: #666;
-    }
-    section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      border-left: 6px solid #ff7f50;
-      padding-left: 12px;
-      color: #333;
-    }
-    .about p, .projects p, .achievements li { margin-bottom: 15px; color: #555; }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .skill {
-      background: #ff7f50;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 25px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    .skill:hover { transform: translateY(-4px); background: #e67300; }
-    .project {
-      margin-bottom: 25px;
-      background: #fffaf5;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
-    }
-    .project:hover { transform: translateY(-5px); }
-    .project strong { font-size: 1.2em; color: #ff7f50; }
-    .contest-list li { margin-bottom: 10px; }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #fff8f0;
-      color: #777;
-      margin-top: 60px;
-      font-size: 0.9em;
-    }
-    /* Animation */
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 1s forwards; }
-    .fade-in:nth-child(1){ animation-delay: 0.2s; }
-    .fade-in:nth-child(2){ animation-delay: 0.4s; }
-    .fade-in:nth-child(3){ animation-delay: 0.6s; }
-    @keyframes fadeIn { to { opacity:1; transform: translateY(0); } }
+    body { font-family:'Poppins', sans-serif; background:#fdfdfd; color:#333; line-height:1.6; }
+    a { text-decoration:none; color:#ff7f50; transition:0.3s; }
+    a:hover { color:#e67300; }
+    header { background:#fff8f0; padding:60px 20px; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
+    header img { width:120px; height:120px; border-radius:50%; margin-bottom:20px; object-fit:cover; }
+    header h1 { font-size:3em; color:#333; margin-bottom:10px; }
+    header p { font-size:1.1em; color:#666; margin-bottom:10px; }
+    section { max-width:900px; margin:60px auto; padding:0 20px; }
+    h2 { font-size:2em; margin-bottom:20px; border-left:6px solid #ff7f50; padding-left:12px; color:#333; }
+    .about p, .projects p, .achievements li { margin-bottom:15px; color:#555; }
+    .skills { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:20px; }
+    .skill { background:#ff7f50; color:#fff; padding:10px 18px; border-radius:25px; font-weight:500; transition:0.3s; }
+    .skill:hover { transform:translateY(-4px); background:#e67300; }
+    .project { margin-bottom:25px; background:#fffaf5; border-radius:15px; padding:20px; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:transform 0.3s; }
+    .project:hover { transform:translateY(-5px); }
+    .project strong { font-size:1.2em; color:#ff7f50; }
+    .contest-list li { margin-bottom:10px; }
+    .timeline-container { margin-top:20px; position:relative; }
+    .timeline-dot { width:15px; height:15px; background:#ff7f50; border-radius:50%; position:absolute; left:-9px; top:5px; }
+    .timeline-item { margin-left:30px; margin-bottom:25px; position:relative; }
+    .timeline-item::before { content:''; position:absolute; width:2px; background:#ff7f50; top:0; bottom:0; left:-2px; }
+    footer { text-align:center; padding:30px; background:#fff8f0; color:#777; margin-top:60px; font-size:0.9em; }
+    .fade-in { opacity:0; transform:translateY(20px); animation:fadeIn 1s forwards; }
+    .fade-in:nth-child(1){ animation-delay:0.2s; }
+    .fade-in:nth-child(2){ animation-delay:0.4s; }
+    .fade-in:nth-child(3){ animation-delay:0.6s; }
+    @keyframes fadeIn { to { opacity:1; transform:translateY(0); } }
   </style>
 </head>
 <body>
   <header>
     <img src="Image-moi.jpg" alt="Brayan SORGHO" class="profile-img">
-    <h1 class="fade-in">SORGHO Brayan Jovani</h1>
-    <p class="fade-in">Étudiant en CPGE-MPI au 2iE | Passionné par la technologie, l'art et l’innovation</p>
-    <p class="fade-in">💼 <a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Mon LinkedIn</a> | 📧 <a href="mailto:sorghobrayan60@gmail.com">Mon Mail</a></p>
+    <h1 class="fade-in">Brayan SORGHO Jovani</h1>
+    <p class="fade-in">Étudiant en CPGE-MPI au 2iE | Passionné par technologie, IA, art et innovation</p>
+    <p class="fade-in">💼 <a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank">LinkedIn</a> | 📧 <a href="mailto:sorghobrayan60@gmail.com">Email</a></p>
   </header>
 
   <section class="about fade-in">
     <h2>À propos de moi</h2>
-    <p>Étudiant en classe préparatoire aux grandes écoles d'ingénieur (MPI) a l'institut 2iE, je suis animé par la curiosité et la rigueur. Passionné par l’informatique et les technologies émergentes, je cherche à concevoir des solutions innovantes qui combinent efficacité, impact social et durabilité.</p>
-    <p>J’ai été président de mon club d’art oratoire et je fais partie des <strong>2iE Volunteers</strong>, contribuant à l’organisation et à la gestion des événements étudiants.</p>
-    <p>Mon parcours s’articule autour de trois piliers : la science, la créativité et l’humain.</p>
+    <p>Étudiant en classe préparatoire MPI à l’Institut 2iE, je suis passionné par l’informatique, l’IA et la cybersécurité. Mon objectif : concevoir des solutions intelligentes à fort impact social et environnemental.</p>
+    <p>Ancien président du club d’art oratoire et membre actif des <strong>2iE Volunteers</strong>, je combine rigueur scientifique, créativité et leadership.</p>
   </section>
 
   <section class="skills-section fade-in">
     <h2>Compétences</h2>
     <div class="skills">
-      <span class="skill">Programmation (Python, OCaml, C++)</span>
+      <span class="skill">Python, OCaml, C++</span>
       <span class="skill">Analyse scientifique & modélisation</span>
-      <span class="skill">Domotique & énergies renouvelables</span>
-      <span class="skill">Innovation agrotech et smartWASH (YILGA, SG-KOOM)</span>
-      <span class="skill">Leadership & gestion d’équipe et de projet</span>
-      <span class="skill"> prototypage</span>
-      <span class="skill">Communication, art oratoire & storytelling</span>
-      <span class="skill">Écriture </span>
-      <span class="skill">Créativité musicale</span>
+      <span class="skill">Automatisation & capteurs</span>
+      <span class="skill">Prototypage de solutions innovantes</span>
+      <span class="skill">Innovation Agrotech / smartWASH</span>
+      <span class="skill">Leadership & gestion de projet</span>
+      <span class="skill">Communication & storytelling</span>
+      <span class="skill">Écriture & créativité musicale</span>
     </div>
   </section>
 
   <section class="projects fade-in">
     <h2>Projets</h2>
     <div class="project">
-      <strong>🌍 SG-Koom</strong><br>
-      Système de traitement des eaux grises domestiques, solaire et intelligent, conçu pour améliorer l’accès à l’eau propre au Burkina Faso. Solution durable et biomimétique, intégrant capteurs et automatisation.
+      <strong>🌍 SG-KOOM</strong><br>
+      Système intelligent de traitement des eaux grises domestiques, solaire et automatisé. Lauréat du <strong>Premier prix Parcours Entrepreneur 2iE</strong> avec le prix spécial “Meilleur impact social & environnemental”.
     </div>
     <div class="project">
       <strong>🧠 YILGA SmartLayers</strong><br>
-      Application et IA pour aider les agriculteurs à choisir les cultures les plus rentables, optimiser les cultures, analyser les sols et suivre les besoins des plantes en temps réel.
+      IA pour l’agriculture : choix des cultures, suivi des sols et optimisation des rendements. Premier prix <strong>Concours Ingenova 72h CPGE</strong>.
     </div>
     <div class="project">
       <strong>🎵 Créations Vocales</strong><br>
-      Exploration vocale artistique avec superpositions harmoniques, travail sur la technique, la justesse et l’expression.
+      Travail sur superpositions harmoniques, justesse et expression vocale.
     </div>
   </section>
 
   <section class="achievements fade-in">
     <h2>Concours & Distinctions</h2>
     <ul class="contest-list">
-      <li>🏆 Concours Ingenova — Premier prix au challenge des 72h des CPGE(projet YILGA)</li>
-      <li>🧠 Concour Génie herbe - Troisième prix</li>
-      <li>🎙️ Concours d’Art Oratoire National — Demi-finaliste & ancien président du club</li>
-      <li>🧮 Concours Mots et Maths — Demi-finaliste</li>
-      <li>🚀 Parcours Entrepreneur — En compétition (projet SG-Koom)</li>
+      <li>🏆 Parcours Entrepreneur 2iE — Premier prix + Meilleur impact social & environnemental (SG-KOOM)</li>
+      <li>🥇 Concours Ingenova — Premier prix (YILGA)</li>
+      <li>🥉 Concours Génie Herbe — Troisième prix</li>
+      <li>🎙️ Concours Art Oratoire National — Demi-finaliste & ancien président du club</li>
+      <li>🧮 Concours Mots & Maths — Demi-finaliste</li>
       <li>🌱 Concours Eco-Green — Lauréat (catégorie Conte)</li>
     </ul>
-    
   </section>
+
   <section class="timeline fade-in">
-    <h2>Mon Parcours</h2>
+    <h2>Parcours</h2>
     <div class="timeline-container">
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <h3>2025 — Parcours Entrepreneur (2iE)</h3>
-          <p>Participation en cours avec le projet <strong>SG-Koom</strong>, un système intelligent de traitement d’eaux grises.</p>
+          <p>Premier prix + prix “Meilleur impact social & environnemental” avec <strong>SG-KOOM</strong>.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <h3>2024 — 72h des CPGE (Concours Ingenova)</h3>
-          <p>Premier prix avec le projet <strong>YILGA SmartLayers</strong>, une IA pour optimiser la rentabilité agricole.</p>
+          <h3>2024 — Concours Ingenova 72h CPGE</h3>
+          <p>Premier prix avec <strong>YILGA SmartLayers</strong>, IA pour l’agriculture.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <h3>2023 — Classe Préparatoire MP2I</h3>
-          <p>Entrée au <strong>2iE</strong> pour poursuivre ma passion des sciences et de la technologie.</p>
+          <h3>2023 — Classe Préparatoire MPI</h3>
+          <p>Entrée au <strong>2iE</strong>, poursuite de ma passion pour la science et la technologie.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <h3>2022 — Président du Club d’Art Oratoire</h3>
-          <p>Développement de mes compétences en communication, gestion et leadership d’équipe.</p>
+          <h3>2022 — Président Club Art Oratoire</h3>
+          <p>Développement du leadership, communication et gestion d’équipe.</p>
         </div>
       </div>
     </div>
@@ -181,13 +129,13 @@
   <section class="contact fade-in">
     <h2>Contact</h2>
     <p>📧 <a href="mailto:sorghobrayan60@gmail.com">sorghobrayan60@gmail.com</a></p>
-    <p>💼 <a href="https://github.com/Sorghobrayan-dotcom" target="_blank">Mon compte github</a></p>
-    <p>📘 <a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Mon LinkedIn</a></p>
-    <p>📞 <a href="+226 74928978" target="_blank">+226 74928978</a></p>
-  </section> 
+    <p>💼 <a href="https://github.com/Sorghobrayan-dotcom" target="_blank">GitHub</a></p>
+    <p>📘 <a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank">LinkedIn</a></p>
+    <p>📞 +226 74 92 89 78</p>
+  </section>
 
   <footer>
-    © 2025 SORGHO Brayan Jovani
+    © 2025 Brayan SORGHO Jovani
   </footer>
 </body>
 </html>
