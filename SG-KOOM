@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SG-KOOM — Assainissement des eaux grises</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <img src="assets/photo.jpg" alt="Photo professionnelle" width="120">
+    <h1>SORGHO Brayan — SG-KOOM</h1>
+    <p>Système enterré de traitement et réutilisation des eaux grises</p>
+  </div>
+</header>
+
+<section id="project-hero">
+  <h2>SG-KOOM</h2>
+  <img src="assets/project2.jpg" alt="SG-KOOM" width="600">
+  <p><strong>Résumé :</strong> SG-KOOM est un système domestique enterré modulable qui traite et réutilise les eaux grises (ménage, vaiselles, lessives). Il combine filtration avancée et désinfection UV pour fournir de l’eau propre réutilisable, tout en étant autonome et connecté pour la domotique.</p>
+</section>
+
+<section id="project-problem">
+  <h2>Problème</h2>
+  <p>Au Burkina Faso et dans de nombreux pays, les eaux grises sont mal collectées et souvent rejetées dans l’environnement, posant des risques pour la santé et l’écosystème. Les solutions existantes sont souvent végétales, peu durables, ou difficiles à maintenir.</p>
+</section>
+
+<section id="project-solution">
+  <h2>Solution</h2>
+  <p>SG-KOOM propose un système biomimétique et entièrement enterré qui filtre les eaux grises avec des filtres longue durée et les désinfecte via LED UV. L’eau traitée peut être réutilisée pour la lessive, l’irrigation ou les toilettes, améliorant l’autonomie hydraulique et la durabilité.</p>
+</section>
+
+<section id="project-role">
+  <h2>Mon rôle</h2>
+  <p>Createur et lead du projet, Conception et prototypage du système, intégration des filtres et de la chambre UV, développement de la domotique et de la supervision via capteurs et interface web/mobile.</p>
+</section>
+
+<section id="project-tech">
+  <h2>Technologies utilisées</h2>
+  <ul>
+    <li>Filtres à longue durée (changements tous les 1-3 ans)</li>
+    <li>Désinfection LED UV</li>
+    <li>Capteurs et automatisation domotique</li>
+    <li>Interface web et mobile</li>
+    <li>Conception biomimétique et modulaire</li>
+  </ul>
+</section>
+
+<section id="project-impact">
+  <h2>Impact</h2>
+  <p>Testé en pilote, SG-KOOM réduit significativement les rejets d’eaux grises dans l’environnement, améliore la disponibilité d’eau réutilisable pour certaines taches et est reconnu pour son approche innovante et durable.</p>
+</section>
+
+<footer>
+  <a href="index.html">← Retour à l'accueil</a>
+</footer>
+
+</body>
+</html>
