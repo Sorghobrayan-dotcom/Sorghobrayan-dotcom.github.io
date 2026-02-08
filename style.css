@@ -1,197 +1,91 @@
-/* Réinitialisation des marges et paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* style.css — version professionnelle adaptée à ton HTML */
+
+:root {
+    --main-bg: #004d4d; /* Vert canard */
+    --main-color: #ffffff; /* Blanc */
+    --card-bg: #006666;
+    --accent-color: #66cccc;
+    --hover-color: #009999;
+    --font-family: 'Inter', sans-serif;
+    --radius: 12px;
+    --shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
-/* Corps de la page */
+/* Reset */
+* {margin: 0; padding: 0; box-sizing: border-box;}
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-family);
+    background-color: var(--main-bg);
+    color: var(--main-color);
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
-/* Header */
+a {text-decoration: none; color: var(--accent-color); transition: color 0.3s;}
+a:hover {color: var(--hover-color);}
+
+/* Header sticky avec photo et identité */
 header {
-    background: linear-gradient(135deg, #f4f4f4, #ff7f50); /* Dégradé subtil */
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    position: relative;
-    overflow: hidden;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 12px 24px;
+    box-shadow: var(--shadow);
+    z-index: 100;
 }
-
-header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    animation: fadeInDown 1.5s ease-in-out;
+header div {
+    display: flex;
+    align-items: center;
 }
-
-header p {
-    font-size: 1.2em;
-    font-weight: 300;
-    animation: fadeIn 2s ease-in-out;
-    animation-delay: 1s;
-}
-
-.profile-img {
-    width: 150px;
-    height: 150px;
+header img {
     border-radius: 50%;
-    display: block;
-    margin: 0 auto 20px auto;
-    border: 3px solid #ff7f50;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 120px;
+    height: 120px;
     object-fit: cover;
+    margin-right: 16px;
+    border: 3px solid var(--accent-color);
 }
+header h1 {font-size: 1.8rem;}
+header p {margin-top: 6px; color: #ccf2f2;}
 
 /* Sections */
 section {
-    padding: 50px 25px;
-    margin: 30px auto;
-    max-width: 900px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-section:hover {
-    transform: translateY(-5px);
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 10px;
 }
 
-section h2 {
-    font-size: 2.2em;
-    margin-bottom: 25px;
-    color: #ff7f50; /* Touche d’orange */
-    text-align: center;
-    position: relative;
-}
+/* Grille projets */
+#projects {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;}
+article {background-color: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s;}
+article:hover {transform: translateY(-8px); box-shadow: 0 12px 32px rgba(0,0,0,0.6);}
+article img {width: 100%; display: block; border-bottom: 2px solid var(--accent-color);}
+article h3 {padding: 12px;}
+article p {padding: 0 12px 12px; color: #ccf2f2;}
 
-section h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #ff7f50;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-section p, section ul {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #555;
-}
-
-/* Liste des projets */
-.project {
-    margin-bottom: 25px;
-    padding: 20px;
-    border-left: 4px solid #ff7f50;
-    background: #fdfdfd;
-    border-radius: 8px;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.project:hover {
-    transform: translateY(-3px);
-    background: #fff3f0;
-}
-
-.project h3 {
-    font-size: 1.5em;
-    color: #ff7f50;
-    margin-bottom: 10px;
-}
-
-/* Image de profil */
-.profile-img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    margin: 25px auto;
-    display: block;
-    border: 4px solid #ff7f50;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+/* Listes prix et leadership */
+ul {list-style: none; margin-top: 10px;}
+ul li {margin-bottom: 12px; padding-left: 12px; position: relative;}
+ul li::before {content: '•'; color: var(--accent-color); position: absolute; left: 0;}
 
 /* Footer */
-footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #333;
-    color: #fff;
-    margin-top: 40px;
-    font-size: 0.9em;
-}
-
-/* Liens */
-a {
-    color: #ff7f50;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #ff9966;
-}
+footer {text-align: center; padding: 24px; background-color: var(--card-bg); border-top: 2px solid var(--accent-color);}
 
 /* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+section {opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s forwards;}
+@keyframes fadeInUp {to {opacity:1; transform: translateY(0);}}
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ---- Timeline ---- */
-.timeline-container {
-  position: relative;
-  margin: 40px 0;
-  padding-left: 40px;
-  border-left: 4px solid #ff7f50;
-}
-
-.timeline-item {
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -12px;
-  top: 5px;
-  width: 20px;
-  height: 20px;
-  background: #ff7f50;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 3px rgba(255,127,80,0.3);
-}
-
-.timeline-content {
-  background: #fffaf5;
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
-
-.timeline-content h3 {
-  color: #e67300;
-  margin-bottom: 5px;
-  font-size: 1.2em;
+/* Responsive */
+@media(max-width: 600px){
+    header {flex-direction: column; align-items: center; text-align: center;}
+    header img {margin-bottom: 12px;}
+    section {padding: 24px 10px;}
 }
