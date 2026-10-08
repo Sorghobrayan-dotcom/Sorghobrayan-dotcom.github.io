@@ -6,7 +6,7 @@
   <title>CV — Brayan Sorgho</title>
   <meta name="description" content="CV de Brayan Sorgho, étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat : projets, distinctions, compétences et engagements.">
   <meta name="author" content="Brayan Sorgho">
-  <meta name="theme-color" content="#0b2545">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/cv.html">
   <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/cv.html">
   <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/cv.html?lang=en">
@@ -27,24 +27,30 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/cv.css">
 
   <script>
-    // Langue choisie avant le premier affichage : aucun clignotement.
+    // Avant le premier affichage : langue, intro (une fois par session) et rideau de transition.
     (function (d) {
       var r = d.documentElement, l;
       r.classList.replace("no-js", "js");
       try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
       if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
       if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
+      try {
+        if (sessionStorage.getItem("curtain")) { r.classList.add("curtain-in"); sessionStorage.removeItem("curtain"); }
+        else if (r.hasAttribute("data-intro") && !sessionStorage.getItem("intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) r.classList.add("intro-on");
+      } catch (e) {}
     })(document);
   </script>
   <script src="assets/js/main.js" defer></script>
 </head>
 <body class="cv-page">
   <a class="skip-link" href="#cv"><span lang="fr">Aller au CV</span><span lang="en">Skip to CV</span></a>
+
+  <div class="curtain" aria-hidden="true"></div>
 
   <header class="cv-toolbar">
     <div class="cv-toolbar__inner">

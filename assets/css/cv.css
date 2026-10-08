@@ -1,6 +1,6 @@
 /* CV — mise en page A4, lisible à l'écran et à l'impression. */
 
-.cv-page { background: var(--bg-soft); }
+.cv-page { background: var(--paper); }
 
 .cv-toolbar {
   position: sticky;
@@ -42,11 +42,11 @@
   gap: 24px;
   align-items: start;
   padding-bottom: 18px;
-  border-bottom: 2px solid var(--navy-900);
+  border-bottom: 2px solid var(--ink);
 }
 
 .cv__name { margin: 0; font-size: 26pt; letter-spacing: -.03em; line-height: 1.05; }
-.cv__title { margin: 8px 0 12px; color: var(--navy-800); font-weight: 600; }
+.cv__title { margin: 8px 0 12px; color: var(--ink-2); font-weight: 600; }
 
 .cv__contact {
   display: flex;
@@ -55,9 +55,9 @@
   font-size: 9pt;
 }
 .cv__contact li { display: inline-flex; align-items: center; gap: 6px; color: var(--text); }
-.cv__contact .icon { width: 13px; height: 13px; color: var(--navy-700); }
+.cv__contact .icon { width: 13px; height: 13px; color: var(--ink-2); }
 .cv__contact a { color: inherit; text-decoration: none; }
-.cv__contact a:hover { color: var(--navy-900); text-decoration: underline; }
+.cv__contact a:hover { color: var(--ink); text-decoration: underline; }
 
 .cv__photo {
   width: 30mm;
@@ -80,7 +80,7 @@
 
 .cv-section__title {
   margin: 0 0 8px;
-  color: var(--navy-900);
+  color: var(--ink);
   font-size: 9pt;
   font-weight: 700;
   letter-spacing: .12em;
@@ -112,7 +112,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--navy-700);
+  background: var(--ink-2);
 }
 
 .cv-side__label { margin: 10px 0 2px; color: var(--ink); font-size: 9.5pt; }
@@ -120,7 +120,7 @@
 .cv__side p { font-size: 9.5pt; }
 
 .cv-awards li { margin-bottom: 8px; font-size: 9.5pt; line-height: 1.4; }
-.cv-awards span { display: block; color: var(--navy-700); font-size: 8pt; font-weight: 700; letter-spacing: .06em; }
+.cv-awards span { display: block; color: var(--ink-2); font-size: 8pt; font-weight: 700; letter-spacing: .06em; }
 
 /* Écrans étroits : une seule colonne, la feuille prend toute la largeur. */
 @media (max-width: 440px) {

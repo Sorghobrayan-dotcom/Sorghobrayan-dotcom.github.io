@@ -6,7 +6,7 @@
   <title>WIIGA — Pompage d’eau piloté par IA sous délestage · Brayan Sorgho</title>
   <meta name="description" content="WIIGA : un agent d’apprentissage par renforcement (PPO) qui pilote une station de pompage soumise aux délestages. Jumeau numérique, résultats mesurés sur 365 jours, code open source.">
   <meta name="author" content="Brayan Sorgho">
-  <meta name="theme-color" content="#0b2545">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/WIIGA.html">
   <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/WIIGA.html">
   <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/WIIGA.html?lang=en">
@@ -29,17 +29,21 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script>
-    // Langue choisie avant le premier affichage : aucun clignotement.
+    // Avant le premier affichage : langue, intro (une fois par session) et rideau de transition.
     (function (d) {
       var r = d.documentElement, l;
       r.classList.replace("no-js", "js");
       try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
       if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
       if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
+      try {
+        if (sessionStorage.getItem("curtain")) { r.classList.add("curtain-in"); sessionStorage.removeItem("curtain"); }
+        else if (r.hasAttribute("data-intro") && !sessionStorage.getItem("intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) r.classList.add("intro-on");
+      } catch (e) {}
     })(document);
   </script>
   <script src="assets/js/main.js" defer></script>
@@ -47,36 +51,64 @@
 <body>
   <a class="skip-link" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
 
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a class="brand" href="./" aria-label="Brayan Sorgho, retour à l’accueil" data-en-aria-label="Brayan Sorgho, back to home">
-        <span class="brand__mark" aria-hidden="true">BS</span>
-        <span class="brand__name">Brayan Sorgho</span>
-      </a>
+  <div class="curtain" aria-hidden="true"></div>
 
-      <nav class="nav" id="nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
-        <ul class="nav__list">
-          <li><a class="nav__link" href="./#profil"><span lang="fr">Profil</span><span lang="en">Profile</span></a></li>
-          <li><a class="nav__link is-active" href="./#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
-          <li><a class="nav__link" href="./#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a></li>
-          <li><a class="nav__link" href="./#distinctions"><span lang="fr">Distinctions</span><span lang="en">Awards</span></a></li>
-          <li><a class="nav__link" href="./#contact">Contact</a></li>
-          <li class="nav__cta"><a class="btn btn--primary btn--sm" href="cv.html"><span lang="fr">Mon CV</span><span lang="en">My CV</span></a></li>
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="./" aria-label="Brayan Sorgho, accueil" data-en-aria-label="Brayan Sorgho, home">
+        <span class="logo__copy" aria-hidden="true">©</span>
+        <span class="logo__roll" aria-hidden="true">
+          <span class="logo__a"><span lang="fr">Codé par Brayan</span><span lang="en">Code by Brayan</span></span>
+          <span class="logo__b">Brayan Sorgho</span>
+        </span>
+      </a>
+      <nav class="header__nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
+        <ul>
+          <li><a class="link-dot is-active" href="./#projets"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
+          <li><a class="link-dot" href="./#parcours"><span lang="fr">Parcours</span><span lang="en">Journey</span></a></li>
+          <li><a class="link-dot" href="#contact">Contact</a></li>
+          <li><a class="link-dot" href="cv.html">CV</a></li>
         </ul>
       </nav>
-
-      <div class="site-header__actions">
-        <div class="lang-switch" role="group" aria-label="Langue / Language">
-          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
-          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
-        </div>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
-          <svg class="icon icon-open" aria-hidden="true"><use href="assets/img/icons.svg#menu"></use></svg>
-          <svg class="icon icon-close" aria-hidden="true"><use href="assets/img/icons.svg#x"></use></svg>
-        </button>
+      <div class="lang-switch header__lang" role="group" aria-label="Langue / Language">
+        <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+        <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
       </div>
     </div>
   </header>
+
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+    <span class="menu-btn__lines" aria-hidden="true"></span>
+  </button>
+
+  <div class="menu" id="menu" inert>
+    <div class="menu__backdrop"></div>
+    <nav class="menu__panel" aria-label="Menu">
+      <span class="menu__curve" aria-hidden="true"></span>
+      <p class="menu__label">Navigation</p>
+      <ul class="menu__links">
+        <li><a href="./"><span lang="fr">Accueil</span><span lang="en">Home</span></a></li>
+        <li><a href="./#projets"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
+        <li><a href="./#parcours"><span lang="fr">Parcours</span><span lang="en">Journey</span></a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+      <div class="menu__foot">
+        <div>
+          <p class="contact__label"><span lang="fr">Réseaux</span><span lang="en">Socials</span></p>
+          <ul>
+            <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="mailto:sorghobrayan60@gmail.com">E-mail</a></li>
+          </ul>
+        </div>
+        <div class="lang-switch lang-switch--dark" role="group" aria-label="Langue / Language">
+          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+      </div>
+    </nav>
+  </div>
 
   <main id="contenu">
     <section class="page-hero" id="haut" aria-labelledby="titre-projet">
@@ -507,14 +539,46 @@
     </nav>
   </main>
 
-  <footer class="site-footer">
-    <div class="container site-footer__inner">
-      <p>© <span data-year>2026</span> Brayan Sorgho</p>
-      <ul class="site-footer__links">
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
+  <footer class="contact contact--after-paper" id="contact" aria-labelledby="titre-contact">
+    <div class="contact__curve" aria-hidden="true"><span></span></div>
+    <div class="container">
+      <div class="contact__head">
+        <img class="contact__avatar" src="assets/img/portrait-square.jpg" width="350" height="350" loading="lazy" alt="">
+        <h2 class="contact__title" id="titre-contact"><span lang="fr">Travaillons<br>ensemble</span><span lang="en">Let’s work<br>together</span></h2>
+      </div>
+
+      <div class="contact__line">
+        <div class="contact__cta">
+          <a class="round-btn round-btn--light" href="mailto:sorghobrayan60@gmail.com" data-magnetic>
+            <span class="round-btn__fill" aria-hidden="true"></span>
+            <span class="round-btn__label"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact__pills">
+        <a class="pill" href="mailto:sorghobrayan60@gmail.com">sorghobrayan60@gmail.com</a>
+        <a class="pill" href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="contact__bottom">
+        <div>
+          <p class="contact__label">Version</p>
+          <p><span data-year>2026</span> © Brayan Sorgho</p>
+        </div>
+        <div>
+          <p class="contact__label"><span lang="fr">Heure locale à Rabat</span><span lang="en">Local time in Rabat</span></p>
+          <p data-clock>GMT+1</p>
+        </div>
+        <div class="contact__socials">
+          <p class="contact__label"><span lang="fr">Réseaux</span><span lang="en">Socials</span></p>
+          <ul>
+            <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
 </body>
