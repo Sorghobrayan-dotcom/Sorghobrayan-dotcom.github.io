@@ -109,8 +109,8 @@ layout: base
   {%- assign s_en = s.texte_en | default: s.texte_fr %}
         <section id="{{ s_id }}" aria-labelledby="h-{{ s_id }}">
           <h2 id="h-{{ s_id }}">{% include t.html fr=s.titre_fr en=s.titre_en %}</h2>
-          {% capture s_html %}{{ s.texte_fr | markdownify }}{% endcapture %}<div class="md" lang="fr">{% include fr.html t=s_html %}</div>
-          <div class="md" lang="en">{{ s_en | markdownify }}</div>
+          {% capture s_html %}{{ s.texte_fr | markdownify | replace: ' />', '>' }}{% endcapture %}<div class="md" lang="fr">{% include fr.html t=s_html %}</div>
+          <div class="md" lang="en">{{ s_en | markdownify | replace: ' />', '>' }}</div>
         </section>
 {%- endfor %}
 {%- endif %}

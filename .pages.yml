@@ -62,6 +62,10 @@ components:
         - { name: postgresql, label: "PostgreSQL" }
         - { name: sqlite, label: "SQLite" }
         - { name: mongodb, label: "MongoDB" }
+        - { name: express, label: "Express" }
+        - { name: solidity, label: "Solidity" }
+        - { name: ethereum, label: "Ethereum" }
+        - { name: polygon, label: "Polygon" }
         - { name: html5, label: "HTML5" }
         - { name: css, label: "CSS" }
         - { name: javascript, label: "JavaScript" }
@@ -150,7 +154,7 @@ content:
         type: select
         options:
           multiple: true
-          values: [ia, data, eau, energie, agriculture, web, social]
+          values: [ia, data, eau, energie, agriculture, web, blockchain, social]
       - { name: domaine_fr, label: Domaine (FR), type: string, description: "Ex. : IA · Eau · Énergie" }
       - { name: domaine_en, label: Domaine (EN), type: string }
       - { name: surtitre_fr, label: Surtitre de la page (FR), type: string, description: "Facultatif. Par défaut : le domaine." }

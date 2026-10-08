@@ -155,21 +155,26 @@
     max-width: none;
     width: 210mm;
     margin: 0;
-    padding: 11mm 13mm 0;
+    padding: 10mm 13mm 0;
     border: 0;
     border-radius: 0;
     box-shadow: none;
-    font-size: 9.4pt;
-    line-height: 1.42;
+    font-size: 9pt;
+    line-height: 1.36;
   }
   .cv__name { font-size: 24pt; }
   .cv__photo { width: 26mm; height: 32mm; }
-  .cv__header { padding-bottom: 12px; }
+  .cv__header { padding-bottom: 10px; }
+  .cv-item__head h3 { font-size: 9.8pt; }
+  .cv-item__sub { font-size: 8.6pt; }
+  .cv__side p, .cv-awards li { font-size: 9pt; }
   .cv__body { padding-top: 12px; }
-  .cv-section + .cv-section { margin-top: 12px; }
-  .cv-item + .cv-item { margin-top: 8px; }
+  .cv-section + .cv-section { margin-top: 10px; }
+  .cv-item + .cv-item { margin-top: 7px; }
+  .cv-awards li { margin-bottom: 6px; }
   .cv p { margin-bottom: 4px; }
   .cv a { color: inherit; text-decoration: none; }
   .cv-item, .cv-section__title { break-inside: avoid; }
+  .cv-section__title { break-after: avoid; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }

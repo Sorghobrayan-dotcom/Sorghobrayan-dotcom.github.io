@@ -3,7 +3,7 @@ titre: SG-KOOM
 afficher: true
 cv: true
 a_la_une: true
-ordre: 3
+ordre: 4
 annee: 2025
 filtres: [eau]
 domaine_fr: Eau · Assainissement
@@ -39,10 +39,8 @@ cv_sous_titre_fr: Créateur et chef de projet · Filtration · LED UV · Domotiq
 cv_sous_titre_en: Founder and project lead · Filtration · UV-LED · Home automation
 cv_points_fr:
   - Système domestique enterré qui filtre, désinfecte et réutilise les eaux grises, supervisé par capteurs et interface web et mobile.
-  - Premier prix du Parcours Entrepreneurs 2iE.
 cv_points_en:
   - Underground household system that filters, disinfects and reuses greywater, monitored by sensors through a web and mobile interface.
-  - First prize, 2iE Entrepreneurs Programme.
 seo_titre_fr: "SG-KOOM : assainissement des eaux grises"
 seo_titre_en: "SG-KOOM: Greywater treatment"
 seo_description: "SG-KOOM : système domestique enterré de traitement et de réutilisation des eaux grises (filtration, LED UV, domotique). Premier prix Parcours Entrepreneurs 2iE 2025."

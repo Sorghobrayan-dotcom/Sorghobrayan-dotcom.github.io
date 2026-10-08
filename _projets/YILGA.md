@@ -3,7 +3,7 @@ titre: YILGA
 afficher: true
 cv: true
 a_la_une: true
-ordre: 2
+ordre: 3
 annee: 2025
 filtres: [ia, agriculture]
 domaine_fr: Agrotech · IA
@@ -39,10 +39,8 @@ cv_sous_titre_fr: Créateur et chef de projet · Python · TensorFlow · scikit-
 cv_sous_titre_en: Founder and project lead · Python · TensorFlow · scikit-learn · IoT
 cv_points_fr:
   - Plateforme qui recommande la culture la plus rentable grâce à un score croisant sol, météo, capteurs et prévisions de marché.
-  - Premier prix INGENOVA 72H des CPGE et prix spécial Incub UO × CITADEL.
 cv_points_en:
   - Platform recommending the most profitable crop through a score combining soil, weather, sensor data and market forecasts.
-  - First prize at INGENOVA 72H and special prize at Incub UO × CITADEL.
 seo_titre_fr: "YILGA : agrotech et IA"
 seo_titre_en: "YILGA: Agritech & AI"
 seo_description: "YILGA : plateforme qui recommande aux agriculteurs la culture la plus rentable grâce à l’IA. Premier prix INGENOVA 72H des CPGE 2025."

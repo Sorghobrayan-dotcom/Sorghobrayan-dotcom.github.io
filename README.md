@@ -71,7 +71,7 @@ cv: true
 a_la_une: true
 ordre: 1                  # 1 = en premier
 annee: 2026
-filtres: [ia, data]       # ia, data, eau, energie, agriculture, web, social
+filtres: [ia, data]       # ia, data, eau, energie, agriculture, web, blockchain, social
 domaine_fr: IA · Data
 domaine_en: AI · Data
 role_fr: Conception et développement
@@ -130,7 +130,8 @@ Dans `_data/competences.yml`, ajoute une ligne dans la bonne famille :
 
 **Logos disponibles** (`icone:`) : python, numpy, pandas, scipy, jupyter, anaconda, googlecolab,
 kaggle, pytorch, tensorflow, keras, scikitlearn, huggingface, opencv, plotly, streamlit, fastapi,
-flask, mlflow, apachespark, apacheairflow, duckdb, mysql, postgresql, sqlite, mongodb, html5, css,
+flask, mlflow, apachespark, apacheairflow, duckdb, mysql, postgresql, sqlite, mongodb, express,
+solidity, ethereum, polygon, html5, css,
 javascript, typescript, react, nodedotjs, php, openjdk, go, flutter, c, cplusplus, r, julia, git,
 github, gitlab, linux, ubuntu, gnubash, docker, latex, markdown, jekyll, figma, notion, arduino,
 raspberrypi, espressif, firebase, supabase, vercel, netlify, selenium, langchain, ollama.
@@ -165,7 +166,7 @@ _data/
   distinctions.yml   prix et classements
   competences.yml    compétences et badges
   filtres.yml        catégories des filtres de la page Projets
-_projets/            un fichier par projet (WIIGA.md, YILGA.md, SG-KOOM.md…)
+_projets/            un fichier par projet (WIIGA.md, SkillBadge.md, YILGA.md, SG-KOOM.md…)
 _includes/etudes/    études de cas détaillées écrites en HTML (WIIGA, YILGA, SG-KOOM)
 _includes/, _layouts/  gabarits (en-tête, menu, pied de page, page projet)
 index.html, projets.html, a-propos.html, contact.html, cv.html   les pages

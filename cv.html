@@ -145,8 +145,8 @@ gabarit: cv
   {%- assign items = g.items | where_exp: "s", "s.cv != false" %}
   {%- if items.size > 0 %}
           <h3 class="cv-side__label">{% include t.html fr=g.groupe_fr en=g.groupe_en %}</h3>
-          <p lang="fr">{% for s in items %}{% include fr.html t=s.nom %}{% unless forloop.last %}&nbsp;· {% endunless %}{% endfor %}</p>
-          <p lang="en">{% for s in items %}{% assign s_en = s.nom_en | default: s.nom %}{% include en.html t=s_en %}{% unless forloop.last %}&nbsp;· {% endunless %}{% endfor %}</p>
+          <p lang="fr">{% for s in items %}{% capture s_nom %}{% include fr.html t=s.nom %}{% endcapture %}{{ s_nom | replace: "-", "‑" }}{% unless forloop.last %}&nbsp;· {% endunless %}{% endfor %}</p>
+          <p lang="en">{% for s in items %}{% assign s_en = s.nom_en | default: s.nom %}{% capture s_nom %}{% include en.html t=s_en %}{% endcapture %}{{ s_nom | replace: "-", "‑" }}{% unless forloop.last %}&nbsp;· {% endunless %}{% endfor %}</p>
   {%- endif %}
 {%- endfor %}
         </section>

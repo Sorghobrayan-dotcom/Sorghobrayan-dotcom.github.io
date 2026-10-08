@@ -19,6 +19,7 @@
     - { nom: TensorFlow, icone: tensorflow }
     - { nom: Apprentissage par renforcement, nom_en: Reinforcement learning, icone: ia, cv: false }
     - { nom: Big Data, icone: donnees, cv: false }
+    - { nom: Blockchain, icone: polygon, cv: false }
     - { nom: Programmation linéaire, nom_en: Linear programming, icone: optimisation }
 
 - groupe_fr: Développement
@@ -27,6 +28,11 @@
     - { nom: HTML, icone: html5 }
     - { nom: CSS, icone: css }
     - { nom: JavaScript, icone: javascript }
+    - { nom: React, icone: react }
+    - { nom: Node.js, icone: nodedotjs }
+    - { nom: Express, icone: express, ruban: false }
+    - { nom: MongoDB, icone: mongodb }
+    - { nom: Solidity, icone: solidity }
     - { nom: Git et GitHub, nom_en: Git & GitHub, icone: github }
     - { nom: Visualisation de données, nom_en: Data visualisation, icone: graphique }
     - { nom: Tests, nom_en: Testing, icone: test }

@@ -7,4 +7,5 @@
 - { id: energie, fr: Énergie, en: Energy }
 - { id: agriculture, fr: Agriculture, en: Agriculture }
 - { id: web, fr: Web, en: Web }
+- { id: blockchain, fr: Blockchain, en: Blockchain }
 - { id: social, fr: Social, en: Social }
