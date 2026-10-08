@@ -1,13 +1,14 @@
 # Portfolio — Brayan Sorgho
 
 Site personnel bilingue (français / anglais) : profil, projets, parcours, distinctions et CV.
+Design inspiré des portfolios de designers indépendants : grandes typographies, palette neutre, interactions soignées.
 En ligne sur **https://sorghobrayan-dotcom.github.io/**
 
 ## Pages
 
 | Fichier | Contenu |
 |---|---|
-| `index.html` | Accueil : profil, compétences, projets, parcours, distinctions, contact |
+| `index.html` | Accueil : intro animée (pluie binaire, nom, photo), bandeau, qualités, chiffres, projets, compétences, parcours, distinctions, contact |
 | `WIIGA.html` | Étude de cas — agent d’apprentissage par renforcement pour le pompage d’eau sous délestage |
 | `YILGA.html` | Étude de cas — plateforme agrotech de recommandation de cultures |
 | `SG-KOOM.html` | Étude de cas — traitement et réutilisation des eaux grises |
@@ -20,8 +21,8 @@ En ligne sur **https://sorghobrayan-dotcom.github.io/**
 assets/
   css/style.css   styles communs (variables, composants, mise en page)
   css/cv.css      mise en page A4 du CV, écran et impression
-  js/main.js      langue, menu mobile, en-tête de l’accueil, lien actif, apparition au défilement, impression
-  img/            icônes (sprite SVG) et favicon
+  js/main.js      langue, intro, menu, transitions de page, boutons magnétiques, défilant, aperçus, apparitions, heure locale
+  img/            photos, couvertures de projets, icônes (sprite SVG) et favicon
 ```
 
 ## Choix techniques
@@ -33,7 +34,8 @@ assets/
 - **Amélioration progressive** : chaque page reste lisible et navigable sans JavaScript.
 - **Performance** : images dimensionnées, chargement différé, icônes regroupées dans un seul sprite SVG.
 - **Référencement** : métadonnées Open Graph, données structurées `schema.org/Person`, `sitemap.xml`.
-- **Palette sobre** : blanc, gris ardoise et un seul bleu marine.
+- **Palette neutre et lumineuse** : blanc, gris chauds et noir profond ; le vert n’apparaît que dans la pluie binaire de l’intro.
+- **Interactions** : intro jouée une fois par session (et jamais si l’utilisateur réduit les animations), nom défilant qui suit le sens du défilement, halo lumineux qui suit le pointeur, boutons magnétiques, aperçu des projets au survol, rubans de compétences, rideau de transition entre les pages, menu flottant.
 
 ## Développer en local
 
