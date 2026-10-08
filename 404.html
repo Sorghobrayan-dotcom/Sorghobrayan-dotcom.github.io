@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr" class="no-js" data-title-en="Page not found · Brayan Sorgho">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable · Brayan Sorgho</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b2545">
+  <!-- Chemins absolus : GitHub Pages sert cette page pour toute adresse inconnue, quelle que soit sa profondeur. -->
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    (function (d) {
+      var r = d.documentElement, l;
+      r.classList.replace("no-js", "js");
+      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
+      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
+      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; d.title = r.getAttribute("data-title-en"); }
+    })(document);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/">
+        <span class="brand__mark" aria-hidden="true">BS</span>
+        <span class="brand__name">Brayan Sorgho</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container not-found">
+    <div>
+      <p class="not-found__code">404</p>
+      <h1><span lang="fr">Cette page n’existe pas</span><span lang="en">This page does not exist</span></h1>
+      <p lang="fr">Le lien est peut-être ancien, ou l’adresse contient une faute de frappe.</p>
+      <p lang="en">The link may be out of date, or the address may contain a typo.</p>
+      <p class="not-found__actions">
+        <a class="btn btn--primary" href="/">
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-left"></use></svg>
+          <span lang="fr">Retour à l’accueil</span><span lang="en">Back to home</span>
+        </a>
+      </p>
+    </div>
+  </main>
+</body>
+</html>

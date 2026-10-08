@@ -1,61 +1,276 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr" class="no-js" data-title-en="SG-KOOM — Greywater treatment · Brayan Sorgho">
 <head>
-  <meta charset="UTF-8">
-  <title>SG-KOOM — Assainissement des eaux grises</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SG-KOOM — Assainissement des eaux grises · Brayan Sorgho</title>
+  <meta name="description" content="SG-KOOM : système domestique enterré de traitement et de réutilisation des eaux grises (filtration, LED UV, domotique). Premier prix Parcours Entrepreneurs 2iE 2025.">
+  <meta name="author" content="Brayan Sorgho">
+  <meta name="theme-color" content="#0b2545">
+  <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/SG-KOOM.html">
+  <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/SG-KOOM.html">
+  <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/SG-KOOM.html?lang=en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Brayan Sorgho">
+  <meta property="og:title" content="SG-KOOM — Chaque goutte compte">
+  <meta property="og:description" content="Système domestique enterré qui filtre, désinfecte et réutilise les eaux grises.">
+  <meta property="og:url" content="https://sorghobrayan-dotcom.github.io/SG-KOOM.html">
+  <meta property="og:image" content="https://sorghobrayan-dotcom.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    // Langue choisie avant le premier affichage : aucun clignotement.
+    (function (d) {
+      var r = d.documentElement, l;
+      r.classList.replace("no-js", "js");
+      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
+      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
+      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
+    })(document);
+  </script>
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
 
-<header>
-  <div>
-    <img src="SG-KOOM.jpeg" alt="Photo professionnelle" width="120">
-    <h1>SORGHO Brayan — SG-KOOM</h1>
-    <p>Système enterré de traitement et réutilisation des eaux grises</p>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./" aria-label="Brayan Sorgho, retour à l’accueil" data-en-aria-label="Brayan Sorgho, back to home">
+        <span class="brand__mark" aria-hidden="true">BS</span>
+        <span class="brand__name">Brayan Sorgho</span>
+      </a>
 
-<section id="project-hero">
-  <h2>SG-KOOM</h2>
-  <img src="assets/project2.jpg" alt="SG-KOOM" width="600">
-  <p><strong>Résumé :</strong> SG-KOOM est un système domestique enterré modulable qui traite et réutilise les eaux grises (ménage, vaiselles, lessives). Il combine filtration avancée et désinfection UV pour fournir de l’eau propre réutilisable, tout en étant autonome et connecté pour la domotique.</p>
-</section>
+      <nav class="nav" id="nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="./#profil"><span lang="fr">Profil</span><span lang="en">Profile</span></a></li>
+          <li><a class="nav__link is-active" href="./#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
+          <li><a class="nav__link" href="./#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a></li>
+          <li><a class="nav__link" href="./#distinctions"><span lang="fr">Distinctions</span><span lang="en">Awards</span></a></li>
+          <li><a class="nav__link" href="./#contact">Contact</a></li>
+          <li class="nav__cta"><a class="btn btn--primary btn--sm" href="cv.html"><span lang="fr">Mon CV</span><span lang="en">My CV</span></a></li>
+        </ul>
+      </nav>
 
-<section id="project-problem">
-  <h2>Problème</h2>
-  <p>Au Burkina Faso et dans de nombreux pays, les eaux grises sont mal collectées et souvent rejetées dans l’environnement, posant des risques pour la santé et l’écosystème. Les solutions existantes sont souvent végétales, peu durables, ou difficiles à maintenir.</p>
-</section>
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Langue / Language">
+          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+          <svg class="icon icon-open" aria-hidden="true"><use href="assets/img/icons.svg#menu"></use></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="assets/img/icons.svg#x"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<section id="project-solution">
-  <h2>Solution</h2>
-  <p>SG-KOOM propose un système biomimétique et entièrement enterré qui filtre les eaux grises avec des filtres longue durée et les désinfecte via LED UV. L’eau traitée peut être réutilisée pour la lessive, l’irrigation ou les toilettes, améliorant l’autonomie hydraulique et la durabilité.</p>
-</section>
+  <main id="contenu">
+    <section class="page-hero" id="haut" aria-labelledby="titre-projet">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d’Ariane" data-en-aria-label="Breadcrumb">
+          <ol>
+            <li><a href="./"><span lang="fr">Accueil</span><span lang="en">Home</span></a></li>
+            <li><a href="./#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
+            <li><span aria-current="page">SG-KOOM</span></li>
+          </ol>
+        </nav>
 
-<section id="project-role">
-  <h2>Mon rôle</h2>
-  <p>Createur et lead du projet, Conception et prototypage du système, intégration des filtres et de la chambre UV, développement de la domotique et de la supervision via capteurs et interface web/mobile.</p>
-</section>
+        <div class="page-hero__head">
+          <p class="kicker"><span lang="fr">Eau · Assainissement · Domotique</span><span lang="en">Water · Sanitation · Home automation</span></p>
+          <h1 class="page-hero__title" id="titre-projet">SG-KOOM</h1>
+          <p class="page-hero__lead" lang="fr">
+            Un système domestique enterré qui traite et réutilise les eaux grises du foyer.
+            Chaque goutte compte.
+          </p>
+          <p class="page-hero__lead" lang="en">
+            An underground household system that treats and reuses the home’s greywater.
+            Every drop counts.
+          </p>
+        </div>
 
-<section id="project-tech">
-  <h2>Technologies utilisées</h2>
-  <ul>
-    <li>Filtres à longue durée (changements tous les 1-3 ans)</li>
-    <li>Désinfection LED UV</li>
-    <li>Capteurs et automatisation domotique</li>
-    <li>Interface web et mobile</li>
-    <li>Conception biomimétique et modulaire</li>
-  </ul>
-</section>
+        <dl class="meta-grid">
+          <div><dt><span lang="fr">Rôle</span><span lang="en">Role</span></dt><dd><span lang="fr">Créateur et chef de projet</span><span lang="en">Founder and project lead</span></dd></div>
+          <div><dt><span lang="fr">Domaine</span><span lang="en">Field</span></dt><dd><span lang="fr">Traitement et réutilisation de l’eau</span><span lang="en">Water treatment and reuse</span></dd></div>
+          <div><dt><span lang="fr">Distinction</span><span lang="en">Award</span></dt><dd><span lang="fr">1er prix Parcours Entrepreneurs 2iE</span><span lang="en">1st prize, 2iE Entrepreneurs Programme</span></dd></div>
+          <div><dt><span lang="fr">Année</span><span lang="en">Year</span></dt><dd>2025</dd></div>
+        </dl>
 
-<section id="project-impact">
-  <h2>Impact</h2>
-  <p>Testé en pilote, SG-KOOM réduit significativement les rejets d’eaux grises dans l’environnement, améliore la disponibilité d’eau réutilisable pour certaines taches et est reconnu pour son approche innovante et durable.</p>
-</section>
+        <figure class="cover cover--logo cover--sgkoom">
+          <img src="assets/img/sg-koom-cover.webp" width="1280" height="800" decoding="async" alt="Logo de SG-KOOM, « Chaque goutte compte »" data-en-alt="SG-KOOM logo, “Every drop counts”">
+        </figure>
+      </div>
+    </section>
 
-<footer>
-  <a href="index.html">← Retour à l'accueil</a>
-</footer>
+    <div class="container case">
+      <nav class="toc" aria-label="Sommaire" data-en-aria-label="Contents" data-spy>
+        <p class="toc__title"><span lang="fr">Sommaire</span><span lang="en">Contents</span></p>
+        <a href="#en-bref"><span lang="fr">En bref</span><span lang="en">Overview</span></a>
+        <a href="#probleme"><span lang="fr">Le problème</span><span lang="en">The problem</span></a>
+        <a href="#solution"><span lang="fr">La solution</span><span lang="en">The solution</span></a>
+        <a href="#role"><span lang="fr">Mon rôle</span><span lang="en">My role</span></a>
+        <a href="#technique"><span lang="fr">Technologies</span><span lang="en">Technology</span></a>
+        <a href="#impact">Impact</a>
+      </nav>
 
+      <div class="prose">
+        <section id="en-bref" aria-labelledby="h-en-bref">
+          <h2 id="h-en-bref"><span lang="fr">En bref</span><span lang="en">Overview</span></h2>
+          <p class="lead" lang="fr">
+            SG-KOOM est un système enterré et modulable qui traite les eaux grises du foyer — ménage,
+            vaisselle, lessive — pour les réutiliser. Il associe une filtration longue durée à une
+            désinfection par LED UV, fonctionne en autonomie et se connecte à la domotique de la maison.
+          </p>
+          <p class="lead" lang="en">
+            SG-KOOM is a modular, underground system that treats household greywater — from cleaning,
+            dishes and laundry — so it can be reused. It pairs long-life filtration with UV-LED
+            disinfection, runs on its own and connects to the home’s automation.
+          </p>
+        </section>
+
+        <section id="probleme" aria-labelledby="h-probleme">
+          <h2 id="h-probleme"><span lang="fr">Le problème</span><span lang="en">The problem</span></h2>
+          <p lang="fr">
+            Au Burkina Faso, comme dans de nombreux pays, les eaux grises sont mal collectées et souvent
+            rejetées directement dans l’environnement, avec des risques pour la santé et les
+            écosystèmes. Les solutions existantes, souvent végétales, sont peu durables ou difficiles à
+            entretenir.
+          </p>
+          <p lang="en">
+            In Burkina Faso, as in many countries, greywater is poorly collected and often released
+            straight into the environment, with risks for health and ecosystems. Existing solutions,
+            often plant-based, are short-lived or hard to maintain.
+          </p>
+        </section>
+
+        <section id="solution" aria-labelledby="h-solution">
+          <h2 id="h-solution"><span lang="fr">La solution</span><span lang="en">The solution</span></h2>
+          <p lang="fr">
+            Un système biomimétique, entièrement enterré, qui suit le parcours de l’eau du foyer jusqu’à
+            sa réutilisation. L’eau traitée sert à la lessive, à l’irrigation ou aux toilettes, ce qui
+            renforce l’autonomie en eau de la maison.
+          </p>
+          <p lang="en">
+            A biomimetic, fully underground system that follows the water from the household to its
+            reuse. The treated water goes to laundry, irrigation or toilets, making the home more
+            self-sufficient in water.
+          </p>
+          <div class="ideas">
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">1</span>
+              <div>
+                <h3><span lang="fr">Collecter</span><span lang="en">Collect</span></h3>
+                <p lang="fr">Les eaux grises du ménage, de la vaisselle et de la lessive sont dirigées vers le module enterré.</p>
+                <p lang="en">Greywater from cleaning, dishes and laundry is routed to the underground module.</p>
+              </div>
+            </div>
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">2</span>
+              <div>
+                <h3><span lang="fr">Filtrer</span><span lang="en">Filter</span></h3>
+                <p lang="fr">Des filtres longue durée retiennent les impuretés ; ils ne se changent que tous les un à trois ans.</p>
+                <p lang="en">Long-life filters hold back impurities; they only need replacing every one to three years.</p>
+              </div>
+            </div>
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">3</span>
+              <div>
+                <h3><span lang="fr">Désinfecter</span><span lang="en">Disinfect</span></h3>
+                <p lang="fr">Une chambre à LED UV élimine les micro-organismes avant le stockage.</p>
+                <p lang="en">A UV-LED chamber kills micro-organisms before storage.</p>
+              </div>
+            </div>
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">4</span>
+              <div>
+                <h3><span lang="fr">Réutiliser et superviser</span><span lang="en">Reuse and monitor</span></h3>
+                <p lang="fr">L’eau traitée alimente lessive, irrigation et toilettes ; des capteurs suivent le système depuis une interface web et mobile.</p>
+                <p lang="en">Treated water feeds laundry, irrigation and toilets; sensors track the system from a web and mobile interface.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="role" aria-labelledby="h-role">
+          <h2 id="h-role"><span lang="fr">Mon rôle</span><span lang="en">My role</span></h2>
+          <p lang="fr">Créateur et chef de projet, j’ai piloté la conception de bout en bout :</p>
+          <p lang="en">As founder and project lead, I drove the design end to end:</p>
+          <ul class="list">
+            <li lang="fr">conception et prototypage du système ;</li>
+            <li lang="en">designing and prototyping the system;</li>
+            <li lang="fr">intégration des filtres et de la chambre de désinfection UV ;</li>
+            <li lang="en">integrating the filters and the UV disinfection chamber;</li>
+            <li lang="fr">développement de la domotique et de la supervision par capteurs ;</li>
+            <li lang="en">building the home automation and sensor-based monitoring;</li>
+            <li lang="fr">conception de l’interface web et mobile.</li>
+            <li lang="en">designing the web and mobile interface.</li>
+          </ul>
+        </section>
+
+        <section id="technique" aria-labelledby="h-technique">
+          <h2 id="h-technique"><span lang="fr">Technologies</span><span lang="en">Technology</span></h2>
+          <dl class="stack">
+            <div class="stack__row"><dt><span lang="fr">Traitement</span><span lang="en">Treatment</span></dt><dd><span class="tags"><span class="tag"><span lang="fr">Filtres longue durée</span><span lang="en">Long-life filters</span></span><span class="tag"><span lang="fr">Désinfection LED UV</span><span lang="en">UV-LED disinfection</span></span></span></dd></div>
+            <div class="stack__row"><dt><span lang="fr">Pilotage</span><span lang="en">Control</span></dt><dd><span class="tags"><span class="tag"><span lang="fr">Capteurs</span><span lang="en">Sensors</span></span><span class="tag"><span lang="fr">Automatisation domotique</span><span lang="en">Home automation</span></span></span></dd></div>
+            <div class="stack__row"><dt>Interface</dt><dd><span class="tags"><span class="tag">Web</span><span class="tag">Mobile</span></span></dd></div>
+            <div class="stack__row"><dt><span lang="fr">Conception</span><span lang="en">Design</span></dt><dd><span class="tags"><span class="tag"><span lang="fr">Biomimétique</span><span lang="en">Biomimetic</span></span><span class="tag"><span lang="fr">Modulaire</span><span lang="en">Modular</span></span><span class="tag"><span lang="fr">Enterrée</span><span lang="en">Underground</span></span></span></dd></div>
+          </dl>
+        </section>
+
+        <section id="impact" aria-labelledby="h-impact">
+          <h2 id="h-impact">Impact</h2>
+          <p lang="fr">
+            Testé en pilote, SG-KOOM réduit nettement les rejets d’eaux grises dans l’environnement et
+            augmente la quantité d’eau réutilisable pour les usages domestiques non potables.
+          </p>
+          <p lang="en">
+            Tested in a pilot, SG-KOOM clearly reduces greywater discharge into the environment and
+            increases the water available for non-drinking household uses.
+          </p>
+          <ul class="kpis">
+            <li class="kpi"><strong><span lang="fr">1er prix</span><span lang="en">1st prize</span></strong><span lang="fr">Parcours Entrepreneurs 2iE, 2025</span><span lang="en">2iE Entrepreneurs Programme, 2025</span></li>
+            <li class="kpi"><strong><span lang="fr">1 à 3 ans</span><span lang="en">1–3 years</span></strong><span lang="fr">entre deux changements de filtres</span><span lang="en">between filter changes</span></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <nav class="next-project" aria-label="Projet suivant" data-en-aria-label="Next project">
+      <div class="container next-project__inner">
+        <div>
+          <p class="next-project__label"><span lang="fr">Projet suivant</span><span lang="en">Next project</span></p>
+          <p class="next-project__title"><strong><span lang="fr">WIIGA — Pompage d’eau piloté par IA</span><span lang="en">WIIGA — AI-driven water pumping</span></strong></p>
+        </div>
+        <a class="btn btn--primary" href="WIIGA.html">
+          <span lang="fr">Découvrir</span><span lang="en">Explore</span>
+          <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+        </a>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-year>2026</span> Brayan Sorgho</p>
+      <ul class="site-footer__links">
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>

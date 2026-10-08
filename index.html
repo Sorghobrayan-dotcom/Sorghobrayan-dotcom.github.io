@@ -1,108 +1,580 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr" class="no-js" data-title-en="Brayan Sorgho — Big Data & AI engineering student">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio — SORGHO Brayan Jovani Aboubacar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brayan Sorgho — Étudiant ingénieur Big Data et IA</title>
+  <meta name="description" content="Portfolio de Brayan Sorgho, étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat. Projets primés : WIIGA, YILGA, SG-KOOM.">
+  <meta name="author" content="Brayan Sorgho">
+  <meta name="theme-color" content="#0b2545">
+  <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/">
+  <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/">
+  <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/?lang=en">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Brayan Sorgho">
+  <meta property="og:title" content="Brayan Sorgho — Étudiant ingénieur Big Data et IA">
+  <meta property="og:description" content="Projets primés en IA appliquée à l’eau, à l’énergie et à l’agriculture.">
+  <meta property="og:url" content="https://sorghobrayan-dotcom.github.io/">
+  <meta property="og:image" content="https://sorghobrayan-dotcom.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    // Langue choisie avant le premier affichage : aucun clignotement.
+    (function (d) {
+      var r = d.documentElement, l;
+      r.classList.replace("no-js", "js");
+      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
+      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
+      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
+    })(document);
+  </script>
+  <script src="assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Brayan Sorgho",
+    "url": "https://sorghobrayan-dotcom.github.io/",
+    "image": "https://sorghobrayan-dotcom.github.io/assets/img/portrait.jpg",
+    "email": "mailto:sorghobrayan60@gmail.com",
+    "jobTitle": "Étudiant ingénieur en Big Data et intelligence artificielle",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Université Internationale de Rabat (UIR)" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "2iE — Institut International d’Ingénierie de l’Eau et de l’Environnement" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Rabat", "addressCountry": "MA" },
+    "knowsAbout": ["Big Data", "Intelligence artificielle", "Apprentissage par renforcement", "Ingénierie de l’eau"],
+    "sameAs": [
+      "https://github.com/Sorghobrayan-dotcom",
+      "https://www.linkedin.com/in/brayan-sorgho-1134b5328"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
 
-<!-- PHOTO + IDENTITÉ (reste visible au scroll via CSS plus tard) -->
-<header>
-  <div>
-    <img src="Image-moi.jpg" alt="Photo professionnelle" width="120">
-    <h1>SORGHO Brayan</h1>
-    <p>Étudiant en CPGE • futur ingénieur en IA et en cybersécurité • Porteur de projets à impact</p>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./" aria-label="Brayan Sorgho, retour à l’accueil" data-en-aria-label="Brayan Sorgho, back to home">
+        <span class="brand__mark" aria-hidden="true">BS</span>
+        <span class="brand__name">Brayan Sorgho</span>
+      </a>
 
-<hr>
+      <nav class="nav" id="nav" aria-label="Navigation principale" data-en-aria-label="Main navigation" data-spy>
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#profil"><span lang="fr">Profil</span><span lang="en">Profile</span></a></li>
+          <li><a class="nav__link" href="#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
+          <li><a class="nav__link" href="#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a></li>
+          <li><a class="nav__link" href="#distinctions"><span lang="fr">Distinctions</span><span lang="en">Awards</span></a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+          <li class="nav__cta"><a class="btn btn--primary btn--sm" href="cv.html"><span lang="fr">Mon CV</span><span lang="en">My CV</span></a></li>
+        </ul>
+      </nav>
 
-<!-- RÉSUMÉ -->
-<section id="resume">
-  <h2>Résumé</h2>
-  <p>
-    Étudiant ambitieux en classes préparatoires MPI à l'institut International 2iE, passionné par la technologie, l'art
-    et les projets innovants. J’ai conçu et développé plusieurs projets mêlant
-    ingénierie, intelligence artificielle et développement durable. J'aime donner du sens aux idées et transformer des concepts complexes en récits clairs, humains et impactants.
-  </p>
-  <p>
-    Persévérant et mature, je m’investis sur le long terme dans ce que j’entreprends. Que ce soit dans la technologie, l’innovation ou l’expression artistique, je cherche constamment à comprendre, à progresser et à construire des projets cohérents, utiles et porteurs de vision.
-  </p>
-</section>
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Langue / Language">
+          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+          <svg class="icon icon-open" aria-hidden="true"><use href="assets/img/icons.svg#menu"></use></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="assets/img/icons.svg#x"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<hr>
+  <main id="contenu">
 
-<!-- PROJETS -->
-<section id="projects">
-  <h2>Projets</h2>
+    <!-- Ouverture -->
+    <section class="hero" id="accueil" aria-labelledby="titre-hero">
+      <div class="container hero__grid">
+        <div>
+          <p class="kicker"><span lang="fr">Étudiant ingénieur · Big Data et IA · UIR</span><span lang="en">Engineering student · Big Data &amp; AI · UIR</span></p>
+          <h1 class="hero__title" id="titre-hero">Brayan Sorgho<span class="hero__subtitle"><span lang="fr">Étudiant ingénieur en Big Data et intelligence artificielle.</span><span lang="en">Engineering student in Big Data &amp; Artificial Intelligence.</span></span></h1>
+          <p class="hero__lead" lang="fr">
+            Je conçois des projets qui mettent la donnée et l’intelligence artificielle au service de
+            besoins concrets — l’accès à l’eau, l’énergie, l’agriculture — de la modélisation jusqu’au
+            code, testé et documenté.
+          </p>
+          <p class="hero__lead" lang="en">
+            I build projects that put data and artificial intelligence to work on real needs — access
+            to water, energy, agriculture — from modelling all the way to tested, documented code.
+          </p>
 
-  <article>
-    <a href="YILGA.html">
-      <img src="YILGA.jpeg" alt="YILGA" width="300">
-      <h3>YILGA — Agrotech & IA</h3>
-    </a>
-    <p>Plateforme intelligente pour les agriculteurs.</p>
-  </article>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projets">
+              <span lang="fr">Voir mes projets</span><span lang="en">See my projects</span>
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+            </a>
+            <a class="btn btn--secondary" href="cv.html">
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#file"></use></svg>
+              <span lang="fr">Consulter mon CV</span><span lang="en">View my CV</span>
+            </a>
+          </div>
 
-  <article>
-    <a href="SG-KOOM.html">
-      <img src="SG-KOOM.jpeg" alt="SG-KOOM" width="300">
-      <h3>SG-KOOM — Assainissement des eaux grises</h3>
-    </a>
-    <p>Système domestique enterré de traitement et réutilisation des eaux grises.</p>
-  </article>
+          <ul class="hero__meta">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#map-pin"></use></svg>
+              <span lang="fr">Rabat, Maroc</span><span lang="en">Rabat, Morocco</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#graduation"></use></svg>
+              <span lang="fr">Université Internationale de Rabat</span><span lang="en">International University of Rabat</span>
+            </li>
+          </ul>
+        </div>
 
-  <article>
-    <a href="WIIGA.html">
-      <img src="WIIGA.jpeg" alt="WIIGA" width="300">
-      <h3>WIIGA — Water Intelligent Integrated Grid Application</h3>
-    </a>
-    <p>Optimisation énergétique et hydraulique des réseaux d’eau.</p>
-  </article>
-</section>
+        <div class="profile-card">
+          <img class="profile-card__photo" src="assets/img/portrait.jpg" width="350" height="450"
+               alt="Portrait de Brayan Sorgho" data-en-alt="Portrait of Brayan Sorgho">
+          <p class="profile-card__name">Brayan Sorgho</p>
+          <p class="profile-card__role"><span lang="fr">Cycle ingénieur Big Data et IA · UIR</span><span lang="en">Big Data &amp; AI engineering · UIR</span></p>
 
-<hr>
+          <ul class="profile-card__facts">
+            <li class="fact"><strong>3</strong><span lang="fr">projets portés</span><span lang="en">projects led</span></li>
+            <li class="fact"><strong>4</strong><span lang="fr">distinctions</span><span lang="en">awards</span></li>
+            <li class="fact"><strong>2</strong><span lang="fr">premiers prix</span><span lang="en">first prizes</span></li>
+          </ul>
 
-<!-- RESPONSABILITÉS & LEADERSHIP -->
-<section id="leadership">
-  <h2>Responsabilités & Leadership</h2>
-  <ul>
-    <li><strong>Président - Club d’Art Oratoire</strong> : organisation de séances, encadrement des membres, compétitions et prise de parole en public.</li>
-    <li><strong>Fondateur -  co Fondateur Projet LA Salliens</strong> : pilotage stratégique, coordination d’équipe, vision long terme dans le cadre de la mise au points d'un projet de bus pour les etudiants de mon ancien collège.</li>
-    <li><strong>Responsable technique</strong> : supervision du développement et des choix technologiques.</li>
-  </ul>
-</section>
+          <div class="profile-card__links">
+            <a class="icon-btn" href="mailto:sorghobrayan60@gmail.com" aria-label="Envoyer un e-mail" data-en-aria-label="Send an email">
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#mail"></use></svg>
+            </a>
+            <a class="icon-btn" href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener" aria-label="GitHub (nouvel onglet)" data-en-aria-label="GitHub (new tab)">
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#github"></use></svg>
+            </a>
+            <a class="icon-btn" href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener" aria-label="LinkedIn (nouvel onglet)" data-en-aria-label="LinkedIn (new tab)">
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#linkedin"></use></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<hr>
+    <!-- Profil -->
+    <section class="section" id="profil" aria-labelledby="titre-profil">
+      <div class="container">
+        <div class="about">
+          <div class="about__text reveal">
+            <p class="kicker"><span lang="fr">Profil</span><span lang="en">Profile</span></p>
+            <h2 class="section__title" id="titre-profil"><span lang="fr">Rigoureux, persévérant, tourné vers l’impact.</span><span lang="en">Rigorous, persistent, impact-driven.</span></h2>
+            <p lang="fr">
+              Après deux années de classes préparatoires MPI — mathématiques, physique, informatique — à
+              2iE, à Ouagadougou, je suis en première année du cycle ingénieur Big Data et intelligence
+              artificielle à l’Université Internationale de Rabat (UIR), ma troisième année d’études
+              supérieures.
+            </p>
+            <p lang="en">
+              After two years of MPI preparatory classes — mathematics, physics, computer science — at
+              2iE in Ouagadougou, I am now in the first year of the Big Data and Artificial Intelligence
+              engineering programme at the International University of Rabat (UIR), my third year of
+              higher education.
+            </p>
+            <p lang="fr">
+              J’ai conçu et porté plusieurs projets qui mêlent ingénierie, IA et développement durable,
+              récompensés à plusieurs reprises. J’aime donner du sens aux idées : transformer un
+              problème complexe en une solution claire, mesurable et utile à ceux qui le vivent.
+            </p>
+            <p lang="en">
+              I have designed and led several award-winning projects that combine engineering, AI and
+              sustainability. I like giving ideas a purpose: turning a complex problem into a clear,
+              measurable solution that helps the people who live with it.
+            </p>
+            <p lang="fr">
+              Je m’investis sur le long terme. En technologie, en innovation comme en prise de parole,
+              je cherche à comprendre, à progresser et à construire des projets cohérents et porteurs
+              de vision.
+            </p>
+            <p lang="en">
+              I commit for the long run. In technology, in innovation and in public speaking alike, I
+              aim to understand, to improve and to build coherent projects with a clear vision.
+            </p>
+          </div>
 
-<!-- PRIX ET DISTINCTIONS -->
-<section id="awards">
-  <h2>Prix & Distinctions</h2>
-  <ul>
-    <li> lauréats - concours Eco green(2023)
-    <li>Premier prix(YILGA) - Concours INGENOVA 72H des CPGE (2025) </li>
-    <li>Premier Prix(SG-KOOM) - Parcours entrepreneurs 2iE (2025)</li>
-    <li>Prix spécial (YILGA)- camp ideation incub UO en collaboration avec le centre d'excellences en IA CITADEL (2025)</li>
-  </ul>
-</section>
+          <div class="reveal">
+            <h3 class="subhead"><span lang="fr">Domaines</span><span lang="en">Focus areas</span></h3>
+            <ul class="focus-list">
+              <li>
+                <span class="focus-list__num">01</span>
+                <div>
+                  <h4><span lang="fr">Intelligence artificielle</span><span lang="en">Artificial intelligence</span></h4>
+                  <p lang="fr">Apprentissage par renforcement, modélisation, aide à la décision.</p>
+                  <p lang="en">Reinforcement learning, modelling, decision support.</p>
+                </div>
+              </li>
+              <li>
+                <span class="focus-list__num">02</span>
+                <div>
+                  <h4>Big Data</h4>
+                  <p lang="fr">Collecte, traitement et valorisation de grands volumes de données.</p>
+                  <p lang="en">Collecting, processing and extracting value from large datasets.</p>
+                </div>
+              </li>
+              <li>
+                <span class="focus-list__num">03</span>
+                <div>
+                  <h4><span lang="fr">Eau, énergie, environnement</span><span lang="en">Water, energy, environment</span></h4>
+                  <p lang="fr">Les défis réels du Burkina Faso comme terrain d’application.</p>
+                  <p lang="en">Real challenges from Burkina Faso as a testing ground.</p>
+                </div>
+              </li>
+              <li>
+                <span class="focus-list__num">04</span>
+                <div>
+                  <h4><span lang="fr">Prise de parole et leadership</span><span lang="en">Public speaking and leadership</span></h4>
+                  <p lang="fr">Président d’un club d’art oratoire, porteur de projets en équipe.</p>
+                  <p lang="en">President of a public-speaking club, leading team projects.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-<hr>
+        <div class="skills">
+          <div class="skill-group reveal">
+            <h3>
+              <span class="skill-group__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#cpu"></use></svg></span>
+              <span lang="fr">IA et données</span><span lang="en">AI &amp; data</span>
+            </h3>
+            <ul class="tags">
+              <li class="tag">Python</li>
+              <li class="tag">NumPy</li>
+              <li class="tag">PyTorch</li>
+              <li class="tag">Stable-Baselines3 (PPO)</li>
+              <li class="tag">Gymnasium</li>
+              <li class="tag">scikit-learn</li>
+              <li class="tag">TensorFlow</li>
+              <li class="tag"><span lang="fr">Programmation linéaire</span><span lang="en">Linear programming</span></li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>
+              <span class="skill-group__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#code"></use></svg></span>
+              <span lang="fr">Développement</span><span lang="en">Development</span>
+            </h3>
+            <ul class="tags">
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+              <li class="tag">JavaScript</li>
+              <li class="tag">Git &amp; GitHub</li>
+              <li class="tag"><span lang="fr">Visualisation de données</span><span lang="en">Data visualisation</span></li>
+              <li class="tag"><span lang="fr">Tests</span><span lang="en">Testing</span></li>
+              <li class="tag">Documentation</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>
+              <span class="skill-group__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#wrench"></use></svg></span>
+              <span lang="fr">Ingénierie</span><span lang="en">Engineering</span>
+            </h3>
+            <ul class="tags">
+              <li class="tag"><span lang="fr">Jumeau numérique</span><span lang="en">Digital twin</span></li>
+              <li class="tag">Simulation</li>
+              <li class="tag"><span lang="fr">Traitement de l’eau</span><span lang="en">Water treatment</span></li>
+              <li class="tag"><span lang="fr">Capteurs et IoT</span><span lang="en">Sensors &amp; IoT</span></li>
+              <li class="tag"><span lang="fr">Domotique</span><span lang="en">Home automation</span></li>
+              <li class="tag"><span lang="fr">Prototypage</span><span lang="en">Prototyping</span></li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>
+              <span class="skill-group__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#users"></use></svg></span>
+              <span lang="fr">Savoir-être</span><span lang="en">Soft skills</span>
+            </h3>
+            <ul class="tags">
+              <li class="tag"><span lang="fr">Art oratoire</span><span lang="en">Public speaking</span></li>
+              <li class="tag">Leadership</li>
+              <li class="tag"><span lang="fr">Gestion de projet</span><span lang="en">Project management</span></li>
+              <li class="tag"><span lang="fr">Travail en équipe</span><span lang="en">Teamwork</span></li>
+              <li class="tag">Pitch</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <ul>
-    <li>Email : <a href="mailto:sorghobrayan60@gmail.com"> sorghobrayan60@gmail.com</a></li>
-    <li>GitHub : <a href="https://github.com/Sorghobrayan-dotcom" target="_blank">github.com/SORGHO-BRAYAN</a></li>
-    <li>LinkedIn : <a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank">linkedin.com/in/SORGHO-BRAYAN</a></li>
-  </ul>
-</section>
+    <!-- Projets -->
+    <section class="section section--soft" id="projets" aria-labelledby="titre-projets">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="kicker"><span lang="fr">Projets</span><span lang="en">Projects</span></p>
+          <h2 class="section__title" id="titre-projets"><span lang="fr">Des projets concrets, mesurés, documentés.</span><span lang="en">Concrete, measured, documented projects.</span></h2>
+          <p class="section__intro" lang="fr">Trois projets que j’ai imaginés et portés, de l’idée jusqu’au prototype.</p>
+          <p class="section__intro" lang="en">Three projects I conceived and led, from the first idea to a working prototype.</p>
+        </div>
 
-<footer>
-  <p>© 2026 — SORGHO BRAYAN JOVANI ABOUBACAR</p>
-</footer>
+        <article class="project-feature reveal" aria-labelledby="titre-wiiga">
+          <a class="project-feature__media" href="WIIGA.html" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/wiiga-console.webp"
+                 width="1200" height="750" loading="lazy" decoding="async" alt="">
+          </a>
+          <div class="project-feature__body">
+            <div class="project-meta">
+              <span class="badge"><span lang="fr">Projet phare</span><span lang="en">Flagship project</span></span>
+              <span class="badge badge--neutral"><span lang="fr">Apprentissage par renforcement</span><span lang="en">Reinforcement learning</span></span>
+              <span class="badge badge--neutral">Open source</span>
+            </div>
+            <h3 class="project-feature__title" id="titre-wiiga"><span lang="fr">WIIGA — piloter le pompage d’eau sous délestage</span><span lang="en">WIIGA — running water pumps through power cuts</span></h3>
+            <p lang="fr">
+              Un agent d’apprentissage par renforcement (PPO) décide, heure par heure, quelle pompe
+              tourne, à quelle puissance et sur quelle énergie — solaire d’abord, réseau ensuite,
+              groupe diesel en dernier recours — pour qu’aucun quartier ne manque d’eau quand le courant
+              est coupé.
+            </p>
+            <p lang="en">
+              A reinforcement-learning agent (PPO) decides, hour by hour, which pump runs, at what power
+              and on which energy source — solar first, grid next, diesel generator as a last resort — so
+              that no district runs dry when the power goes out.
+            </p>
 
+            <ul class="stats">
+              <li class="stat"><strong>−67 %</strong><span lang="fr">d’heures sans eau pour le quartier le plus exposé</span><span lang="en">dry hours for the worst-served district</span></li>
+              <li class="stat"><strong>−48 %</strong><span lang="fr">de CO₂ face à la pratique actuelle</span><span lang="en">CO₂ compared with current practice</span></li>
+              <li class="stat"><strong lang="fr">148 455</strong><strong lang="en">148,455</strong><span lang="fr">personnes-jours par an au-dessus du seuil OMS</span><span lang="en">person-days a year above the WHO threshold</span></li>
+            </ul>
+
+            <div class="project-links">
+              <a class="btn btn--primary btn--sm" href="WIIGA.html">
+                <span lang="fr">Étude de cas</span><span lang="en">Case study</span>
+                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+              </a>
+              <a class="btn btn--secondary btn--sm" href="https://sorghobrayan-dotcom.github.io/WIIGA/" target="_blank" rel="noopener">
+                <span lang="fr">Démo en ligne</span><span lang="en">Live demo</span>
+                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#external"></use></svg>
+              </a>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/Sorghobrayan-dotcom/WIIGA" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#github"></use></svg>
+                <span lang="fr">Code source</span><span lang="en">Source code</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-card__media project-card__media--logo cover--yilga">
+              <img src="assets/img/yilga-cover.webp" width="1280" height="800" loading="lazy" decoding="async"
+                   alt="Logo de YILGA" data-en-alt="YILGA logo">
+            </div>
+            <div class="project-card__body">
+              <div class="project-meta">
+                <span class="badge">
+                  <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#trophy"></use></svg>
+                  <span lang="fr">1er prix INGENOVA 72H · 2025</span><span lang="en">1st prize INGENOVA 72H · 2025</span>
+                </span>
+              </div>
+              <h3 class="project-card__title"><a href="YILGA.html"><span lang="fr">YILGA — Agrotech et IA</span><span lang="en">YILGA — Agritech &amp; AI</span></a></h3>
+              <p class="project-card__text" lang="fr">
+                Une plateforme qui aide les agriculteurs à choisir la culture la plus rentable, en
+                croisant données de terrain (sol, météo, capteurs) et prévisions des marchés local et
+                international.
+              </p>
+              <p class="project-card__text" lang="en">
+                A platform that helps farmers choose the most profitable crop by combining field data
+                (soil, weather, sensors) with local and international market forecasts.
+              </p>
+              <span class="project-card__more" aria-hidden="true">
+                <span lang="fr">Découvrir le projet</span><span lang="en">Explore the project</span>
+                <svg class="icon"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+              </span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__media project-card__media--logo cover--sgkoom">
+              <img src="assets/img/sg-koom-cover.webp" width="1280" height="800" loading="lazy" decoding="async"
+                   alt="Logo de SG-KOOM, « Chaque goutte compte »" data-en-alt="SG-KOOM logo, “Every drop counts”">
+            </div>
+            <div class="project-card__body">
+              <div class="project-meta">
+                <span class="badge">
+                  <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#trophy"></use></svg>
+                  <span lang="fr">1er prix Parcours Entrepreneurs 2iE · 2025</span><span lang="en">1st prize 2iE Entrepreneurs Programme · 2025</span>
+                </span>
+              </div>
+              <h3 class="project-card__title"><a href="SG-KOOM.html"><span lang="fr">SG-KOOM — Assainissement des eaux grises</span><span lang="en">SG-KOOM — Greywater treatment</span></a></h3>
+              <p class="project-card__text" lang="fr">
+                Un système domestique enterré qui filtre puis désinfecte par UV les eaux grises du foyer
+                pour les réutiliser : lessive, irrigation, chasses d’eau.
+              </p>
+              <p class="project-card__text" lang="en">
+                An underground household system that filters greywater and disinfects it with UV light
+                so it can be reused for laundry, irrigation and toilet flushing.
+              </p>
+              <span class="project-card__more" aria-hidden="true">
+                <span lang="fr">Découvrir le projet</span><span lang="en">Explore the project</span>
+                <svg class="icon"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parcours -->
+    <section class="section" id="parcours" aria-labelledby="titre-parcours">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="kicker"><span lang="fr">Parcours</span><span lang="en">Background</span></p>
+          <h2 class="section__title" id="titre-parcours"><span lang="fr">Formation et engagements</span><span lang="en">Education and commitments</span></h2>
+        </div>
+
+        <div class="journey">
+          <div class="reveal">
+            <h3 class="subhead"><span lang="fr">Formation</span><span lang="en">Education</span></h3>
+            <ol class="timeline">
+              <li class="timeline__item">
+                <span class="timeline__date"><span lang="fr">Depuis le 7 septembre 2026</span><span lang="en">Since 7 September 2026</span></span>
+                <h4 class="timeline__title"><span lang="fr">Cycle ingénieur — Big Data et intelligence artificielle</span><span lang="en">Engineering degree — Big Data &amp; Artificial Intelligence</span></h4>
+                <p class="timeline__org"><span lang="fr">Université Internationale de Rabat (UIR), Maroc</span><span lang="en">International University of Rabat (UIR), Morocco</span></p>
+                <p class="timeline__text" lang="fr">Troisième année d’études supérieures, première année du cycle ingénieur.</p>
+                <p class="timeline__text" lang="en">Third year of higher education, first year of the engineering cycle.</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__date"><span lang="fr">2024 – 2026 · terminées</span><span lang="en">2024 – 2026 · completed</span></span>
+                <h4 class="timeline__title"><span lang="fr">Classes préparatoires MPI</span><span lang="en">MPI preparatory classes</span></h4>
+                <p class="timeline__org"><span lang="fr">2iE — Institut International d’Ingénierie de l’Eau et de l’Environnement, Ouagadougou</span><span lang="en">2iE — International Institute for Water and Environmental Engineering, Ouagadougou</span></p>
+                <p class="timeline__text" lang="fr">Formation scientifique intensive en mathématiques, physique et informatique.</p>
+                <p class="timeline__text" lang="en">Intensive scientific training in mathematics, physics and computer science.</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="reveal">
+            <h3 class="subhead"><span lang="fr">Responsabilités et leadership</span><span lang="en">Responsibilities and leadership</span></h3>
+            <ol class="timeline">
+              <li class="timeline__item">
+                <span class="timeline__date"><span lang="fr">Vie associative</span><span lang="en">Student life</span></span>
+                <h4 class="timeline__title"><span lang="fr">Président — Club d’art oratoire</span><span lang="en">President — Public-speaking club</span></h4>
+                <p class="timeline__text" lang="fr">Organisation des séances, encadrement des membres, préparation aux compétitions et à la prise de parole en public.</p>
+                <p class="timeline__text" lang="en">Running sessions, mentoring members, preparing them for competitions and for speaking in public.</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__date"><span lang="fr">Entrepreneuriat</span><span lang="en">Entrepreneurship</span></span>
+                <h4 class="timeline__title"><span lang="fr">Cofondateur — Projet LA Salliens</span><span lang="en">Co-founder — LA Salliens project</span></h4>
+                <p class="timeline__text" lang="fr">Pilotage stratégique et coordination d’équipe pour la mise en place d’un service de bus destiné aux élèves de mon ancien collège.</p>
+                <p class="timeline__text" lang="en">Strategy and team coordination to set up a bus service for the pupils of my former secondary school.</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__date"><span lang="fr">Projets</span><span lang="en">Projects</span></span>
+                <h4 class="timeline__title"><span lang="fr">Responsable technique — YILGA, SG-KOOM, WIIGA</span><span lang="en">Technical lead — YILGA, SG-KOOM, WIIGA</span></h4>
+                <p class="timeline__text" lang="fr">Supervision du développement et des choix technologiques, de l’architecture à la démonstration.</p>
+                <p class="timeline__text" lang="en">Overseeing development and technology choices, from architecture to demo.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distinctions -->
+    <section class="section section--soft" id="distinctions" aria-labelledby="titre-distinctions">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="kicker"><span lang="fr">Distinctions</span><span lang="en">Awards</span></p>
+          <h2 class="section__title" id="titre-distinctions"><span lang="fr">Prix et reconnaissances</span><span lang="en">Prizes and recognition</span></h2>
+        </div>
+
+        <ul class="awards">
+          <li class="award reveal">
+            <div class="award__top">
+              <span class="award__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#trophy"></use></svg></span>
+              <span class="award__year">2025</span>
+            </div>
+            <h3 class="award__title"><span lang="fr">Premier prix — YILGA</span><span lang="en">First prize — YILGA</span></h3>
+            <p class="award__event"><span lang="fr">Concours INGENOVA 72H des CPGE</span><span lang="en">INGENOVA 72H competition for preparatory classes</span></p>
+          </li>
+          <li class="award reveal">
+            <div class="award__top">
+              <span class="award__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#trophy"></use></svg></span>
+              <span class="award__year">2025</span>
+            </div>
+            <h3 class="award__title"><span lang="fr">Premier prix — SG-KOOM</span><span lang="en">First prize — SG-KOOM</span></h3>
+            <p class="award__event"><span lang="fr">Parcours Entrepreneurs 2iE</span><span lang="en">2iE Entrepreneurs Programme</span></p>
+          </li>
+          <li class="award reveal">
+            <div class="award__top">
+              <span class="award__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#award"></use></svg></span>
+              <span class="award__year">2025</span>
+            </div>
+            <h3 class="award__title"><span lang="fr">Prix spécial — YILGA</span><span lang="en">Special prize — YILGA</span></h3>
+            <p class="award__event"><span lang="fr">Camp d’idéation Incub UO, avec le centre d’excellence en IA CITADEL</span><span lang="en">Incub UO ideation camp, with the CITADEL AI centre of excellence</span></p>
+          </li>
+          <li class="award reveal">
+            <div class="award__top">
+              <span class="award__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#award"></use></svg></span>
+              <span class="award__year">2023</span>
+            </div>
+            <h3 class="award__title"><span lang="fr">Lauréat</span><span lang="en">Laureate</span></h3>
+            <p class="award__event"><span lang="fr">Concours Eco Green</span><span lang="en">Eco Green competition</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact" aria-labelledby="titre-contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div>
+            <p class="kicker">Contact</p>
+            <h2 id="titre-contact"><span lang="fr">Restons en contact</span><span lang="en">Let’s get in touch</span></h2>
+            <p lang="fr">Une opportunité de stage, un projet à construire ou une simple question : écrivez-moi.</p>
+            <p lang="en">An internship opportunity, a project to build or just a question: drop me a line.</p>
+          </div>
+
+          <ul class="contact-list">
+            <li>
+              <a href="mailto:sorghobrayan60@gmail.com">
+                <span class="contact-list__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#mail"></use></svg></span>
+                <span class="contact-list__text"><small>E-mail</small><span>sorghobrayan60@gmail.com</span></span>
+                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">
+                <span class="contact-list__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#github"></use></svg></span>
+                <span class="contact-list__text"><small>GitHub</small><span>github.com/Sorghobrayan-dotcom</span></span>
+                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#external"></use></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">
+                <span class="contact-list__icon"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#linkedin"></use></svg></span>
+                <span class="contact-list__text"><small>LinkedIn</small><span>linkedin.com/in/brayan-sorgho</span></span>
+                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#external"></use></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-year>2026</span> Brayan Sorgho</p>
+      <ul class="site-footer__links">
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
