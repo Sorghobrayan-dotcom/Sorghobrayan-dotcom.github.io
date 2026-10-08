@@ -753,7 +753,7 @@ strong { color: var(--ink); font-weight: 600; }
   .hero__photo { height: min(50svh, 440px); }
   .hero__role { top: 112px; right: auto; left: var(--gutter); font-size: 1.35rem; }
   .hero__arrow { width: 24px; height: 24px; margin-bottom: 12px; }
-  .hero__location { top: 178px; padding: 10px 10px 10px var(--gutter); gap: 14px; font-size: .85rem; }
+  .hero__location { top: 228px; padding: 10px 10px 10px var(--gutter); gap: 14px; font-size: .85rem; }
   .globe { width: 46px; height: 46px; }
   .globe svg { width: 26px; height: 26px; }
 }
