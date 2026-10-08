@@ -1,0 +1,4 @@
+{%- comment -%}Texte bilingue en ligne. Paramètres : fr, en (facultatif : repris du français s'il manque).{%- endcomment -%}
+{%- assign t_fr = include.fr -%}
+{%- assign t_en = include.en | default: include.fr -%}
+{%- if t_en == t_fr -%}{% include fr.html t=t_fr %}{%- else -%}<span lang="fr">{% include fr.html t=t_fr %}</span><span lang="en">{% include en.html t=t_en %}</span>{%- endif -%}

@@ -1,122 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr" data-lang="fr" class="no-js" data-title-en="Work | Brayan Sorgho">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projets | Brayan Sorgho</title>
-  <meta name="description" content="Les projets de Brayan Sorgho : WIIGA (IA et eau), YILGA (agrotech et IA), SG-KOOM (assainissement des eaux grises).">
-  <meta name="author" content="Brayan Sorgho">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/projets.html">
-  <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/projets.html">
-  <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/projets.html?lang=en">
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:site_name" content="Brayan Sorgho">
-  <meta property="og:title" content="Projets | Brayan Sorgho">
-  <meta property="og:description" content="WIIGA, YILGA et SG-KOOM : des projets utiles, mesurés et primés.">
-  <meta property="og:url" content="https://sorghobrayan-dotcom.github.io/projets.html">
-  <meta property="og:image" content="https://sorghobrayan-dotcom.github.io/assets/img/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;display=swap">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <script>
-    // Avant le premier affichage : langue, intro (une fois par session) et rideau de transition.
-    (function (d) {
-      var r = d.documentElement, l;
-      r.classList.replace("no-js", "js");
-      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
-      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
-      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
-      try {
-        if (sessionStorage.getItem("curtain")) { r.classList.add("curtain-in"); sessionStorage.removeItem("curtain"); }
-        else if (r.hasAttribute("data-intro") && !sessionStorage.getItem("intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) r.classList.add("intro-on");
-      } catch (e) {}
-    })(document);
-  </script>
-  <script src="assets/js/main.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
-
-  <div class="curtain" aria-hidden="true"></div>
-
-  <header class="header">
-    <div class="header__inner">
-      <a class="logo" href="./" aria-label="Brayan Sorgho, accueil" data-en-aria-label="Brayan Sorgho, home">
-        <span class="logo__copy" aria-hidden="true">©</span>
-        <span class="logo__roll" aria-hidden="true">
-          <span class="logo__a"><span lang="fr">Codé par Brayan</span><span lang="en">Code by Brayan</span></span>
-          <span class="logo__b">Brayan Sorgho</span>
-        </span>
-      </a>
-      <nav class="header__nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
-        <ul>
-          <li><a class="link-dot is-active" href="projets.html" aria-current="page"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
-          <li><a class="link-dot" href="a-propos.html"><span lang="fr">À propos</span><span lang="en">About</span></a></li>
-          <li><a class="link-dot" href="contact.html">Contact</a></li>
-          <li><a class="link-dot" href="cv.html">CV</a></li>
-        </ul>
-      </nav>
-      <div class="lang-switch header__lang" role="group" aria-label="Langue / Language">
-          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
-          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
-        </div>
-    </div>
-  </header>
-
-  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
-    <span class="menu-btn__lines" aria-hidden="true"></span>
-  </button>
-
-  <div class="menu" id="menu" inert>
-    <div class="menu__backdrop"></div>
-    <nav class="menu__panel" aria-label="Menu">
-      <span class="menu__curve" aria-hidden="true"></span>
-      <p class="menu__label">Navigation</p>
-      <ul class="menu__links">
-        <li><a href="./"><span lang="fr">Accueil</span><span lang="en">Home</span></a></li>
-        <li><a href="projets.html"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
-        <li><a href="a-propos.html"><span lang="fr">À propos</span><span lang="en">About</span></a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="cv.html">CV</a></li>
-      </ul>
-      <div class="menu__foot">
-        <div>
-          <p class="contact__label"><span lang="fr">Réseaux</span><span lang="en">Socials</span></p>
-          <ul>
-            <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="mailto:sorghobrayan60@gmail.com">E-mail</a></li>
-          </ul>
-        </div>
-        <div class="lang-switch lang-switch--dark" role="group" aria-label="Langue / Language">
-          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
-          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
-        </div>
-      </div>
-    </nav>
-  </div>
+---
+titre_fr: Projets | Brayan Sorgho
+titre_en: Work | Brayan Sorgho
+description: Les projets de Brayan Sorgho, étudiant ingénieur en Big Data et IA, de l’idée au prototype.
+partage_description: Des projets utiles, mesurés et primés.
+---
+{%- assign projets = site.projets | where_exp: "p", "p.afficher != false" | sort: "ordre", "last" %}
 
   <main id="contenu">
     <section class="page-head" id="haut" aria-labelledby="titre-page">
       <div class="container">
-        <p class="kicker"><span lang="fr">Projets</span><span lang="en">Work</span></p>
-        <h1 class="page-head__title" id="titre-page"><span lang="fr">Des projets utiles, mesurés et primés</span><span lang="en">Useful, measured, award-winning projects</span></h1>
-        <p class="page-head__lead" lang="fr">Chaque projet part d’un problème réel. Choisis un projet pour découvrir sa page.</p>
-        <p class="page-head__lead" lang="en">Every project starts from a real problem. Pick one to open its own page.</p>
+        <p class="kicker">{% include t.html fr="Projets" en="Work" %}</p>
+        <h1 class="page-head__title" id="titre-page">{% include t.html fr="Des projets utiles, mesurés et primés" en="Useful, measured, award-winning projects" %}</h1>
+        {% include p.html classe="page-head__lead" fr="Chaque projet part d’un problème réel. Choisis un projet pour découvrir sa page." en="Every project starts from a real problem. Pick one to open its own page." %}
       </div>
     </section>
 
@@ -125,136 +20,46 @@
         <div class="work-views" data-views data-view="list">
           <div class="work-toolbar">
             <div class="filters" role="group" aria-label="Filtrer les projets" data-en-aria-label="Filter projects">
-              <button class="filter" type="button" data-filter="all" aria-pressed="true"><span lang="fr">Tous</span><span lang="en">All</span><sup>3</sup></button>
-              <button class="filter" type="button" data-filter="ia" aria-pressed="false"><span lang="fr">IA</span><span lang="en">AI</span><sup>2</sup></button>
-              <button class="filter" type="button" data-filter="eau" aria-pressed="false"><span lang="fr">Eau</span><span lang="en">Water</span><sup>2</sup></button>
-              <button class="filter" type="button" data-filter="agriculture" aria-pressed="false">Agriculture<sup>1</sup></button>
+              <button class="filter" type="button" data-filter="all" aria-pressed="true">{% include t.html fr="Tous" en="All" %}<sup>{{ projets.size }}</sup></button>
+{%- for f in site.data.filtres %}
+  {%- assign nb = projets | where_exp: "p", "p.filtres contains f.id" | size %}
+  {%- if nb > 0 %}
+              <button class="filter" type="button" data-filter="{{ f.id }}" aria-pressed="false">{% include t.html fr=f.fr en=f.en %}<sup>{{ nb }}</sup></button>
+  {%- endif %}
+{%- endfor %}
             </div>
             <div class="view-toggle" role="group" aria-label="Affichage" data-en-aria-label="Layout">
               <button class="view-btn" type="button" data-view-btn="list" aria-pressed="true" aria-label="Vue en liste" data-en-aria-label="List view">
-                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#list"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="{{ '/assets/img/icons.svg' | relative_url }}#list"></use></svg>
               </button>
               <button class="view-btn" type="button" data-view-btn="grid" aria-pressed="false" aria-label="Vue en grille" data-en-aria-label="Grid view">
-                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#grid"></use></svg>
+                <svg class="icon" aria-hidden="true"><use href="{{ '/assets/img/icons.svg' | relative_url }}#grid"></use></svg>
               </button>
             </div>
           </div>
 
           <div class="work-table">
             <div class="work-head" aria-hidden="true">
-              <span><span lang="fr">Projet</span><span lang="en">Project</span></span><span><span lang="fr">Domaine</span><span lang="en">Field</span></span><span><span lang="fr">Rôle</span><span lang="en">Role</span></span><span><span lang="fr">Année</span><span lang="en">Year</span></span>
+              <span>{% include t.html fr="Projet" en="Project" %}</span><span>{% include t.html fr="Domaine" en="Field" %}</span><span>{% include t.html fr="Rôle" en="Role" %}</span><span>{% include t.html fr="Année" en="Year" %}</span>
             </div>
             <ul class="work-list work-list--table" data-work>
-          <li data-tags="ia eau">
-            <a class="work-item__link" href="WIIGA.html" data-preview="0">
-              <img class="work-item__thumb" src="assets/img/wiiga-console.webp" width="1200" height="750" loading="lazy" decoding="async" alt="">
-              <span class="work-item__title">WIIGA</span>
-              <span class="work-item__meta"><span lang="fr">IA · Eau · Énergie</span><span lang="en">AI · Water · Energy</span></span>
-              <span class="work-item__meta"><span lang="fr">Conception et développement</span><span lang="en">Design and development</span></span>
-              <span class="work-item__year">2026</span>
-            </a>
-          </li>
-          <li data-tags="ia agriculture">
-            <a class="work-item__link" href="YILGA.html" data-preview="1">
-              <img class="work-item__thumb" src="assets/img/yilga-cover.webp" width="1280" height="800" loading="lazy" decoding="async" alt="">
-              <span class="work-item__title">YILGA</span>
-              <span class="work-item__meta"><span lang="fr">Agrotech · IA</span><span lang="en">Agritech · AI</span></span>
-              <span class="work-item__meta"><span lang="fr">Créateur et chef de projet</span><span lang="en">Founder and project lead</span></span>
-              <span class="work-item__year">2025</span>
-            </a>
-          </li>
-          <li data-tags="eau">
-            <a class="work-item__link" href="SG-KOOM.html" data-preview="2">
-              <img class="work-item__thumb" src="assets/img/sg-koom-cover.webp" width="1280" height="800" loading="lazy" decoding="async" alt="">
-              <span class="work-item__title">SG‑KOOM</span>
-              <span class="work-item__meta"><span lang="fr">Eau · Assainissement</span><span lang="en">Water · Sanitation</span></span>
-              <span class="work-item__meta"><span lang="fr">Créateur et chef de projet</span><span lang="en">Founder and project lead</span></span>
-              <span class="work-item__year">2025</span>
-            </a>
-          </li>
+{%- include projets-liste.html liste=projets tableau=true %}
             </ul>
           </div>
 
           <ul class="work-grid">
-          <li data-tags="ia eau">
-            <a class="work-card" href="WIIGA.html">
-              <span class="work-card__media"><img src="assets/img/wiiga-console.webp" width="1200" height="750" loading="lazy" decoding="async" alt=""></span>
-              <span class="work-card__title">WIIGA</span>
-              <span class="work-card__meta"><span><span lang="fr">IA · Eau · Énergie</span><span lang="en">AI · Water · Energy</span></span><span>2026</span></span>
-            </a>
-          </li>
-          <li data-tags="ia agriculture">
-            <a class="work-card" href="YILGA.html">
-              <span class="work-card__media"><img src="assets/img/yilga-cover.webp" width="1280" height="800" loading="lazy" decoding="async" alt=""></span>
-              <span class="work-card__title">YILGA</span>
-              <span class="work-card__meta"><span><span lang="fr">Agrotech · IA</span><span lang="en">Agritech · AI</span></span><span>2025</span></span>
-            </a>
-          </li>
-          <li data-tags="eau">
-            <a class="work-card" href="SG-KOOM.html">
-              <span class="work-card__media"><img src="assets/img/sg-koom-cover.webp" width="1280" height="800" loading="lazy" decoding="async" alt=""></span>
-              <span class="work-card__title">SG‑KOOM</span>
-              <span class="work-card__meta"><span><span lang="fr">Eau · Assainissement</span><span lang="en">Water · Sanitation</span></span><span>2025</span></span>
-            </a>
-          </li>
+{%- for p in projets %}
+            <li data-tags="{{ p.filtres | join: ' ' }}">
+              <a class="work-card" href="{{ p.url | relative_url }}">
+                <span class="work-card__media"><img src="{{ p.image | relative_url }}" width="{{ p.image_largeur | default: 1280 }}" height="{{ p.image_hauteur | default: 800 }}" loading="lazy" decoding="async" alt=""></span>
+                <span class="work-card__title">{% include nom.html t=p.titre %}</span>
+                <span class="work-card__meta"><span>{% include t.html fr=p.domaine_fr en=p.domaine_en %}</span><span>{{ p.annee }}</span></span>
+              </a>
+            </li>
+{%- endfor %}
           </ul>
         </div>
       </div>
-
-      <div class="preview" aria-hidden="true">
-        <div class="preview__inner">
-          <div class="preview__slides">
-            <div class="preview__slide preview__slide--wiiga"><img src="assets/img/wiiga-console.webp" width="1200" height="750" loading="lazy" alt=""></div>
-            <div class="preview__slide preview__slide--yilga"><img src="assets/img/yilga-cover.webp" width="1280" height="800" loading="lazy" alt=""></div>
-            <div class="preview__slide preview__slide--sgkoom"><img src="assets/img/sg-koom-cover.webp" width="1280" height="800" loading="lazy" alt=""></div>
-          </div>
-        </div>
-        <span class="preview__label"><span lang="fr">Voir</span><span lang="en">View</span></span>
-      </div>
+{% include apercu.html liste=projets %}
     </section>
   </main>
-
-  <footer class="contact" id="contact" aria-labelledby="titre-contact">
-    <div class="contact__curve" aria-hidden="true"><span></span></div>
-    <div class="container">
-      <div class="contact__head">
-        <img class="contact__avatar" src="assets/img/portrait-square.jpg" width="350" height="350" loading="lazy" alt="">
-        <h2 class="contact__title" id="titre-contact"><span lang="fr">Travaillons<br>ensemble</span><span lang="en">Let’s work<br>together</span></h2>
-      </div>
-
-      <div class="contact__line">
-        <div class="contact__cta">
-          <a class="round-btn round-btn--light" href="contact.html" data-magnetic>
-            <span class="round-btn__fill" aria-hidden="true"></span>
-            <span class="round-btn__label"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></span>
-          </a>
-        </div>
-      </div>
-
-      <div class="contact__pills">
-        <a class="pill" href="mailto:sorghobrayan60@gmail.com">sorghobrayan60@gmail.com</a>
-        <a class="pill" href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-
-      <div class="contact__bottom">
-        <div>
-          <p class="contact__label">Version</p>
-          <p><span data-year>2026</span> © Brayan Sorgho</p>
-        </div>
-        <div>
-          <p class="contact__label"><span lang="fr">Heure locale à Rabat</span><span lang="en">Local time in Rabat</span></p>
-          <p data-clock>GMT+1</p>
-        </div>
-        <div class="contact__socials">
-          <p class="contact__label"><span lang="fr">Réseaux</span><span lang="en">Socials</span></p>
-          <ul>
-            <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="cv.html">CV</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>

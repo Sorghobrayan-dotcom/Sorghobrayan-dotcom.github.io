@@ -1,0 +1,82 @@
+# ---------------------------------------------------------------
+# Parcours : formation, expériences et responsabilités.
+# Pour chaque ligne :
+#   afficher: false  → cachée sur le site (la ligne reste ici, prête à revenir)
+#   cv: false        → retirée du CV seulement
+# L'ordre dans ce fichier est l'ordre d'affichage (le plus récent en haut).
+# ---------------------------------------------------------------
+
+formation:
+  - titre_fr: Cycle ingénieur en Big Data et intelligence artificielle
+    titre_en: Engineering degree in Big Data & Artificial Intelligence
+    lieu_fr: Université Internationale de Rabat (UIR), Maroc
+    lieu_en: International University of Rabat (UIR), Morocco
+    date_fr: Depuis le 7 sept. 2026
+    date_en: Since 7 Sept. 2026
+    cv_titre_fr: Cycle ingénieur Big Data et IA
+    cv_date_fr: Depuis sept. 2026
+    cv_date_en: Since Sept. 2026
+    cv_lieu_fr: Université Internationale de Rabat (UIR), Maroc · 1re année du cycle, 3e année d’études supérieures
+    cv_lieu_en: International University of Rabat (UIR), Morocco · first year of the cycle, third year of higher education
+    afficher: true
+    cv: true
+
+  - titre_fr: Classes préparatoires MPI
+    titre_en: MPI preparatory classes
+    lieu_fr: "2iE, Ouagadougou : mathématiques, physique, informatique"
+    lieu_en: "2iE, Ouagadougou: mathematics, physics, computer science"
+    date_fr: 2024 - 2026
+    cv_lieu_fr: 2iE, Institut International d’Ingénierie de l’Eau et de l’Environnement, Ouagadougou
+    cv_lieu_en: 2iE, International Institute for Water and Environmental Engineering, Ouagadougou
+    detail_fr: Mathématiques, physique et informatique.
+    detail_en: Mathematics, physics and computer science.
+    afficher: true
+    cv: true
+
+# Stages, jobs, missions, bénévolat… La section apparaît dès qu'il y a une ligne.
+# Exemple à copier (enlève les # au début des lignes) :
+#  - titre_fr: Stagiaire data scientist
+#    titre_en: Data science intern
+#    lieu_fr: Nom de l’entreprise, Rabat
+#    lieu_en: Company name, Rabat
+#    date_fr: Juil. - août 2027
+#    date_en: Jul. - Aug. 2027
+#    detail_fr: Ce que tu as fait, en une ou deux phrases.
+#    detail_en: What you did, in one or two sentences.
+#    afficher: true
+#    cv: true
+experiences: []
+
+responsabilites:
+  - titre_fr: Président du club d’art oratoire
+    titre_en: President of the public-speaking club
+    lieu_fr: Séances, encadrement des membres, compétitions
+    lieu_en: Sessions, mentoring, competitions
+    date_fr: Vie associative
+    date_en: Student life
+    detail_fr: Organisation des séances, encadrement des membres, préparation aux compétitions.
+    detail_en: Running sessions, mentoring members, preparing for competitions.
+    afficher: true
+    cv: true
+
+  - titre_fr: Cofondateur du projet LA Salliens
+    titre_en: Co-founder of the LA Salliens project
+    lieu_fr: Un service de bus pour les élèves de mon ancien collège
+    lieu_en: A bus service for pupils of my former school
+    date_fr: Entrepreneuriat
+    date_en: Entrepreneurship
+    detail_fr: Pilotage et coordination d’équipe pour un service de bus destiné aux élèves de mon ancien collège.
+    detail_en: Leading and coordinating a team to set up a bus service for pupils of my former school.
+    afficher: true
+    cv: true
+
+  - titre_fr: "Responsable technique : WIIGA, YILGA, SG-KOOM"
+    titre_en: "Technical lead: WIIGA, YILGA, SG-KOOM"
+    lieu_fr: Développement et choix technologiques
+    lieu_en: Development and technology choices
+    date_fr: Projets
+    date_en: Projects
+    detail_fr: Supervision du développement et des choix technologiques.
+    detail_en: Overseeing development and technology choices.
+    afficher: true
+    cv: true

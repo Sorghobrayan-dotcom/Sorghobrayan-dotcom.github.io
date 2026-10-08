@@ -1,0 +1,4 @@
+{%- comment -%}Paragraphe bilingue. Paramètres : fr, en, classe (facultatif).{%- endcomment -%}
+{%- assign p_en = include.en | default: include.fr -%}
+<p{% if include.classe %} class="{{ include.classe }}"{% endif %} lang="fr">{% include fr.html t=include.fr %}</p>
+<p{% if include.classe %} class="{{ include.classe }}"{% endif %} lang="en">{% include en.html t=p_en %}</p>

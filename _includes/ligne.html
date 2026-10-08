@@ -1,0 +1,6 @@
+{%- comment -%}Ligne de parcours. Paramètre : l (titre, lieu, date en _fr / _en).{%- endcomment %}
+          <li class="row reveal">
+            <span class="row__main">{% include t.html fr=include.l.titre_fr en=include.l.titre_en %}</span>
+            <span class="row__sub">{% include t.html fr=include.l.lieu_fr en=include.l.lieu_en %}</span>
+            <span class="row__end">{% include t.html fr=include.l.date_fr en=include.l.date_en %}</span>
+          </li>

@@ -1,0 +1,5 @@
+          <ul>
+            <li><a href="{{ site.data.profil.github }}" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="{{ site.data.profil.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="{% if include.cv %}{{ '/cv.html' | relative_url }}">CV{% else %}mailto:{{ site.data.profil.email }}">E-mail{% endif %}</a></li>
+          </ul>

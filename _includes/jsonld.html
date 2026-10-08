@@ -1,0 +1,22 @@
+{%- assign profil = site.data.profil %}
+{%- capture savoirs %}{% for g in site.data.competences limit: 1 %}{% for s in g.items %}"{{ s.nom }}"{% unless forloop.last %}, {% endunless %}{% endfor %}{% endfor %}{% endcapture %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ profil.nom_complet }}",
+    "alternateName": "{{ profil.nom }}",
+    "url": "{{ '/' | absolute_url }}",
+    "image": "{{ '/assets/img/portrait.jpg' | absolute_url }}",
+    "email": "mailto:{{ profil.email }}",
+    "jobTitle": {{ profil.titre_fr | jsonify }},
+    "affiliation": { "@type": "CollegeOrUniversity", "name": {{ profil.ecole_fr | jsonify }} },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "2iE, Institut International d’Ingénierie de l’Eau et de l’Environnement" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Rabat", "addressCountry": "MA" },
+    "knowsAbout": [{{ savoirs }}],
+    "sameAs": [
+      "{{ profil.github }}",
+      "{{ profil.linkedin }}"
+    ]
+  }
+  </script>

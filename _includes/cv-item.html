@@ -1,0 +1,21 @@
+{%- comment -%}Élément du CV (formation, expérience, responsabilité). Paramètre : l.{%- endcomment %}
+          <article class="cv-item">
+            <div class="cv-item__head">
+{%- assign l_titre_fr = include.l.cv_titre_fr | default: include.l.titre_fr %}
+{%- assign l_titre_en = include.l.cv_titre_en | default: include.l.titre_en %}
+{%- assign l_date_fr = include.l.cv_date_fr | default: include.l.date_fr %}
+{%- assign l_date_en = include.l.cv_date_en | default: include.l.date_en %}
+              <h3>{% include t.html fr=l_titre_fr en=l_titre_en %}</h3>
+{%- if include.date %}
+              <span class="cv-item__date">{% include t.html fr=l_date_fr en=l_date_en %}</span>
+{%- endif %}
+            </div>
+{%- assign l_lieu_fr = include.l.cv_lieu_fr | default: include.l.lieu_fr %}
+{%- assign l_lieu_en = include.l.cv_lieu_en | default: include.l.lieu_en %}
+{%- if include.lieu and l_lieu_fr %}
+            <p class="cv-item__sub">{% include t.html fr=l_lieu_fr en=l_lieu_en %}</p>
+{%- endif %}
+{%- if include.l.detail_fr %}
+            {% include p.html fr=include.l.detail_fr en=include.l.detail_en %}
+{%- endif %}
+          </article>

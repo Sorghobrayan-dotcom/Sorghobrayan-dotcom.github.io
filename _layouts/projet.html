@@ -1,0 +1,156 @@
+---
+layout: base
+---
+{%- comment -%}
+  Page d'un projet, construite à partir de son fichier dans _projets/.
+  Le corps vient soit d'une étude détaillée (_includes/etudes/NOM.html, champ « etude »),
+  soit des « sections » écrites dans le fichier du projet.
+{%- endcomment %}
+{%- assign icones = '/assets/img/icons.svg' | relative_url %}
+{%- assign projets = site.projets | where_exp: "p", "p.afficher != false" | sort: "ordre", "last" %}
+{%- assign recompenses = "" | split: "" %}
+{%- for d in site.data.distinctions %}
+  {%- if d.afficher != false and d.projet %}{% if d.projet == page.slug or d.projet == page.titre %}{% assign recompenses = recompenses | push: d %}{% endif %}{% endif %}
+{%- endfor %}
+{%- assign surtitre_fr = page.surtitre_fr | default: page.domaine_fr %}
+{%- assign surtitre_en = page.surtitre_en | default: page.domaine_en %}
+{%- assign alt_fr = page.image_alt_fr | default: page.titre %}
+{%- assign alt_en = page.image_alt_en | default: alt_fr %}
+{%- if page.sommaire %}
+  {%- assign sommaire = page.sommaire %}
+{%- else %}
+  {%- assign sommaire = "" | split: "" %}
+  {%- for s in page.sections %}
+    {%- capture s_item %}{{ s.titre_fr | slugify }}|{{ s.titre_fr }}|{{ s.titre_en | default: s.titre_fr }}{% endcapture %}
+    {%- assign sommaire = sommaire | push: s_item %}
+  {%- endfor %}
+{%- endif %}
+
+  <main id="contenu">
+    <section class="page-hero" id="haut" aria-labelledby="titre-projet">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d’Ariane" data-en-aria-label="Breadcrumb">
+          <ol>
+            <li><a href="{{ '/' | relative_url }}">{% include t.html fr="Accueil" en="Home" %}</a></li>
+            <li><a href="{{ '/projets.html' | relative_url }}">{% include t.html fr="Projets" en="Projects" %}</a></li>
+            <li><span aria-current="page">{{ page.titre }}</span></li>
+          </ol>
+        </nav>
+
+        <div class="page-hero__head">
+          <p class="kicker">{% include t.html fr=surtitre_fr en=surtitre_en %}</p>
+          <h1 class="page-hero__title" id="titre-projet">{% include nom.html t=page.titre %}</h1>
+{%- if page.resume_fr %}
+          {% include p.html classe="page-hero__lead" fr=page.resume_fr en=page.resume_en %}
+{%- endif %}
+{%- if page.liens.size > 0 %}
+
+          <div class="page-hero__actions">
+{%- for l in page.liens %}
+  {%- case l.type %}{% when "demo" %}{% assign l_icone = "play" %}{% when "code" %}{% assign l_icone = "github" %}{% else %}{% assign l_icone = "external" %}{% endcase %}
+            <a class="btn {% if forloop.first %}btn--primary{% else %}btn--secondary{% endif %}" href="{{ l.url }}" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="{{ icones }}#{{ l_icone }}"></use></svg>
+              {% include t.html fr=l.texte_fr en=l.texte_en %}
+            </a>
+{%- endfor %}
+          </div>
+{%- endif %}
+        </div>
+
+        <dl class="meta-grid">
+{%- for i in page.infos %}
+          <div><dt>{% include t.html fr=i.titre_fr en=i.titre_en %}</dt><dd>{% include t.html fr=i.texte_fr en=i.texte_en %}</dd></div>
+{%- endfor %}
+{%- unless page.infos %}
+          <div><dt>{% include t.html fr="Rôle" en="Role" %}</dt><dd>{% include t.html fr=page.role_fr en=page.role_en %}</dd></div>
+          <div><dt>{% include t.html fr="Domaine" en="Field" %}</dt><dd>{% include t.html fr=page.domaine_fr en=page.domaine_en %}</dd></div>
+          <div><dt>{% include t.html fr="Année" en="Year" %}</dt><dd>{{ page.annee }}</dd></div>
+{%- endunless %}
+{%- if recompenses.size > 0 %}
+          <div><dt>{% if recompenses.size > 1 %}{% include t.html fr="Distinctions" en="Awards" %}{% else %}{% include t.html fr="Distinction" en="Award" %}{% endif %}</dt><dd>
+{%- for d in recompenses %}
+  {%- assign d_badge_fr = d.badge_fr | default: d.prix_fr %}
+  {%- assign d_badge_en = d.badge_en | default: d.prix_en | default: d_badge_fr %}
+  {%- assign d_court_fr = d.court_fr | default: d.evenement_fr %}
+  {%- assign d_court_en = d.court_en | default: d.evenement_en | default: d_court_fr %}
+  {%- unless forloop.first %}<br>{% endunless %}<span lang="fr">{% include fr.html t=d_badge_fr %}, {% include fr.html t=d_court_fr %}</span><span lang="en">{% include en.html t=d_badge_en %}, {% include en.html t=d_court_en %}</span>
+{%- endfor %}</dd></div>
+{%- endif %}
+        </dl>
+{%- if page.image %}
+
+        <figure class="cover{% if page.image_type == 'logo' %} cover--logo cover--{{ page.fond | default: 'creme' }}{% endif %}">
+          <img src="{{ page.image | relative_url }}" width="{{ page.image_largeur | default: 1280 }}" height="{{ page.image_hauteur | default: 800 }}" decoding="async"
+               alt="{{ alt_fr | escape }}" data-en-alt="{{ alt_en | escape }}">
+        </figure>
+{%- endif %}
+      </div>
+    </section>
+{%- if sommaire.size > 0 or recompenses.size > 0 %}
+
+    <div class="container case">
+      <nav class="toc" aria-label="Sommaire" data-en-aria-label="Contents" data-spy>
+        <p class="toc__title">{% include t.html fr="Sommaire" en="Contents" %}</p>
+{%- for s in sommaire %}
+  {%- if s.id %}{% assign s_id = s.id %}{% assign s_fr = s.fr %}{% assign s_en = s.en %}{% else %}{% assign s_parts = s | split: "|" %}{% assign s_id = s_parts[0] %}{% assign s_fr = s_parts[1] %}{% assign s_en = s_parts[2] %}{% endif %}
+        <a href="#{{ s_id }}">{% include t.html fr=s_fr en=s_en %}</a>
+{%- endfor %}
+{%- if recompenses.size > 0 %}
+        <a href="#distinctions">{% include t.html fr="Distinctions" en="Awards" %}</a>
+{%- endif %}
+      </nav>
+
+      <div class="prose">
+{%- if page.etude %}
+{% include etudes/{{ page.etude }}.html %}
+{%- else %}
+{%- for s in page.sections %}
+  {%- assign s_id = s.titre_fr | slugify %}
+  {%- assign s_en = s.texte_en | default: s.texte_fr %}
+        <section id="{{ s_id }}" aria-labelledby="h-{{ s_id }}">
+          <h2 id="h-{{ s_id }}">{% include t.html fr=s.titre_fr en=s.titre_en %}</h2>
+          {% capture s_html %}{{ s.texte_fr | markdownify }}{% endcapture %}<div class="md" lang="fr">{% include fr.html t=s_html %}</div>
+          <div class="md" lang="en">{{ s_en | markdownify }}</div>
+        </section>
+{%- endfor %}
+{%- endif %}
+{%- if recompenses.size > 0 %}
+
+        <section id="distinctions" aria-labelledby="h-distinctions">
+          <h2 id="h-distinctions">{% include t.html fr="Distinctions" en="Awards" %}</h2>
+          <ul class="kpis">
+{%- for d in recompenses %}
+  {%- assign d_badge_fr = d.badge_fr | default: d.prix_fr %}
+  {%- assign d_badge_en = d.badge_en | default: d.prix_en | default: d_badge_fr %}
+  {%- assign d_ev_en = d.evenement_en | default: d.evenement_fr %}
+            <li class="kpi"><strong>{% include t.html fr=d_badge_fr en=d_badge_en %}</strong><span lang="fr">{% include fr.html t=d.evenement_fr %}, {{ d.annee }}</span><span lang="en">{% include en.html t=d_ev_en %}, {{ d.annee }}</span></li>
+{%- endfor %}
+          </ul>
+        </section>
+{%- endif %}
+      </div>
+    </div>
+{%- endif %}
+{%- assign suivant = nil %}
+{%- for p in projets %}
+  {%- if p.url == page.url %}
+    {%- assign j = forloop.index0 | plus: 1 | modulo: projets.size %}
+    {%- assign suivant = projets[j] %}
+  {%- endif %}
+{%- endfor %}
+{%- if suivant and suivant.url != page.url %}
+
+    <nav class="next-project" aria-label="Projet suivant" data-en-aria-label="Next project">
+      <div class="container next-project__inner">
+        <div>
+          <p class="next-project__label">{% include t.html fr="Projet suivant" en="Next project" %}</p>
+          <p class="next-project__title"><strong>{% include nom.html t=suivant.titre %}</strong></p>
+        </div>
+        <a class="btn btn--primary" href="{{ suivant.url | relative_url }}">
+          {% include t.html fr="Découvrir" en="Explore" %}
+          <svg class="icon" aria-hidden="true"><use href="{{ icones }}#arrow-right"></use></svg>
+        </a>
+      </div>
+    </nav>
+{%- endif %}
+  </main>

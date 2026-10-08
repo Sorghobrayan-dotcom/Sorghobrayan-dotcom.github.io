@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{%- assign profil = site.data.profil %}
+{%- if page.collection == "projets" %}
+  {%- assign seo_fr = page.seo_titre_fr | default: page.titre %}
+  {%- assign seo_en = page.seo_titre_en | default: seo_fr %}
+  {%- assign titre_fr = seo_fr | append: " | " | append: profil.nom %}
+  {%- assign titre_en = seo_en | append: " | " | append: profil.nom %}
+  {%- assign description = page.seo_description | default: page.resume_fr %}
+  {%- assign partage_titre = page.partage_titre | default: seo_fr %}
+  {%- assign partage_description = page.partage_description | default: page.resume_fr %}
+  {%- assign og_type = "article" %}
+{%- else %}
+  {%- assign titre_fr = page.titre_fr %}
+  {%- assign titre_en = page.titre_en | default: titre_fr %}
+  {%- assign description = page.description %}
+  {%- assign partage_titre = page.partage_titre | default: titre_fr %}
+  {%- assign partage_description = page.partage_description | default: description %}
+  {%- assign og_type = page.og_type | default: "website" %}
+{%- endif %}
+{%- assign url_page = page.url | replace: "index.html", "" | prepend: site.url %}
+{%- capture meta_description %}{% include fr.html t=description %}{% endcapture %}
+{%- capture meta_partage_titre %}{% include fr.html t=partage_titre %}{% endcapture %}
+{%- capture meta_partage_description %}{% include fr.html t=partage_description %}{% endcapture %}
+<html lang="fr" data-lang="fr" class="no-js"{% if page.intro %} data-intro{% endif %} data-title-en="{{ titre_en | escape }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ titre_fr | escape }}</title>
+  <meta name="description" content="{{ meta_description | strip_html | replace: '&amp;', '&' | escape }}">
+  <meta name="author" content="{{ profil.nom }}">
+  <meta name="theme-color" content="{% if page.intro %}#e8e7e3{% else %}#ffffff{% endif %}">
+{%- if page.collection == "projets" and page.afficher == false %}
+  <meta name="robots" content="noindex">
+{%- endif %}
+  <link rel="canonical" href="{{ url_page }}">
+  <link rel="alternate" hreflang="fr" href="{{ url_page }}">
+  <link rel="alternate" hreflang="en" href="{{ url_page }}?lang=en">
+
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="{{ profil.nom }}">
+  <meta property="og:title" content="{{ meta_partage_titre | strip_html | replace: '&amp;', '&' | escape }}">
+  <meta property="og:description" content="{{ meta_partage_description | strip_html | replace: '&amp;', '&' | escape }}">
+  <meta property="og:url" content="{{ url_page }}">
+  <meta property="og:image" content="{{ '/assets/img/og-image.jpg' | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/img/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+{%- if page.gabarit == "cv" %}
+  <link rel="stylesheet" href="{{ '/assets/css/cv.css' | relative_url }}">
+{%- endif %}
+
+  <script>
+    // Avant le premier affichage : langue, intro (une fois par session) et rideau de transition.
+    (function (d) {
+      var r = d.documentElement, l;
+      r.classList.replace("no-js", "js");
+      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
+      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
+      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
+      try {
+        if (sessionStorage.getItem("curtain")) { r.classList.add("curtain-in"); sessionStorage.removeItem("curtain"); }
+        else if (r.hasAttribute("data-intro") && !sessionStorage.getItem("intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) r.classList.add("intro-on");
+      } catch (e) {}
+    })(document);
+  </script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+{%- if page.jsonld %}
+{% include jsonld.html %}
+{%- endif %}
+</head>
+<body{% if page.gabarit == "cv" %} class="cv-page"{% endif %}>
+{%- if page.gabarit == "cv" %}
+  <a class="skip-link" href="#cv">{% include t.html fr="Aller au CV" en="Skip to CV" %}</a>
+{%- else %}
+  <a class="skip-link" href="#contenu">{% include t.html fr="Aller au contenu" en="Skip to content" %}</a>
+{%- endif %}
+{%- if page.intro %}
+{% include intro.html %}
+{%- endif %}
+
+  <div class="curtain" aria-hidden="true"></div>
+{%- unless page.gabarit == "cv" %}
+{% include chrome.html %}
+{%- endunless %}
+{{ content }}
+{%- unless page.gabarit == "cv" %}
+{% include pied.html style=page.pied %}
+{%- endunless %}
+</body>
+</html>

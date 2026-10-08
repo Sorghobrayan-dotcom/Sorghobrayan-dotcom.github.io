@@ -1,0 +1,10 @@
+# Catégories des filtres de la page Projets.
+# Dans un projet, « filtres: [ia, eau] » le range dans ces catégories.
+# Un filtre n'apparaît que s'il contient au moins un projet affiché.
+- { id: ia, fr: IA, en: AI }
+- { id: data, fr: Data, en: Data }
+- { id: eau, fr: Eau, en: Water }
+- { id: energie, fr: Énergie, en: Energy }
+- { id: agriculture, fr: Agriculture, en: Agriculture }
+- { id: web, fr: Web, en: Web }
+- { id: social, fr: Social, en: Social }

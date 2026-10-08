@@ -1,70 +1,34 @@
-<!DOCTYPE html>
-<html lang="fr" data-lang="fr" class="no-js" data-title-en="CV | Brayan Sorgho">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV | Brayan Sorgho</title>
-  <meta name="description" content="CV de Brayan Sorgho, étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat : projets, distinctions, compétences et engagements.">
-  <meta name="author" content="Brayan Sorgho">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/cv.html">
-  <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/cv.html">
-  <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/cv.html?lang=en">
-
-  <meta property="og:type" content="profile">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:title" content="CV | Brayan Sorgho">
-  <meta property="og:description" content="Étudiant ingénieur Big Data et IA à l’UIR. IA appliquée à l’eau, à l’énergie et à l’agriculture.">
-  <meta property="og:url" content="https://sorghobrayan-dotcom.github.io/cv.html">
-  <meta property="og:image" content="https://sorghobrayan-dotcom.github.io/assets/img/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;display=swap">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/cv.css">
-
-  <script>
-    // Avant le premier affichage : langue, intro (une fois par session) et rideau de transition.
-    (function (d) {
-      var r = d.documentElement, l;
-      r.classList.replace("no-js", "js");
-      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
-      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
-      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
-      try {
-        if (sessionStorage.getItem("curtain")) { r.classList.add("curtain-in"); sessionStorage.removeItem("curtain"); }
-        else if (r.hasAttribute("data-intro") && !sessionStorage.getItem("intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) r.classList.add("intro-on");
-      } catch (e) {}
-    })(document);
-  </script>
-  <script src="assets/js/main.js" defer></script>
-</head>
-<body class="cv-page">
-  <a class="skip-link" href="#cv"><span lang="fr">Aller au CV</span><span lang="en">Skip to CV</span></a>
-
-  <div class="curtain" aria-hidden="true"></div>
+---
+titre_fr: CV | Brayan Sorgho
+titre_en: CV | Brayan Sorgho
+description: "CV de Brayan Sorgho, étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat : projets, distinctions, compétences et engagements."
+partage_description: Étudiant ingénieur Big Data et IA à l’UIR. IA appliquée à l’eau, à l’énergie et à l’agriculture.
+og_type: profile
+gabarit: cv
+---
+{%- comment -%}
+  Le CV se remplit tout seul à partir de _data/ et de _projets/.
+  Pour retirer un élément du CV sans le retirer du site : « cv: false ».
+{%- endcomment %}
+{%- assign profil = site.data.profil %}
+{%- assign parcours = site.data.parcours %}
+{%- assign formation = parcours.formation | where_exp: "l", "l.cv != false" | where_exp: "l", "l.afficher != false" %}
+{%- assign experiences = parcours.experiences | where_exp: "l", "l.cv != false" | where_exp: "l", "l.afficher != false" %}
+{%- assign responsabilites = parcours.responsabilites | where_exp: "l", "l.cv != false" | where_exp: "l", "l.afficher != false" %}
+{%- assign projets = site.projets | where_exp: "p", "p.cv != false" | where_exp: "p", "p.afficher != false" | sort: "ordre", "last" %}
+{%- assign distinctions = site.data.distinctions | where_exp: "d", "d.cv != false" | where_exp: "d", "d.afficher != false" %}
+{%- assign icones = '/assets/img/icons.svg' | relative_url %}
 
   <header class="cv-toolbar">
     <div class="cv-toolbar__inner">
-      <a class="btn btn--ghost btn--sm" href="./">
-        <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#arrow-left"></use></svg>
+      <a class="btn btn--ghost btn--sm" href="{{ '/' | relative_url }}">
+        <svg class="icon" aria-hidden="true"><use href="{{ icones }}#arrow-left"></use></svg>
         <span lang="fr">Retour<span class="cv-toolbar__more"> au portfolio</span></span><span lang="en">Back<span class="cv-toolbar__more"> to portfolio</span></span>
       </a>
       <div class="cv-toolbar__end">
-        <div class="lang-switch" role="group" aria-label="Langue / Language">
-          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
-          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
-        </div>
+        {% include langue.html %}
         <button class="btn btn--primary btn--sm" type="button" data-print>
-          <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#download"></use></svg>
+          <svg class="icon" aria-hidden="true"><use href="{{ icones }}#download"></use></svg>
           <span lang="fr"><span class="cv-toolbar__more">Télécharger en </span>PDF</span><span lang="en"><span class="cv-toolbar__more">Download </span>PDF</span>
         </button>
       </div>
@@ -74,187 +38,140 @@
   <main class="cv" id="cv">
     <header class="cv__header">
       <div>
-        <h1 class="cv__name">Brayan Jovani Aboubacar Sorgho</h1>
+        <h1 class="cv__name">{{ profil.nom_complet }}</h1>
         <p class="cv__title">
-          <span lang="fr">Étudiant ingénieur en Big Data et intelligence artificielle · Université Internationale de Rabat</span>
-          <span lang="en">Big Data &amp; Artificial Intelligence engineering student · International University of Rabat</span>
+          <span lang="fr">{% include fr.html t=profil.titre_fr %} · {{ profil.ecole_fr }}</span>
+          <span lang="en">{% include en.html t=profil.titre_en %} · {{ profil.ecole_en }}</span>
         </p>
+{%- if profil.annonce.afficher %}
+        <p class="cv__announce">{% include t.html fr=profil.annonce.fr en=profil.annonce.en %}</p>
+{%- endif %}
         <ul class="cv__contact">
           <li>
-            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#mail"></use></svg>
-            <a href="mailto:sorghobrayan60@gmail.com">sorghobrayan60@gmail.com</a>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#mail"></use></svg>
+            <a href="mailto:{{ profil.email }}">{{ profil.email }}</a>
           </li>
           <li>
-            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#map-pin"></use></svg>
-            <span lang="fr">Rabat, Maroc</span><span lang="en">Rabat, Morocco</span>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#map-pin"></use></svg>
+            {% include t.html fr=profil.ville_fr en=profil.ville_en %}
           </li>
           <li>
-            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#github"></use></svg>
-            <a href="https://github.com/Sorghobrayan-dotcom">github.com/Sorghobrayan-dotcom</a>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#github"></use></svg>
+            <a href="{{ profil.github }}">{{ profil.github | remove: "https://" }}</a>
           </li>
           <li>
-            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#linkedin"></use></svg>
-            <a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328">linkedin.com/in/brayan-sorgho-1134b5328</a>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#linkedin"></use></svg>
+            <a href="{{ profil.linkedin }}">{{ profil.linkedin | remove: "https://www." }}</a>
           </li>
           <li>
-            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#globe"></use></svg>
-            <a href="https://sorghobrayan-dotcom.github.io/">sorghobrayan-dotcom.github.io</a>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#globe"></use></svg>
+            <a href="{{ '/' | absolute_url }}">{{ site.url | remove: "https://" }}</a>
           </li>
         </ul>
       </div>
-      <img class="cv__photo" src="assets/img/portrait.jpg" width="350" height="450" alt="Portrait de Brayan Sorgho" data-en-alt="Portrait of Brayan Sorgho">
+      <img class="cv__photo" src="{{ '/assets/img/portrait.jpg' | relative_url }}" width="350" height="450" alt="Portrait de {{ profil.nom }}" data-en-alt="Portrait of {{ profil.nom }}">
     </header>
 
     <div class="cv__body">
       <div class="cv__main">
         <section class="cv-section" aria-labelledby="cv-profil">
-          <h2 class="cv-section__title" id="cv-profil"><span lang="fr">Profil</span><span lang="en">Profile</span></h2>
-          <p lang="fr">
-            Étudiant en première année du cycle ingénieur Big Data et IA à l’UIR, après deux années de
-            classes préparatoires MPI. Je conçois des projets qui mettent la donnée et l’intelligence
-            artificielle au service de besoins concrets : l’eau, l’énergie, l’agriculture.
-          </p>
-          <p lang="en">
-            First-year Big Data &amp; AI engineering student at UIR, after two years of MPI preparatory
-            classes. I build projects that put data and artificial intelligence to work on real needs:
-            water, energy and agriculture.
-          </p>
+          <h2 class="cv-section__title" id="cv-profil">{% include t.html fr="Profil" en="Profile" %}</h2>
+          {% include p.html fr=profil.cv_profil_fr en=profil.cv_profil_en %}
         </section>
 
         <section class="cv-section" aria-labelledby="cv-formation">
-          <h2 class="cv-section__title" id="cv-formation"><span lang="fr">Formation</span><span lang="en">Education</span></h2>
-          <article class="cv-item">
-            <div class="cv-item__head">
-              <h3><span lang="fr">Cycle ingénieur Big Data et IA</span><span lang="en">Engineering degree in Big Data &amp; Artificial Intelligence</span></h3>
-              <span class="cv-item__date"><span lang="fr">Depuis sept. 2026</span><span lang="en">Since Sept. 2026</span></span>
-            </div>
-            <p class="cv-item__sub"><span lang="fr">Université Internationale de Rabat (UIR), Maroc · 1re année du cycle, 3e année d’études supérieures</span><span lang="en">International University of Rabat (UIR), Morocco · first year of the cycle, third year of higher education</span></p>
-          </article>
-          <article class="cv-item">
-            <div class="cv-item__head">
-              <h3><span lang="fr">Classes préparatoires MPI</span><span lang="en">MPI preparatory classes</span></h3>
-              <span class="cv-item__date">2024 - 2026</span>
-            </div>
-            <p class="cv-item__sub"><span lang="fr">2iE, Institut International d’Ingénierie de l’Eau et de l’Environnement, Ouagadougou</span><span lang="en">2iE, International Institute for Water and Environmental Engineering, Ouagadougou</span></p>
-            <p lang="fr">Mathématiques, physique et informatique.</p>
-            <p lang="en">Mathematics, physics and computer science.</p>
-          </article>
+          <h2 class="cv-section__title" id="cv-formation">{% include t.html fr="Formation" en="Education" %}</h2>
+{%- for l in formation %}{% include cv-item.html l=l date=true lieu=true %}{% endfor %}
         </section>
+{%- if experiences.size > 0 %}
+
+        <section class="cv-section" aria-labelledby="cv-experiences">
+          <h2 class="cv-section__title" id="cv-experiences">{% include t.html fr="Expériences" en="Experience" %}</h2>
+{%- for l in experiences %}{% include cv-item.html l=l date=true lieu=true %}{% endfor %}
+        </section>
+{%- endif %}
 
         <section class="cv-section" aria-labelledby="cv-projets">
-          <h2 class="cv-section__title" id="cv-projets"><span lang="fr">Projets</span><span lang="en">Projects</span></h2>
-
+          <h2 class="cv-section__title" id="cv-projets">{% include t.html fr="Projets" en="Projects" %}</h2>
+{%- for p in projets %}
+  {%- assign p_titre_fr = p.cv_titre_fr | default: p.titre %}
+  {%- assign p_titre_en = p.cv_titre_en | default: p_titre_fr %}
+  {%- if p.cv_sous_titre_fr %}
+    {%- assign p_sous_fr = p.cv_sous_titre_fr %}
+    {%- assign p_sous_en = p.cv_sous_titre_en | default: p.cv_sous_titre_fr %}
+  {%- else %}
+    {%- assign p_sous_fr = p.role_fr %}
+    {%- assign p_sous_en = p.role_en | default: p.role_fr %}
+  {%- endif %}
+  {%- assign p_points_en = p.cv_points_en | default: p.cv_points_fr %}
           <article class="cv-item">
             <div class="cv-item__head">
-              <h3><span lang="fr">WIIGA : pompage d’eau piloté par IA</span><span lang="en">WIIGA: AI-driven water pumping</span></h3>
-              <span class="cv-item__date">Open source</span>
+              <h3>{% include t.html fr=p_titre_fr en=p_titre_en %}</h3>
+              <span class="cv-item__date">{{ p.cv_date | default: p.annee }}</span>
             </div>
-            <p class="cv-item__sub">Python · Stable-Baselines3 (PPO) · Gymnasium · NumPy · SciPy</p>
+{%- if p_sous_fr %}
+            <p class="cv-item__sub">{% include t.html fr=p_sous_fr en=p_sous_en %}</p>
+{%- endif %}
+{%- if p.cv_points_fr %}
             <ul lang="fr">
-              <li>Agent d’apprentissage par renforcement qui décide chaque heure quelle pompe tourne, à quelle puissance et sur quelle énergie, dans une ville soumise aux délestages.</li>
-              <li>Jumeau numérique d’une station de 22 000 habitants, calibré sur trois années de données climatiques.</li>
-              <li>Sur 365 jours simulés : 67 % d’heures sans eau en moins pour le quartier le plus exposé face à la règle manuelle, et 48 % de CO₂ en moins face à la pratique actuelle.</li>
+{%- for x in p.cv_points_fr %}
+              <li>{% include fr.html t=x %}</li>
+{%- endfor %}
             </ul>
             <ul lang="en">
-              <li>Reinforcement-learning agent that decides every hour which pump runs, at what power and on which energy source, in a city facing scheduled power cuts.</li>
-              <li>Digital twin of a station serving 22,000 people, calibrated on three years of climate data.</li>
-              <li>Over 365 simulated days: 67% fewer dry hours for the worst-served district than the hand-written rulebook, 48% less CO₂ than current practice.</li>
+{%- for x in p_points_en %}
+              <li>{% include en.html t=x %}</li>
+{%- endfor %}
             </ul>
+{%- elsif p.resume_fr %}
+            {% include p.html fr=p.resume_fr en=p.resume_en %}
+{%- endif %}
           </article>
-
-          <article class="cv-item">
-            <div class="cv-item__head">
-              <h3><span lang="fr">YILGA : agrotech et IA</span><span lang="en">YILGA: Agritech &amp; AI</span></h3>
-              <span class="cv-item__date">2025</span>
-            </div>
-            <p class="cv-item__sub"><span lang="fr">Créateur et chef de projet</span><span lang="en">Founder and project lead</span> · Python · TensorFlow · scikit-learn · IoT</p>
-            <ul lang="fr">
-              <li>Plateforme qui recommande la culture la plus rentable grâce à un score croisant sol, météo, capteurs et prévisions de marché.</li>
-              <li>Premier prix INGENOVA 72H des CPGE et prix spécial Incub UO × CITADEL.</li>
-            </ul>
-            <ul lang="en">
-              <li>Platform recommending the most profitable crop through a score combining soil, weather, sensor data and market forecasts.</li>
-              <li>First prize at INGENOVA 72H and special prize at Incub UO × CITADEL.</li>
-            </ul>
-          </article>
-
-          <article class="cv-item">
-            <div class="cv-item__head">
-              <h3><span lang="fr">SG-KOOM : assainissement des eaux grises</span><span lang="en">SG-KOOM: Greywater treatment</span></h3>
-              <span class="cv-item__date">2025</span>
-            </div>
-            <p class="cv-item__sub"><span lang="fr">Créateur et chef de projet · Filtration · LED UV · Domotique</span><span lang="en">Founder and project lead · Filtration · UV-LED · Home automation</span></p>
-            <ul lang="fr">
-              <li>Système domestique enterré qui filtre, désinfecte et réutilise les eaux grises, supervisé par capteurs et interface web et mobile.</li>
-              <li>Premier prix du Parcours Entrepreneurs 2iE.</li>
-            </ul>
-            <ul lang="en">
-              <li>Underground household system that filters, disinfects and reuses greywater, monitored by sensors through a web and mobile interface.</li>
-              <li>First prize, 2iE Entrepreneurs Programme.</li>
-            </ul>
-          </article>
+{%- endfor %}
         </section>
+{%- if responsabilites.size > 0 %}
 
         <section class="cv-section" aria-labelledby="cv-engagements">
-          <h2 class="cv-section__title" id="cv-engagements"><span lang="fr">Responsabilités</span><span lang="en">Responsibilities</span></h2>
-          <article class="cv-item">
-            <div class="cv-item__head"><h3><span lang="fr">Président du club d’art oratoire</span><span lang="en">President of the public-speaking club</span></h3></div>
-            <p lang="fr">Organisation des séances, encadrement des membres, préparation aux compétitions.</p>
-            <p lang="en">Running sessions, mentoring members, preparing for competitions.</p>
-          </article>
-          <article class="cv-item">
-            <div class="cv-item__head"><h3><span lang="fr">Cofondateur du projet LA Salliens</span><span lang="en">Co-founder of the LA Salliens project</span></h3></div>
-            <p lang="fr">Pilotage et coordination d’équipe pour un service de bus destiné aux élèves de mon ancien collège.</p>
-            <p lang="en">Leading and coordinating a team to set up a bus service for pupils of my former school.</p>
-          </article>
-          <article class="cv-item">
-            <div class="cv-item__head"><h3><span lang="fr">Responsable technique : YILGA, SG-KOOM, WIIGA</span><span lang="en">Technical lead: YILGA, SG-KOOM, WIIGA</span></h3></div>
-            <p lang="fr">Supervision du développement et des choix technologiques.</p>
-            <p lang="en">Overseeing development and technology choices.</p>
-          </article>
+          <h2 class="cv-section__title" id="cv-engagements">{% include t.html fr="Responsabilités" en="Responsibilities" %}</h2>
+{%- for l in responsabilites %}{% include cv-item.html l=l %}{% endfor %}
         </section>
+{%- endif %}
       </div>
 
       <aside class="cv__side">
         <section class="cv-section" aria-labelledby="cv-competences">
-          <h2 class="cv-section__title" id="cv-competences"><span lang="fr">Compétences</span><span lang="en">Skills</span></h2>
-          <h3 class="cv-side__label"><span lang="fr">IA et données</span><span lang="en">AI &amp; data</span></h3>
-          <p lang="fr">Python, NumPy, PyTorch, Stable-Baselines3, Gymnasium, scikit-learn, TensorFlow, programmation linéaire</p>
-          <p lang="en">Python, NumPy, PyTorch, Stable-Baselines3, Gymnasium, scikit-learn, TensorFlow, linear programming</p>
-          <h3 class="cv-side__label"><span lang="fr">Développement</span><span lang="en">Development</span></h3>
-          <p lang="fr">HTML, CSS, JavaScript, Git et GitHub, tests, visualisation de données</p>
-          <p lang="en">HTML, CSS, JavaScript, Git &amp; GitHub, testing, data visualisation</p>
-          <h3 class="cv-side__label"><span lang="fr">Ingénierie</span><span lang="en">Engineering</span></h3>
-          <p lang="fr">Jumeau numérique, simulation, traitement de l’eau, capteurs et IoT, domotique, prototypage</p>
-          <p lang="en">Digital twins, simulation, water treatment, sensors &amp; IoT, home automation, prototyping</p>
-          <h3 class="cv-side__label"><span lang="fr">Savoir-être</span><span lang="en">Soft skills</span></h3>
-          <p lang="fr">Art oratoire, leadership, gestion de projet, travail en équipe, pitch</p>
-          <p lang="en">Public speaking, leadership, project management, teamwork, pitching</p>
+          <h2 class="cv-section__title" id="cv-competences">{% include t.html fr="Compétences" en="Skills" %}</h2>
+{%- for g in site.data.competences %}
+  {%- assign items = g.items | where_exp: "s", "s.cv != false" %}
+  {%- if items.size > 0 %}
+          <h3 class="cv-side__label">{% include t.html fr=g.groupe_fr en=g.groupe_en %}</h3>
+          <p lang="fr">{% for s in items %}{% include fr.html t=s.nom %}{% unless forloop.last %}&nbsp;· {% endunless %}{% endfor %}</p>
+          <p lang="en">{% for s in items %}{% assign s_en = s.nom_en | default: s.nom %}{% include en.html t=s_en %}{% unless forloop.last %}&nbsp;· {% endunless %}{% endfor %}</p>
+  {%- endif %}
+{%- endfor %}
         </section>
 
         <section class="cv-section" aria-labelledby="cv-distinctions">
-          <h2 class="cv-section__title" id="cv-distinctions"><span lang="fr">Distinctions</span><span lang="en">Awards</span></h2>
+          <h2 class="cv-section__title" id="cv-distinctions">{% include t.html fr="Distinctions" en="Awards" %}</h2>
           <ul class="cv-awards" lang="fr">
-            <li><span>2025</span>Premier prix, INGENOVA 72H des CPGE (YILGA)</li>
-            <li><span>2025</span>Premier prix, Parcours Entrepreneurs 2iE (SG-KOOM)</li>
-            <li><span>2025</span>Prix spécial, Camp d’idéation Incub UO × CITADEL (YILGA)</li>
-            <li><span>2023</span>Lauréat, Concours Eco Green</li>
+{%- for d in distinctions %}
+  {%- assign d_court_fr = d.court_fr | default: d.evenement_fr %}
+            <li><span>{{ d.annee }}</span>{% include fr.html t=d.prix_fr %}, {% include fr.html t=d_court_fr %}{% if d.projet %} ({% include nom.html t=d.projet %}){% endif %}</li>
+{%- endfor %}
           </ul>
           <ul class="cv-awards" lang="en">
-            <li><span>2025</span>First prize, INGENOVA 72H (YILGA)</li>
-            <li><span>2025</span>First prize, 2iE Entrepreneurs Programme (SG-KOOM)</li>
-            <li><span>2025</span>Special prize, Incub UO × CITADEL ideation camp (YILGA)</li>
-            <li><span>2023</span>Laureate, Eco Green competition</li>
+{%- for d in distinctions %}
+  {%- assign d_prix_en = d.prix_en | default: d.prix_fr %}
+  {%- assign d_court_en = d.court_en | default: d.evenement_en | default: d.court_fr | default: d.evenement_fr %}
+            <li><span>{{ d.annee }}</span>{% include en.html t=d_prix_en %}, {% include en.html t=d_court_en %}{% if d.projet %} ({% include nom.html t=d.projet %}){% endif %}</li>
+{%- endfor %}
           </ul>
         </section>
 
         <section class="cv-section" aria-labelledby="cv-interets">
-          <h2 class="cv-section__title" id="cv-interets"><span lang="fr">Centres d’intérêt</span><span lang="en">Interests</span></h2>
-          <p lang="fr">Big Data, intelligence artificielle, cybersécurité, innovation à impact, art et prise de parole en public.</p>
-          <p lang="en">Big Data, artificial intelligence, cybersecurity, impact-driven innovation, art and public speaking.</p>
+          <h2 class="cv-section__title" id="cv-interets">{% include t.html fr="Centres d’intérêt" en="Interests" %}</h2>
+          {% include p.html fr=profil.interets_fr en=profil.interets_en %}
         </section>
       </aside>
     </div>
   </main>
-</body>
-</html>

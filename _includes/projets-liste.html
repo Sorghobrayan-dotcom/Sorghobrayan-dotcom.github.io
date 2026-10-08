@@ -1,0 +1,14 @@
+{%- comment -%}Lignes de projets. Paramètres : liste, tableau (true sur la page Projets).{%- endcomment -%}
+{%- for p in include.liste %}
+          <li{% if include.tableau %} data-tags="{{ p.filtres | join: ' ' }}"{% endif %}>
+            <a class="work-item__link" href="{{ p.url | relative_url }}" data-preview="{{ forloop.index0 }}">
+              <img class="work-item__thumb" src="{{ p.image | relative_url }}" width="{{ p.image_largeur | default: 1280 }}" height="{{ p.image_hauteur | default: 800 }}" loading="lazy" decoding="async" alt="">
+              <span class="work-item__title">{% include nom.html t=p.titre %}</span>
+              <span class="work-item__meta">{% include t.html fr=p.domaine_fr en=p.domaine_en %}</span>
+{%- if include.tableau %}
+              <span class="work-item__meta">{% include t.html fr=p.role_fr en=p.role_en %}</span>
+              <span class="work-item__year">{{ p.annee }}</span>
+{%- endif %}
+            </a>
+          </li>
+{%- endfor %}

@@ -1,0 +1,420 @@
+# ---------------------------------------------------------------
+# Pages CMS : des formulaires pour mettre le site à jour sans toucher au code.
+# Ouvre https://app.pagescms.org, connecte-toi avec GitHub et choisis ce dépôt.
+# Chaque « Enregistrer » crée un commit ; GitHub Pages republie le site en 1 à 2 minutes.
+# ---------------------------------------------------------------
+
+media:
+  input: assets/img
+  output: /assets/img
+  categories: [image]
+  rename: safe
+
+settings:
+  content:
+    merge: true
+  commit:
+    templates:
+      create: "Ajout : {path}"
+      update: "Mise à jour : {path}"
+      delete: "Suppression : {path}"
+      rename: "Renommage : {oldPath} en {newPath}"
+
+components:
+  afficher:
+    type: boolean
+    label: Afficher sur le site
+    description: Décoche pour cacher sans supprimer. Recoche pour le faire revenir.
+    default: true
+  cv:
+    type: boolean
+    label: Mettre dans le CV
+    default: true
+  icone:
+    type: select
+    label: Icône du badge
+    description: Logo (marque) ou pictogramme. Laisse vide pour un badge sans icône.
+    options:
+      values:
+        - { name: python, label: "Python" }
+        - { name: numpy, label: "NumPy" }
+        - { name: pandas, label: "pandas" }
+        - { name: scipy, label: "SciPy" }
+        - { name: jupyter, label: "Jupyter" }
+        - { name: anaconda, label: "Anaconda" }
+        - { name: googlecolab, label: "Google Colab" }
+        - { name: kaggle, label: "Kaggle" }
+        - { name: pytorch, label: "PyTorch" }
+        - { name: tensorflow, label: "TensorFlow" }
+        - { name: keras, label: "Keras" }
+        - { name: scikitlearn, label: "scikit-learn" }
+        - { name: huggingface, label: "Hugging Face" }
+        - { name: opencv, label: "OpenCV" }
+        - { name: plotly, label: "Plotly" }
+        - { name: streamlit, label: "Streamlit" }
+        - { name: fastapi, label: "FastAPI" }
+        - { name: flask, label: "Flask" }
+        - { name: mlflow, label: "MLflow" }
+        - { name: apachespark, label: "Apache Spark" }
+        - { name: apacheairflow, label: "Apache Airflow" }
+        - { name: duckdb, label: "DuckDB" }
+        - { name: mysql, label: "MySQL" }
+        - { name: postgresql, label: "PostgreSQL" }
+        - { name: sqlite, label: "SQLite" }
+        - { name: mongodb, label: "MongoDB" }
+        - { name: html5, label: "HTML5" }
+        - { name: css, label: "CSS" }
+        - { name: javascript, label: "JavaScript" }
+        - { name: typescript, label: "TypeScript" }
+        - { name: react, label: "React" }
+        - { name: nodedotjs, label: "Node.js" }
+        - { name: php, label: "PHP" }
+        - { name: openjdk, label: "OpenJDK" }
+        - { name: go, label: "Go" }
+        - { name: flutter, label: "Flutter" }
+        - { name: c, label: "C" }
+        - { name: cplusplus, label: "C++" }
+        - { name: r, label: "R" }
+        - { name: julia, label: "Julia" }
+        - { name: git, label: "Git" }
+        - { name: github, label: "GitHub" }
+        - { name: gitlab, label: "GitLab" }
+        - { name: linux, label: "Linux" }
+        - { name: ubuntu, label: "Ubuntu" }
+        - { name: gnubash, label: "GNU Bash" }
+        - { name: docker, label: "Docker" }
+        - { name: latex, label: "LaTeX" }
+        - { name: markdown, label: "Markdown" }
+        - { name: jekyll, label: "Jekyll" }
+        - { name: figma, label: "Figma" }
+        - { name: notion, label: "Notion" }
+        - { name: arduino, label: "Arduino" }
+        - { name: raspberrypi, label: "Raspberry Pi" }
+        - { name: espressif, label: "Espressif" }
+        - { name: firebase, label: "Firebase" }
+        - { name: supabase, label: "Supabase" }
+        - { name: vercel, label: "Vercel" }
+        - { name: netlify, label: "Netlify" }
+        - { name: selenium, label: "Selenium" }
+        - { name: langchain, label: "LangChain" }
+        - { name: ollama, label: "Ollama" }
+        - { name: ia, label: "Pictogramme : IA (étincelles)" }
+        - { name: renforcement, label: "Pictogramme : apprentissage par renforcement (boucle)" }
+        - { name: donnees, label: "Pictogramme : données (base)" }
+        - { name: graphique, label: "Pictogramme : graphique" }
+        - { name: test, label: "Pictogramme : tests (coche)" }
+        - { name: optimisation, label: "Pictogramme : optimisation (cible)" }
+        - { name: jumeau, label: "Pictogramme : jumeau numérique (cube)" }
+        - { name: simulation, label: "Pictogramme : simulation (onde)" }
+        - { name: eau, label: "Pictogramme : eau (goutte)" }
+        - { name: capteur, label: "Pictogramme : capteurs et IoT" }
+        - { name: maison, label: "Pictogramme : maison, domotique" }
+        - { name: prototype, label: "Pictogramme : prototypage (couches)" }
+        - { name: micro, label: "Pictogramme : prise de parole (micro)" }
+        - { name: leadership, label: "Pictogramme : leadership (drapeau)" }
+        - { name: projet, label: "Pictogramme : gestion de projet" }
+        - { name: equipe, label: "Pictogramme : équipe" }
+        - { name: pitch, label: "Pictogramme : pitch (tableau)" }
+        - { name: code, label: "Pictogramme : code" }
+        - { name: reseau, label: "Pictogramme : réseau de neurones" }
+        - { name: securite, label: "Pictogramme : sécurité (bouclier)" }
+        - { name: langue, label: "Pictogramme : langues (globe)" }
+        - { name: energie, label: "Pictogramme : énergie (éclair)" }
+        - { name: maths, label: "Pictogramme : mathématiques (pi)" }
+        - { name: cloud, label: "Pictogramme : cloud" }
+        - { name: conception, label: "Pictogramme : conception (crayon)" }
+
+content:
+  - name: projets
+    label: Projets
+    type: collection
+    path: _projets
+    format: yaml-frontmatter
+    filename: "{fields.titre}.md"
+    view:
+      fields: [titre, annee, afficher, cv, a_la_une, ordre]
+      primary: titre
+      sort: [ordre, annee, titre]
+      default:
+        sort: ordre
+        order: asc
+    fields:
+      - { name: titre, label: Nom du projet, type: string, required: true }
+      - { name: afficher, component: afficher }
+      - { name: cv, component: cv }
+      - { name: a_la_une, label: À la une sur l’accueil, type: boolean, default: true }
+      - { name: ordre, label: Ordre, type: number, description: "1 = en premier. Les projets sont triés par ce nombre." }
+      - { name: annee, label: Année, type: string }
+      - name: filtres
+        label: Catégories (filtres de la page Projets)
+        type: select
+        options:
+          multiple: true
+          values: [ia, data, eau, energie, agriculture, web, social]
+      - { name: domaine_fr, label: Domaine (FR), type: string, description: "Ex. : IA · Eau · Énergie" }
+      - { name: domaine_en, label: Domaine (EN), type: string }
+      - { name: surtitre_fr, label: Surtitre de la page (FR), type: string, description: "Facultatif. Par défaut : le domaine." }
+      - { name: surtitre_en, label: Surtitre de la page (EN), type: string }
+      - { name: role_fr, label: Mon rôle (FR), type: string }
+      - { name: role_en, label: Mon rôle (EN), type: string }
+      - { name: resume_fr, label: Résumé (FR), type: text, description: Une ou deux phrases sous le titre de la page. }
+      - { name: resume_en, label: Résumé (EN), type: text }
+      - { name: image, label: Image de couverture, type: image, description: "Capture d’écran ou logo, idéalement 1280 × 800 px." }
+      - name: image_type
+        label: Type d’image
+        type: select
+        options:
+          values:
+            - { name: capture, label: Capture d’écran (remplit le cadre) }
+            - { name: logo, label: Logo (centré sur un fond) }
+      - name: fond
+        label: Fond de l’aperçu
+        type: select
+        options:
+          values:
+            - { name: creme, label: Crème }
+            - { name: sable, label: Sable }
+            - { name: blanc, label: Blanc }
+      - { name: image_alt_fr, label: Description de l’image (FR), type: string }
+      - { name: image_alt_en, label: Description de l’image (EN), type: string }
+      - name: liens
+        label: Boutons (démo, code…)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{texte_fr}"
+        fields:
+          - name: type
+            type: select
+            options:
+              values:
+                - { name: demo, label: Démo }
+                - { name: code, label: Code source }
+                - { name: autre, label: Autre lien }
+          - { name: url, label: Adresse, type: string }
+          - { name: texte_fr, label: Texte (FR), type: string }
+          - { name: texte_en, label: Texte (EN), type: string }
+      - name: infos
+        label: Fiche du projet (sous le titre)
+        description: Facultatif. Sans fiche, le site affiche rôle, domaine et année.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titre_fr}"
+        fields:
+          - { name: titre_fr, label: Intitulé (FR), type: string }
+          - { name: titre_en, label: Intitulé (EN), type: string }
+          - { name: texte_fr, label: Valeur (FR), type: string }
+          - { name: texte_en, label: Valeur (EN), type: string }
+      - name: sections
+        label: Sections de la page
+        description: "Ex. : Le problème, La solution, Mon rôle, Résultats. Le sommaire se crée tout seul."
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titre_fr}"
+        fields:
+          - { name: titre_fr, label: Titre (FR), type: string }
+          - { name: titre_en, label: Titre (EN), type: string }
+          - { name: texte_fr, label: Texte (FR), type: rich-text, options: { format: markdown } }
+          - { name: texte_en, label: Texte (EN), type: rich-text, options: { format: markdown } }
+      - { name: cv_date, label: "CV : date ou mention", type: string, description: "Facultatif. Par défaut : l’année. Ex. : Open source" }
+      - { name: cv_titre_fr, label: "CV : titre (FR)", type: string, description: "Facultatif. Ex. : MonProjet : tableau de bord IA" }
+      - { name: cv_titre_en, label: "CV : titre (EN)", type: string }
+      - { name: cv_sous_titre_fr, label: "CV : ligne technique (FR)", type: string, description: "Ex. : Python · scikit-learn · Streamlit" }
+      - { name: cv_sous_titre_en, label: "CV : ligne technique (EN)", type: string }
+      - { name: cv_points_fr, label: "CV : points clés (FR)", type: text, list: true }
+      - { name: cv_points_en, label: "CV : points clés (EN)", type: text, list: true }
+
+  - name: distinctions
+    label: Distinctions
+    type: file
+    path: _data/distinctions.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: annee, label: Année, type: string }
+      - { name: prix_fr, label: Prix obtenu (FR), type: string, description: "Ex. : Premier prix, Finaliste, Classé parmi les meilleurs projets" }
+      - { name: prix_en, label: Prix obtenu (EN), type: string }
+      - { name: evenement_fr, label: Concours (FR), type: string }
+      - { name: evenement_en, label: Concours (EN), type: string }
+      - { name: court_fr, label: Nom court du concours (FR), type: string, description: Facultatif, pour le CV et la fiche projet. }
+      - { name: court_en, label: Nom court du concours (EN), type: string }
+      - { name: badge_fr, label: Prix en très court (FR), type: string, description: "Facultatif. Ex. : 1er prix" }
+      - { name: badge_en, label: Prix en très court (EN), type: string }
+      - name: projet
+        label: Projet concerné
+        description: Facultatif. La distinction s’affiche aussi sur la page du projet.
+        type: reference
+        options:
+          collection: projets
+          value: "{primary}"
+          label: "{primary}"
+      - { name: afficher, component: afficher }
+      - { name: cv, component: cv }
+
+  - name: parcours
+    label: Parcours (formation, expériences, responsabilités)
+    type: file
+    path: _data/parcours.yml
+    format: yaml
+    fields:
+      - name: formation
+        label: Formation
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titre_fr}"
+        fields:
+          - { name: titre_fr, label: Intitulé (FR), type: string }
+          - { name: titre_en, label: Intitulé (EN), type: string }
+          - { name: lieu_fr, label: Lieu ou précision (FR), type: string }
+          - { name: lieu_en, label: Lieu ou précision (EN), type: string }
+          - { name: date_fr, label: Date (FR), type: string, description: "Ex. : Juil. - août 2027" }
+          - { name: date_en, label: Date (EN), type: string }
+          - { name: detail_fr, label: Détail pour le CV (FR), type: text }
+          - { name: detail_en, label: Détail pour le CV (EN), type: text }
+          - { name: cv_titre_fr, label: "CV : intitulé plus court (FR)", type: string, description: Facultatif. }
+          - { name: cv_titre_en, label: "CV : intitulé plus court (EN)", type: string }
+          - { name: cv_lieu_fr, label: "CV : lieu détaillé (FR)", type: string, description: Facultatif. }
+          - { name: cv_lieu_en, label: "CV : lieu détaillé (EN)", type: string }
+          - { name: cv_date_fr, label: "CV : date (FR)", type: string, description: Facultatif. }
+          - { name: cv_date_en, label: "CV : date (EN)", type: string }
+          - { name: afficher, component: afficher }
+          - { name: cv, component: cv }
+      - name: experiences
+        label: Expériences (stages, jobs, bénévolat)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titre_fr}"
+        fields:
+          - { name: titre_fr, label: Intitulé (FR), type: string }
+          - { name: titre_en, label: Intitulé (EN), type: string }
+          - { name: lieu_fr, label: Lieu ou précision (FR), type: string }
+          - { name: lieu_en, label: Lieu ou précision (EN), type: string }
+          - { name: date_fr, label: Date (FR), type: string, description: "Ex. : Juil. - août 2027" }
+          - { name: date_en, label: Date (EN), type: string }
+          - { name: detail_fr, label: Détail pour le CV (FR), type: text }
+          - { name: detail_en, label: Détail pour le CV (EN), type: text }
+          - { name: cv_titre_fr, label: "CV : intitulé plus court (FR)", type: string, description: Facultatif. }
+          - { name: cv_titre_en, label: "CV : intitulé plus court (EN)", type: string }
+          - { name: cv_lieu_fr, label: "CV : lieu détaillé (FR)", type: string, description: Facultatif. }
+          - { name: cv_lieu_en, label: "CV : lieu détaillé (EN)", type: string }
+          - { name: cv_date_fr, label: "CV : date (FR)", type: string, description: Facultatif. }
+          - { name: cv_date_en, label: "CV : date (EN)", type: string }
+          - { name: afficher, component: afficher }
+          - { name: cv, component: cv }
+      - name: responsabilites
+        label: Responsabilités
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titre_fr}"
+        fields:
+          - { name: titre_fr, label: Intitulé (FR), type: string }
+          - { name: titre_en, label: Intitulé (EN), type: string }
+          - { name: lieu_fr, label: Lieu ou précision (FR), type: string }
+          - { name: lieu_en, label: Lieu ou précision (EN), type: string }
+          - { name: date_fr, label: Date (FR), type: string, description: "Ex. : Juil. - août 2027" }
+          - { name: date_en, label: Date (EN), type: string }
+          - { name: detail_fr, label: Détail pour le CV (FR), type: text }
+          - { name: detail_en, label: Détail pour le CV (EN), type: text }
+          - { name: cv_titre_fr, label: "CV : intitulé plus court (FR)", type: string, description: Facultatif. }
+          - { name: cv_titre_en, label: "CV : intitulé plus court (EN)", type: string }
+          - { name: cv_lieu_fr, label: "CV : lieu détaillé (FR)", type: string, description: Facultatif. }
+          - { name: cv_lieu_en, label: "CV : lieu détaillé (EN)", type: string }
+          - { name: cv_date_fr, label: "CV : date (FR)", type: string, description: Facultatif. }
+          - { name: cv_date_en, label: "CV : date (EN)", type: string }
+          - { name: afficher, component: afficher }
+          - { name: cv, component: cv }
+
+  - name: competences
+    label: Compétences (badges)
+    type: file
+    path: _data/competences.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: groupe_fr, label: Famille (FR), type: string }
+      - { name: groupe_en, label: Famille (EN), type: string }
+      - name: items
+        label: Compétences
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{nom}"
+        fields:
+          - { name: nom, label: Nom (FR), type: string }
+          - { name: nom_en, label: Nom (EN), type: string, description: Seulement s’il est différent. }
+          - { name: icone, component: icone }
+          - { name: cv, component: cv }
+          - { name: ruban, label: Dans les bandeaux de l’accueil, type: boolean, default: true }
+
+  - name: profil
+    label: Profil (titre, annonce, textes)
+    type: file
+    path: _data/profil.yml
+    format: yaml
+    fields:
+      - { name: nom, label: Nom d’usage, type: string }
+      - { name: nom_complet, label: Nom complet (CV), type: string }
+      - { name: prenoms, label: "Intro : prénoms (en grand)", type: string }
+      - { name: nom_famille, label: "Intro : nom (plus petit)", type: string }
+      - { name: email, label: E-mail, type: string }
+      - { name: github, label: Lien GitHub, type: string }
+      - { name: linkedin, label: Lien LinkedIn, type: string }
+      - { name: titre_fr, label: Mon titre (FR), type: string, description: "Repris sur l’accueil, le CV et dans Google." }
+      - { name: titre_en, label: Mon titre (EN), type: string }
+      - { name: titre_court_fr, label: Titre court sur deux lignes (FR), type: string, description: "<br> pour aller à la ligne." }
+      - { name: titre_court_en, label: Titre court sur deux lignes (EN), type: string }
+      - { name: ecole_fr, label: École (FR), type: string }
+      - { name: ecole_en, label: École (EN), type: string }
+      - { name: ville_fr, label: Ville (FR), type: string }
+      - { name: ville_en, label: Ville (EN), type: string }
+      - name: annonce
+        label: Annonce (pastille sur l’accueil et le CV)
+        type: object
+        fields:
+          - { name: afficher, label: Afficher l’annonce, type: boolean, default: false }
+          - { name: fr, label: Texte (FR), type: string, description: "Ex. : Je recherche un stage d’été en data ou en IA" }
+          - { name: en, label: Texte (EN), type: string }
+      - { name: accroche_fr, label: Grande phrase de l’accueil (FR), type: text }
+      - { name: accroche_en, label: Grande phrase de l’accueil (EN), type: text }
+      - { name: presentation_fr, label: Présentation courte (FR), type: text }
+      - { name: presentation_en, label: Présentation courte (EN), type: text }
+      - { name: a_propos_fr, label: Page À propos, paragraphes (FR), type: text, list: true }
+      - { name: a_propos_en, label: Page À propos, paragraphes (EN), type: text, list: true }
+      - { name: cv_profil_fr, label: Résumé en tête du CV (FR), type: text }
+      - { name: cv_profil_en, label: Résumé en tête du CV (EN), type: text }
+      - { name: interets_fr, label: Centres d’intérêt (FR), type: text }
+      - { name: interets_en, label: Centres d’intérêt (EN), type: text }
+      - name: qualites
+        label: Qualités (page À propos)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titre_fr}"
+        fields:
+          - { name: titre_fr, label: Qualité (FR), type: string }
+          - { name: titre_en, label: Qualité (EN), type: string }
+          - { name: texte_fr, label: Phrase (FR), type: text }
+          - { name: texte_en, label: Phrase (EN), type: text }
+      - name: chiffres
+        label: Chiffres de l’accueil
+        description: "Valeur « projets » ou « distinctions » : le nombre se calcule tout seul."
+        type: object
+        list: true
+        fields:
+          - { name: valeur, label: Valeur, type: string }
+          - { name: suffixe, label: Suffixe (ex. %), type: string }
+          - { name: texte_fr, label: Texte (FR), type: string }
+          - { name: texte_en, label: Texte (EN), type: string }

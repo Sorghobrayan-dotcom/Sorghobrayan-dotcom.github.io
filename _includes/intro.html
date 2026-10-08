@@ -1,0 +1,12 @@
+
+  <!-- Intro : pluie de 0 et de 1, arrêt de la pluie, le nom, puis le visage prend sa place -->
+  <div class="intro">
+    <canvas class="intro__rain" aria-hidden="true"></canvas>
+    <div class="intro__stage" aria-hidden="true">
+      <p class="intro__name">
+        <span class="intro__last" data-text="{{ site.data.profil.nom_famille }}"></span>
+        <span class="intro__first" data-text="{{ site.data.profil.prenoms }}"></span>
+      </p>
+    </div>
+    <button class="intro__skip" type="button">{% include t.html fr="Passer l’intro" en="Skip intro" %}</button>
+  </div>

@@ -1,0 +1,2 @@
+{%- comment -%}Typographie anglaise : apostrophe courbe, pas de tiret long.{%- endcomment -%}
+{{- include.t | replace: " & ", " &amp; " | replace: "'", "’" | replace: " — ", ", " | replace: "—", "-" | replace: "–", "-" -}}

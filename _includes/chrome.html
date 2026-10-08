@@ -1,0 +1,50 @@
+{%- comment -%}En-tête, bouton et panneau de menu, communs à toutes les pages.{%- endcomment -%}
+{%- if page.collection == "projets" %}{% assign actif = "/projets.html" %}{% else %}{% assign actif = page.url %}{% endif %}
+{%- assign nav = "/projets.html|Projets|Work,/a-propos.html|À propos|About,/contact.html|Contact|Contact,/cv.html|CV|CV" | split: "," %}
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="{{ '/' | relative_url }}" aria-label="{{ site.data.profil.nom }}, accueil" data-en-aria-label="{{ site.data.profil.nom }}, home">
+        <span class="logo__copy" aria-hidden="true">©</span>
+        <span class="logo__roll" aria-hidden="true">
+          <span class="logo__a">{% include t.html fr="Codé par Brayan" en="Code by Brayan" %}</span>
+          <span class="logo__b">{{ site.data.profil.nom }}</span>
+        </span>
+      </a>
+      <nav class="header__nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
+        <ul>
+{%- for item in nav %}
+  {%- assign n = item | split: "|" %}{% assign n_fr = n[1] %}{% assign n_en = n[2] %}
+          <li><a class="link-dot{% if n[0] == actif %} is-active{% endif %}" href="{{ n[0] | relative_url }}"{% if n[0] == actif %} aria-current="page"{% endif %}>{% include t.html fr=n_fr en=n_en %}</a></li>
+{%- endfor %}
+        </ul>
+      </nav>
+      {% include langue.html classe=" header__lang" %}
+    </div>
+  </header>
+
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+    <span class="menu-btn__lines" aria-hidden="true"></span>
+  </button>
+
+  <div class="menu" id="menu" inert>
+    <div class="menu__backdrop"></div>
+    <nav class="menu__panel" aria-label="Menu">
+      <span class="menu__curve" aria-hidden="true"></span>
+      <p class="menu__label">Navigation</p>
+      <ul class="menu__links">
+        <li><a href="{{ '/' | relative_url }}">{% include t.html fr="Accueil" en="Home" %}</a></li>
+{%- for item in nav %}
+  {%- assign n = item | split: "|" %}{% assign n_fr = n[1] %}{% assign n_en = n[2] %}
+        <li><a href="{{ n[0] | relative_url }}">{% include t.html fr=n_fr en=n_en %}</a></li>
+{%- endfor %}
+      </ul>
+      <div class="menu__foot">
+        <div>
+          <p class="contact__label">{% include t.html fr="Réseaux" en="Socials" %}</p>
+{% include reseaux.html %}
+        </div>
+        {% include langue.html classe=" lang-switch--dark" %}
+      </div>
+    </nav>
+  </div>

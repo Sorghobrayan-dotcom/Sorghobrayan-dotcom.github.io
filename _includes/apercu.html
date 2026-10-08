@@ -1,0 +1,11 @@
+{%- comment -%}Aperçu qui suit le pointeur au survol d'une liste de projets. Paramètre : liste (même ordre que la liste).{%- endcomment %}
+      <div class="preview" aria-hidden="true">
+        <div class="preview__inner">
+          <div class="preview__slides">
+{%- for p in include.liste %}
+            <div class="preview__slide preview__slide--{{ p.fond | default: 'creme' }}"><img src="{{ p.image | relative_url }}" width="{{ p.image_largeur | default: 1280 }}" height="{{ p.image_hauteur | default: 800 }}" loading="lazy" alt=""></div>
+{%- endfor %}
+          </div>
+        </div>
+        <span class="preview__label">{% include t.html fr="Voir" en="View" %}</span>
+      </div>

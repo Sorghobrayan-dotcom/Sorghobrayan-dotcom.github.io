@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------
+# Compétences, regroupées par famille.
+#   nom      le nom affiché (en français)
+#   nom_en   le nom en anglais, seulement s'il est différent
+#   icone    le logo du badge (liste des icônes disponibles dans le README)
+#   cv: false    → pas dans le CV
+#   ruban: false → pas dans les bandeaux défilants de l'accueil
+# ---------------------------------------------------------------
+
+- groupe_fr: IA et données
+  groupe_en: AI & data
+  items:
+    - { nom: Python, icone: python }
+    - { nom: NumPy, icone: numpy }
+    - { nom: PyTorch, icone: pytorch }
+    - { nom: Stable-Baselines3, icone: renforcement }
+    - { nom: Gymnasium, icone: simulation }
+    - { nom: scikit-learn, icone: scikitlearn }
+    - { nom: TensorFlow, icone: tensorflow }
+    - { nom: Apprentissage par renforcement, nom_en: Reinforcement learning, icone: ia, cv: false }
+    - { nom: Big Data, icone: donnees, cv: false }
+    - { nom: Programmation linéaire, nom_en: Linear programming, icone: optimisation }
+
+- groupe_fr: Développement
+  groupe_en: Development
+  items:
+    - { nom: HTML, icone: html5 }
+    - { nom: CSS, icone: css }
+    - { nom: JavaScript, icone: javascript }
+    - { nom: Git et GitHub, nom_en: Git & GitHub, icone: github }
+    - { nom: Visualisation de données, nom_en: Data visualisation, icone: graphique }
+    - { nom: Tests, nom_en: Testing, icone: test }
+
+- groupe_fr: Ingénierie
+  groupe_en: Engineering
+  items:
+    - { nom: Jumeau numérique, nom_en: Digital twin, icone: jumeau }
+    - { nom: Simulation, icone: simulation, ruban: false }
+    - { nom: Traitement de l’eau, nom_en: Water treatment, icone: eau }
+    - { nom: Capteurs et IoT, nom_en: Sensors & IoT, icone: capteur }
+    - { nom: Domotique, nom_en: Home automation, icone: maison }
+    - { nom: Prototypage, nom_en: Prototyping, icone: prototype }
+
+- groupe_fr: Savoir-être
+  groupe_en: Soft skills
+  items:
+    - { nom: Art oratoire, nom_en: Public speaking, icone: micro }
+    - { nom: Leadership, icone: leadership }
+    - { nom: Gestion de projet, nom_en: Project management, icone: projet }
+    - { nom: Travail en équipe, nom_en: Teamwork, icone: equipe }
+    - { nom: Pitch, icone: pitch }

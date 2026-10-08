@@ -1,120 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr" data-lang="fr" class="no-js" data-title-en="Contact | Brayan Sorgho">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact | Brayan Sorgho</title>
-  <meta name="description" content="Contacter Brayan Sorgho, étudiant ingénieur Big Data et IA : stage, projet ou simple question.">
-  <meta name="author" content="Brayan Sorgho">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/contact.html">
-  <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/contact.html">
-  <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/contact.html?lang=en">
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:site_name" content="Brayan Sorgho">
-  <meta property="og:title" content="Contact | Brayan Sorgho">
-  <meta property="og:description" content="Stage, projet ou simple question : écrivez-moi.">
-  <meta property="og:url" content="https://sorghobrayan-dotcom.github.io/contact.html">
-  <meta property="og:image" content="https://sorghobrayan-dotcom.github.io/assets/img/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;display=swap">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <script>
-    // Avant le premier affichage : langue, intro (une fois par session) et rideau de transition.
-    (function (d) {
-      var r = d.documentElement, l;
-      r.classList.replace("no-js", "js");
-      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
-      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
-      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
-      try {
-        if (sessionStorage.getItem("curtain")) { r.classList.add("curtain-in"); sessionStorage.removeItem("curtain"); }
-        else if (r.hasAttribute("data-intro") && !sessionStorage.getItem("intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) r.classList.add("intro-on");
-      } catch (e) {}
-    })(document);
-  </script>
-  <script src="assets/js/main.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
-
-  <div class="curtain" aria-hidden="true"></div>
-
-  <header class="header">
-    <div class="header__inner">
-      <a class="logo" href="./" aria-label="Brayan Sorgho, accueil" data-en-aria-label="Brayan Sorgho, home">
-        <span class="logo__copy" aria-hidden="true">©</span>
-        <span class="logo__roll" aria-hidden="true">
-          <span class="logo__a"><span lang="fr">Codé par Brayan</span><span lang="en">Code by Brayan</span></span>
-          <span class="logo__b">Brayan Sorgho</span>
-        </span>
-      </a>
-      <nav class="header__nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
-        <ul>
-          <li><a class="link-dot" href="projets.html"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
-          <li><a class="link-dot" href="a-propos.html"><span lang="fr">À propos</span><span lang="en">About</span></a></li>
-          <li><a class="link-dot is-active" href="contact.html" aria-current="page">Contact</a></li>
-          <li><a class="link-dot" href="cv.html">CV</a></li>
-        </ul>
-      </nav>
-      <div class="lang-switch header__lang" role="group" aria-label="Langue / Language">
-          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
-          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
-        </div>
-    </div>
-  </header>
-
-  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
-    <span class="menu-btn__lines" aria-hidden="true"></span>
-  </button>
-
-  <div class="menu" id="menu" inert>
-    <div class="menu__backdrop"></div>
-    <nav class="menu__panel" aria-label="Menu">
-      <span class="menu__curve" aria-hidden="true"></span>
-      <p class="menu__label">Navigation</p>
-      <ul class="menu__links">
-        <li><a href="./"><span lang="fr">Accueil</span><span lang="en">Home</span></a></li>
-        <li><a href="projets.html"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
-        <li><a href="a-propos.html"><span lang="fr">À propos</span><span lang="en">About</span></a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="cv.html">CV</a></li>
-      </ul>
-      <div class="menu__foot">
-        <div>
-          <p class="contact__label"><span lang="fr">Réseaux</span><span lang="en">Socials</span></p>
-          <ul>
-            <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="mailto:sorghobrayan60@gmail.com">E-mail</a></li>
-          </ul>
-        </div>
-        <div class="lang-switch lang-switch--dark" role="group" aria-label="Langue / Language">
-          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
-          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
-        </div>
-      </div>
-    </nav>
-  </div>
+---
+titre_fr: Contact | Brayan Sorgho
+titre_en: Contact | Brayan Sorgho
+description: "Contacter Brayan Sorgho, étudiant ingénieur Big Data et IA : stage, projet ou simple question."
+partage_description: "Stage, projet ou simple question : écrivez-moi."
+pied: minimal
+---
 
   <main id="contenu">
     <section class="page-head" id="haut" aria-labelledby="titre-page">
       <div class="container">
         <div class="page-head__who">
-          <img class="page-head__avatar" src="assets/img/portrait-square.jpg" width="350" height="350" alt="">
+          <img class="page-head__avatar" src="{{ '/assets/img/portrait-square.jpg' | relative_url }}" width="350" height="350" alt="">
           <p class="kicker">Contact</p>
         </div>
         <h1 class="page-head__title" id="titre-page"><span lang="fr">Démarrons un projet ensemble</span><span lang="en">Let’s start a project together</span></h1>
@@ -123,7 +19,7 @@
 
     <section class="section section--tight" aria-label="Formulaire et coordonnées" data-en-aria-label="Form and details">
       <div class="container contact-page">
-        <form class="contact-form reveal" data-mailto-form="sorghobrayan60@gmail.com" action="mailto:sorghobrayan60@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form reveal" data-mailto-form="{{ site.data.profil.email }}" action="mailto:{{ site.data.profil.email }}" method="post" enctype="text/plain">
           <div class="form-field">
             <span class="form-field__num" aria-hidden="true">01</span>
             <div>
@@ -166,19 +62,19 @@
         <div class="contact-aside reveal">
           <div class="aside-block">
             <p class="aside-label">E-mail</p>
-            <p><a href="mailto:sorghobrayan60@gmail.com">sorghobrayan60@gmail.com</a></p>
+            <p><a href="mailto:{{ site.data.profil.email }}">{{ site.data.profil.email }}</a></p>
           </div>
           <div class="aside-block">
             <p class="aside-label"><span lang="fr">Réseaux</span><span lang="en">Socials</span></p>
             <ul>
-              <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
-              <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
-              <li><a href="cv.html">CV</a></li>
+              <li><a href="{{ site.data.profil.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="{{ site.data.profil.github }}" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="{{ '/cv.html' | relative_url }}">CV</a></li>
             </ul>
           </div>
           <div class="aside-block">
             <p class="aside-label"><span lang="fr">Basé à</span><span lang="en">Located in</span></p>
-            <p><span lang="fr">Rabat, Maroc</span><span lang="en">Rabat, Morocco</span></p>
+            <p>{% include t.html fr=site.data.profil.ville_fr en=site.data.profil.ville_en %}</p>
           </div>
           <div class="aside-block">
             <p class="aside-label"><span lang="fr">Heure locale</span><span lang="en">Local time</span></p>
@@ -188,29 +84,3 @@
       </div>
     </section>
   </main>
-
-  <footer class="contact contact--minimal" aria-label="Pied de page" data-en-aria-label="Footer">
-    <div class="contact__curve" aria-hidden="true"><span></span></div>
-    <div class="container">
-      <div class="contact__bottom">
-        <div>
-          <p class="contact__label">Version</p>
-          <p><span data-year>2026</span> © Brayan Sorgho</p>
-        </div>
-        <div>
-          <p class="contact__label"><span lang="fr">Heure locale à Rabat</span><span lang="en">Local time in Rabat</span></p>
-          <p data-clock>GMT+1</p>
-        </div>
-        <div class="contact__socials">
-          <p class="contact__label"><span lang="fr">Réseaux</span><span lang="en">Socials</span></p>
-          <ul>
-            <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="cv.html">CV</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>

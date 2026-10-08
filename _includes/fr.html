@@ -1,0 +1,2 @@
+{%- comment -%}Typographie française : apostrophe courbe, espaces insécables, pas de tiret long.{%- endcomment -%}
+{{- include.t | replace: " & ", " &amp; " | replace: "'", "’" | replace: " :", " :" | replace: " ;", " ;" | replace: " ?", " ?" | replace: " !", " !" | replace: " %", " %" | replace: "« ", "« " | replace: " »", " »" | replace: " — ", ", " | replace: "—", "-" | replace: "–", "-" -}}

@@ -1,0 +1,33 @@
+# Configuration Jekyll, lue par GitHub Pages à chaque mise à jour du dépôt.
+# Le contenu à modifier se trouve dans _data/ (profil, parcours, distinctions,
+# compétences) et dans _projets/ (un fichier par projet). Voir le README.
+
+title: Brayan Sorgho
+url: https://sorghobrayan-dotcom.github.io
+baseurl: ""
+lang: fr
+timezone: Africa/Casablanca
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: false
+
+collections:
+  projets:
+    output: true
+    permalink: /:path.html
+
+defaults:
+  - scope: { path: "", type: projets }
+    values: { layout: projet, pied: papier }
+  - scope: { path: "" }
+    values: { layout: base }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .pages.yml

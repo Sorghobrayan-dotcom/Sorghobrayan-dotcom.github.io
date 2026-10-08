@@ -1,0 +1,67 @@
+# ---------------------------------------------------------------
+# Distinctions : prix, classements, sélections.
+# Le plus récent en haut. Champs utiles :
+#   prix        ce que tu as obtenu (« Premier prix », « Finaliste »…)
+#   evenement   le concours, en entier
+#   court       nom court du concours (CV et fiche projet), facultatif
+#   badge       version très courte du prix (fiche projet), facultatif
+#   projet      nom exact du fichier projet (WIIGA, YILGA, SG-KOOM…), facultatif :
+#               la distinction s'affiche alors aussi sur la page du projet
+#   afficher / cv : true ou false
+# ---------------------------------------------------------------
+
+- annee: 2026
+  prix_fr: Classé parmi les meilleurs projets
+  prix_en: Ranked among the top projects
+  badge_fr: Top du classement
+  badge_en: Top ranked
+  evenement_fr: MIABE Hackathon, compétition panafricaine
+  evenement_en: MIABE Hackathon, pan-African competition
+  court_fr: MIABE Hackathon panafricain
+  court_en: pan-African MIABE Hackathon
+  projet: WIIGA
+  afficher: true
+  cv: true
+
+- annee: 2025
+  prix_fr: Premier prix
+  prix_en: First prize
+  badge_fr: 1er prix
+  badge_en: 1st prize
+  evenement_fr: Concours INGENOVA 72H des CPGE
+  evenement_en: INGENOVA 72H competition for preparatory classes
+  court_fr: INGENOVA 72H des CPGE
+  court_en: INGENOVA 72H
+  projet: YILGA
+  afficher: true
+  cv: true
+
+- annee: 2025
+  prix_fr: Premier prix
+  prix_en: First prize
+  badge_fr: 1er prix
+  badge_en: 1st prize
+  evenement_fr: Parcours Entrepreneurs 2iE
+  evenement_en: 2iE Entrepreneurs Programme
+  projet: SG-KOOM
+  afficher: true
+  cv: true
+
+- annee: 2025
+  prix_fr: Prix spécial
+  prix_en: Special prize
+  evenement_fr: Camp d’idéation Incub UO, avec le centre d’excellence en IA CITADEL
+  evenement_en: Incub UO ideation camp, with the CITADEL AI centre of excellence
+  court_fr: Camp d’idéation Incub UO × CITADEL
+  court_en: Incub UO × CITADEL ideation camp
+  projet: YILGA
+  afficher: true
+  cv: true
+
+- annee: 2023
+  prix_fr: Lauréat
+  prix_en: Laureate
+  evenement_fr: Concours Eco Green
+  evenement_en: Eco Green competition
+  afficher: true
+  cv: true

@@ -1,0 +1,89 @@
+# ---------------------------------------------------------------
+# Profil : ce qui change quand tu changes de « phase »
+# (nouvelle école, stage, nouveau poste, recherche d'opportunité).
+# Chaque texte existe en français (_fr) et en anglais (_en).
+# ---------------------------------------------------------------
+
+nom: Brayan Sorgho
+nom_complet: Brayan Jovani Aboubacar Sorgho
+prenoms: Brayan Jovani Aboubacar   # écrit en grand dans l'intro
+nom_famille: SORGHO                # écrit en plus petit dans l'intro
+
+# Titre affiché partout : accueil, CV, menu, référencement.
+titre_fr: Étudiant ingénieur en Big Data et intelligence artificielle
+titre_en: Big Data & Artificial Intelligence engineering student
+# Version courte sur deux lignes, en haut de l'accueil.
+titre_court_fr: Étudiant ingénieur<br>Big Data & IA
+titre_court_en: Engineering student<br>Big Data & AI
+ecole_fr: Université Internationale de Rabat
+ecole_en: International University of Rabat
+
+ville_fr: Rabat, Maroc
+ville_en: Rabat, Morocco
+
+email: sorghobrayan60@gmail.com
+github: https://github.com/Sorghobrayan-dotcom
+linkedin: https://www.linkedin.com/in/brayan-sorgho-1134b5328
+
+# Pastille d'annonce sur l'accueil et le CV (recherche de stage, disponibilité…).
+# Mets « afficher: true » pour l'allumer, « false » pour l'éteindre.
+annonce:
+  afficher: false
+  fr: Je recherche un stage d’été en data ou en IA
+  en: Looking for a summer internship in data or AI
+
+# Phrase d'accroche de l'accueil (grand texte animé).
+accroche_fr: "Je transforme la donnée en décisions utiles. Des projets concrets, mesurés et pensés pour ceux qui les vivent : l’eau, l’énergie, l’agriculture."
+accroche_en: "I turn data into decisions that matter. Concrete, measured projects built for the people who live with them: water, energy, agriculture."
+
+# Courte présentation à côté de l'accroche.
+presentation_fr: Étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat, j’allie modélisation, code et sens du terrain pour résoudre des problèmes réels.
+presentation_en: A Big Data and Artificial Intelligence engineering student at the International University of Rabat, I combine modelling, code and field sense to solve real problems.
+
+# Page À propos : premier paragraphe en grand, puis les suivants.
+a_propos_fr:
+  - Étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat, je construis des solutions qui partent du terrain.
+  - Après deux années de classes préparatoires MPI (mathématiques, physique, informatique) à 2iE, à Ouagadougou, je suis entré le 7 septembre 2026 en première année du cycle ingénieur à l’UIR, ma troisième année d’études supérieures.
+  - "J’ai conçu et porté plusieurs projets qui mêlent ingénierie, IA et développement durable, récompensés à plusieurs reprises. J’aime donner du sens aux idées : transformer un problème complexe en une solution claire, mesurable et utile à ceux qui le vivent."
+a_propos_en:
+  - A Big Data and Artificial Intelligence engineering student at the International University of Rabat, I build solutions that start from real life.
+  - After two years of MPI preparatory classes (mathematics, physics, computer science) at 2iE in Ouagadougou, I started the engineering programme at UIR on 7 September 2026, my third year of higher education.
+  - "I have designed and led several award-winning projects that combine engineering, AI and sustainability. I like giving ideas a purpose: turning a complex problem into a clear, measurable solution that helps the people who live with it."
+
+# Résumé en tête du CV.
+cv_profil_fr: "Étudiant en première année du cycle ingénieur Big Data et IA à l’UIR, après deux années de classes préparatoires MPI. Je conçois des projets qui mettent la donnée et l’intelligence artificielle au service de besoins concrets : l’eau, l’énergie, l’agriculture."
+cv_profil_en: "First-year Big Data & AI engineering student at UIR, after two years of MPI preparatory classes. I build projects that put data and artificial intelligence to work on real needs: water, energy and agriculture."
+
+interets_fr: Big Data, intelligence artificielle, cybersécurité, innovation à impact, art et prise de parole en public.
+interets_en: Big Data, artificial intelligence, cybersecurity, impact-driven innovation, art and public speaking.
+
+# Les qualités de la page À propos.
+qualites:
+  - titre_fr: Rigueur
+    titre_en: Rigour
+    texte_fr: Chaque résultat est mesuré, testé et reproductible. Les limites sont écrites, pas cachées.
+    texte_en: Every result is measured, tested and reproducible. Limits are written down, not hidden.
+  - titre_fr: Impact
+    texte_fr: "L’eau, l’énergie, l’agriculture : je pars de problèmes réels, vécus au Burkina Faso."
+    texte_en: "Water, energy, agriculture: I start from real problems, lived in Burkina Faso."
+  - titre_fr: Leadership
+    texte_fr: Président d’un club d’art oratoire et chef de projet sur des projets primés.
+    texte_en: President of a public-speaking club and project lead on award-winning projects.
+  - titre_fr: Persévérance
+    titre_en: Persistence
+    texte_fr: Je m’investis sur le long terme, de la première idée au prototype qui fonctionne.
+    texte_en: I commit for the long run, from the first idea to a prototype that works.
+
+# Chiffres de l'accueil. « valeur: projets » et « valeur: distinctions »
+# se comptent tout seuls à partir de tes projets et distinctions affichés.
+chiffres:
+  - valeur: projets
+    texte_fr: projets imaginés et portés, de l’idée au prototype
+    texte_en: projects conceived and led, from idea to prototype
+  - valeur: distinctions
+    texte_fr: distinctions, dont deux premiers prix et un classement panafricain
+    texte_en: awards, including two first prizes and a pan-African ranking
+  - valeur: 67
+    suffixe: "%"
+    texte_fr: d’heures sans eau en moins pour le quartier le plus exposé, avec WIIGA
+    texte_en: fewer dry hours for the worst-served district, with WIIGA

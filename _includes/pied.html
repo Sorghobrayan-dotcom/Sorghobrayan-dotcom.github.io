@@ -1,0 +1,53 @@
+{%- comment -%}Pied de page. style : contact (par défaut), papier (après une section grise), minimal.{%- endcomment -%}
+{%- assign profil = site.data.profil %}
+{%- capture bas %}
+      <div class="contact__bottom">
+        <div>
+          <p class="contact__label">Version</p>
+          <p><span data-year>{{ site.time | date: "%Y" }}</span> © {{ profil.nom }}</p>
+        </div>
+        <div>
+          <p class="contact__label">{% include t.html fr="Heure locale à Rabat" en="Local time in Rabat" %}</p>
+          <p data-clock>GMT+1</p>
+        </div>
+        <div class="contact__socials">
+          <p class="contact__label">{% include t.html fr="Réseaux" en="Socials" %}</p>
+{% include reseaux.html cv=true %}
+        </div>
+      </div>
+{%- endcapture %}
+{%- if include.style == "minimal" %}
+
+  <footer class="contact contact--minimal" aria-label="Pied de page" data-en-aria-label="Footer">
+    <div class="contact__curve" aria-hidden="true"><span></span></div>
+    <div class="container">
+{{ bas }}
+    </div>
+  </footer>
+{%- else %}
+
+  <footer class="contact{% if include.style == 'papier' %} contact--after-paper{% endif %}" id="contact" aria-labelledby="titre-contact">
+    <div class="contact__curve" aria-hidden="true"><span></span></div>
+    <div class="container">
+      <div class="contact__head">
+        <img class="contact__avatar" src="{{ '/assets/img/portrait-square.jpg' | relative_url }}" width="350" height="350" loading="lazy" alt="">
+        <h2 class="contact__title" id="titre-contact">{% include t.html fr="Travaillons<br>ensemble" en="Let’s work<br>together" %}</h2>
+      </div>
+
+      <div class="contact__line">
+        <div class="contact__cta">
+          <a class="round-btn round-btn--light" href="{{ '/contact.html' | relative_url }}" data-magnetic>
+            <span class="round-btn__fill" aria-hidden="true"></span>
+            <span class="round-btn__label">{% include t.html fr="Me contacter" en="Get in touch" %}</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact__pills">
+        <a class="pill" href="mailto:{{ profil.email }}">{{ profil.email }}</a>
+        <a class="pill" href="{{ profil.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+{{ bas }}
+    </div>
+  </footer>
+{%- endif %}
