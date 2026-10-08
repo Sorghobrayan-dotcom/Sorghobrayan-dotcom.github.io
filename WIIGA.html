@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr" data-lang="fr" class="no-js" data-title-en="WIIGA — AI-driven water pumping under power cuts · Brayan Sorgho">
+<html lang="fr" data-lang="fr" class="no-js" data-title-en="WIIGA: AI-driven water pumping under power cuts | Brayan Sorgho">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WIIGA — Pompage d’eau piloté par IA sous délestage · Brayan Sorgho</title>
+  <title>WIIGA : pompage d’eau piloté par IA sous délestage | Brayan Sorgho</title>
   <meta name="description" content="WIIGA : un agent d’apprentissage par renforcement (PPO) qui pilote une station de pompage soumise aux délestages. Jumeau numérique, résultats mesurés sur 365 jours, code open source.">
   <meta name="author" content="Brayan Sorgho">
   <meta name="theme-color" content="#ffffff">
@@ -15,7 +15,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:site_name" content="Brayan Sorgho">
-  <meta property="og:title" content="WIIGA — l’eau là où elle est attendue, quand elle est attendue">
+  <meta property="og:title" content="WIIGA : l’eau là où elle est attendue, quand elle est attendue">
   <meta property="og:description" content="Un agent PPO qui pilote le pompage d’eau d’une ville soumise aux délestages électriques.">
   <meta property="og:url" content="https://sorghobrayan-dotcom.github.io/WIIGA.html">
   <meta property="og:image" content="https://sorghobrayan-dotcom.github.io/assets/img/og-image.jpg">
@@ -64,16 +64,16 @@
       </a>
       <nav class="header__nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
         <ul>
-          <li><a class="link-dot is-active" href="./#projets"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
-          <li><a class="link-dot" href="./#parcours"><span lang="fr">Parcours</span><span lang="en">Journey</span></a></li>
-          <li><a class="link-dot" href="#contact">Contact</a></li>
+          <li><a class="link-dot is-active" href="projets.html" aria-current="page"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
+          <li><a class="link-dot" href="a-propos.html"><span lang="fr">À propos</span><span lang="en">About</span></a></li>
+          <li><a class="link-dot" href="contact.html">Contact</a></li>
           <li><a class="link-dot" href="cv.html">CV</a></li>
         </ul>
       </nav>
       <div class="lang-switch header__lang" role="group" aria-label="Langue / Language">
-        <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
-        <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
-      </div>
+          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
     </div>
   </header>
 
@@ -88,9 +88,9 @@
       <p class="menu__label">Navigation</p>
       <ul class="menu__links">
         <li><a href="./"><span lang="fr">Accueil</span><span lang="en">Home</span></a></li>
-        <li><a href="./#projets"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
-        <li><a href="./#parcours"><span lang="fr">Parcours</span><span lang="en">Journey</span></a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="projets.html"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
+        <li><a href="a-propos.html"><span lang="fr">À propos</span><span lang="en">About</span></a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="cv.html">CV</a></li>
       </ul>
       <div class="menu__foot">
@@ -116,7 +116,7 @@
         <nav class="breadcrumb" aria-label="Fil d’Ariane" data-en-aria-label="Breadcrumb">
           <ol>
             <li><a href="./"><span lang="fr">Accueil</span><span lang="en">Home</span></a></li>
-            <li><a href="./#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
+            <li><a href="projets.html"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
             <li><span aria-current="page">WIIGA</span></li>
           </ol>
         </nav>
@@ -184,7 +184,7 @@
             quand elle est attendue, sur l’énergie la plus propre disponible à ce moment-là ?
           </p>
           <p class="lead" lang="en">
-            In most cities, the water pumps simply run — all of them, all day long. WIIGA asks a
+            In most cities, the water pumps simply run: all of them, all day long. WIIGA asks a
             different question: what if water were brought where it is needed, when it is needed, on
             the cleanest power available at that moment?
           </p>
@@ -207,13 +207,13 @@
           <h2 id="h-probleme"><span lang="fr">Le problème</span><span lang="en">The problem</span></h2>
           <p lang="fr">
             À Ouagadougou, le réseau électrique a été délesté en moyenne <strong>14 heures par jour</strong>
-            en avril 2024, et surtout le soir — précisément quand les ménages rentrent et ont besoin
+            en avril 2024, et surtout le soir, précisément quand les ménages rentrent et ont besoin
             d’eau. Sans électricité, les pompes s’arrêtent, les réservoirs se vident et les robinets
             sont à sec.
           </p>
           <p lang="en">
             In Ouagadougou, the power grid was shed for an average of <strong>14 hours a day</strong> in
-            April 2024, mostly in the evening — exactly when households come home and need water. No
+            April 2024, mostly in the evening, exactly when households come home and need water. No
             electricity means the pumps stop, the tanks empty and the taps run dry.
           </p>
           <p lang="fr">
@@ -317,12 +317,12 @@
                 <p lang="fr">
                   À 13 h, le solaire est gratuit ; à 19 h, il a disparu. Plutôt que d’acheter des
                   batteries, l’agent remplit les réservoirs à midi. Il ne stocke pas de l’électricité,
-                  il stocke du travail déjà fait — et le réservoir existe déjà.
+                  il stocke du travail déjà fait, et le réservoir existe déjà.
                 </p>
                 <p lang="en">
                   At 1 p.m. solar power is free; by 7 p.m. it is gone. Instead of buying batteries, the
                   agent fills the tanks at midday. It does not store electricity, it stores work already
-                  done — and the tank is already there.
+                  done, and the tank is already there.
                 </p>
               </div>
             </div>
@@ -332,12 +332,12 @@
                 <h3><span lang="fr">La récompense regarde le quartier le plus mal servi</span><span lang="en">The reward looks at the worst-served district</span></h3>
                 <p lang="fr">
                   <code>min</code>, pas <code>mean</code>. Avec une moyenne, assécher un quartier pour
-                  en garder deux pleins serait une excellente politique — et une politique
+                  en garder deux pleins serait une excellente politique, et une politique
                   inacceptable. Une ligne de code qui porte tout le projet.
                 </p>
                 <p lang="en">
                   <code>min</code>, not <code>mean</code>. With an average, draining one district to
-                  keep two full would score well — and be unacceptable. One line of code that carries
+                  keep two full would score well, and be unacceptable. One line of code that carries
                   the whole project.
                 </p>
               </div>
@@ -348,13 +348,13 @@
                 <h3><span lang="fr">L’agent peut parler à la ville</span><span lang="en">The agent can talk to the city</span></h3>
                 <p lang="fr">
                   Prévenir les habitants de remplir leurs bidons avant une coupure ne coûte pas de
-                  carburant, mais de la crédibilité : +0,04 pour une alerte juste, −0,15 pour une
-                  fausse. L’agent apprend à ne parler qu’à bon escient : 0,70 alerte par jour, juste
+                  carburant, mais de la crédibilité : une alerte juste rapporte 0,04 de confiance, une fausse
+                  en coûte 0,15. L’agent apprend à ne parler qu’à bon escient : 0,70 alerte par jour, juste
                   dans <strong>96 %</strong> des cas.
                 </p>
                 <p lang="en">
                   Telling residents to fill their jerrycans before a cut costs no fuel, but it costs
-                  credibility: +0.04 for a correct warning, −0.15 for a false one. The agent learns to
+                  credibility: a correct warning earns 0.04 of trust, a false one costs 0.15. The agent learns to
                   speak only when it matters: 0.70 warnings a day, right <strong>96%</strong> of the
                   time.
                 </p>
@@ -391,9 +391,9 @@
           </p>
 
           <ul class="kpis">
-            <li class="kpi"><strong>−67 %</strong><span lang="fr">d’heures sans eau pour le quartier le plus exposé, face à la règle manuelle</span><span lang="en">dry hours for the worst-served district, compared with the hand-written rulebook</span></li>
-            <li class="kpi"><strong>−72 %</strong><span lang="fr">de coût d’exploitation face à la pratique actuelle</span><span lang="en">operating cost compared with current practice</span></li>
-            <li class="kpi"><strong>−48 %</strong><span lang="fr">d’émissions de CO₂ face à la pratique actuelle</span><span lang="en">CO₂ emissions compared with current practice</span></li>
+            <li class="kpi"><strong>67 %</strong><span lang="fr">d’heures sans eau en moins pour le quartier le plus exposé, face à la règle manuelle</span><span lang="en">fewer dry hours for the worst-served district than the hand-written rulebook</span></li>
+            <li class="kpi"><strong>72 %</strong><span lang="fr">de coût d’exploitation en moins face à la pratique actuelle</span><span lang="en">lower operating cost than current practice</span></li>
+            <li class="kpi"><strong>48 %</strong><span lang="fr">d’émissions de CO₂ en moins face à la pratique actuelle</span><span lang="en">less CO₂ than current practice</span></li>
             <li class="kpi"><strong lang="fr">148 455</strong><strong lang="en">148,455</strong><span lang="fr">personnes-jours par an au-dessus du seuil OMS de 20 litres</span><span lang="en">person-days a year above the WHO threshold of 20 litres</span></li>
           </ul>
 
@@ -432,12 +432,12 @@
           <ul class="list">
             <li lang="fr"><strong>Variance :</strong> trois entraînements sur trois graines battent tous la règle manuelle, de 37 % à 72 %.</li>
             <li lang="en"><strong>Variance:</strong> three trainings on three seeds all beat the rulebook, by 37% to 72%.</li>
-            <li lang="fr"><strong>Méthode de référence :</strong> face à une commande prédictive (MPC) résolue par programmation linéaire, l’agent sert 82 % mieux — le MPC reste 48 % moins cher, et c’est écrit.</li>
-            <li lang="en"><strong>Reference method:</strong> against model predictive control (MPC) solved by linear programming, the agent serves 82% better — the MPC stays 48% cheaper, and that is stated.</li>
+            <li lang="fr"><strong>Méthode de référence :</strong> face à une commande prédictive (MPC) résolue par programmation linéaire, l’agent sert 82 % mieux ; le MPC reste 48 % moins cher, et c’est écrit.</li>
+            <li lang="en"><strong>Reference method:</strong> against model predictive control (MPC) solved by linear programming, the agent serves 82% better; the MPC stays 48% cheaper, and that is stated.</li>
             <li lang="fr"><strong>Demande imprévue :</strong> +30 % d’eau tirée sur un quartier sans prévenir l’agent, il garde 44 à 57 % d’avance.</li>
-            <li lang="en"><strong>Unexpected demand:</strong> with 30% more water drawn by one district and no warning to the agent, it keeps a 44–57% lead.</li>
-            <li lang="fr"><strong>Autres villes :</strong> sans réentraînement, il bat la règle à Chennai et Nairobi, et perd de peu à Sydney et Lima — son avantage suit la difficulté du terrain.</li>
-            <li lang="en"><strong>Other cities:</strong> without retraining, it beats the rulebook in Chennai and Nairobi and narrowly loses in Sydney and Lima — its edge tracks how hard the city is.</li>
+            <li lang="en"><strong>Unexpected demand:</strong> with 30% more water drawn by one district and no warning to the agent, it keeps a 44 to 57% lead.</li>
+            <li lang="fr"><strong>Autres villes :</strong> sans réentraînement, il bat la règle à Chennai et Nairobi, et perd de peu à Sydney et Lima : son avantage suit la difficulté du terrain.</li>
+            <li lang="en"><strong>Other cities:</strong> without retraining, it beats the rulebook in Chennai and Nairobi and narrowly loses in Sydney and Lima: its edge tracks how hard the city is.</li>
           </ul>
 
           <figure class="figure">
@@ -529,7 +529,7 @@
       <div class="container next-project__inner">
         <div>
           <p class="next-project__label"><span lang="fr">Projet suivant</span><span lang="en">Next project</span></p>
-          <p class="next-project__title"><strong><span lang="fr">YILGA — Agrotech et IA</span><span lang="en">YILGA — Agritech &amp; AI</span></strong></p>
+          <p class="next-project__title"><strong>YILGA</strong></p>
         </div>
         <a class="btn btn--primary" href="YILGA.html">
           <span lang="fr">Découvrir</span><span lang="en">Explore</span>
@@ -549,7 +549,7 @@
 
       <div class="contact__line">
         <div class="contact__cta">
-          <a class="round-btn round-btn--light" href="mailto:sorghobrayan60@gmail.com" data-magnetic>
+          <a class="round-btn round-btn--light" href="contact.html" data-magnetic>
             <span class="round-btn__fill" aria-hidden="true"></span>
             <span class="round-btn__label"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></span>
           </a>
