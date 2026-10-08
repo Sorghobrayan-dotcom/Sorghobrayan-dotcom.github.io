@@ -602,7 +602,14 @@ strong { color: var(--ink); font-weight: 600; }
   border-bottom: 1px solid var(--line);
 }
 
-.project-feature__media img { transition: transform .5s ease; }
+.project-feature__media img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: left top;
+  transition: transform .5s ease;
+}
 .project-feature:hover .project-feature__media img { transform: scale(1.015); }
 
 .project-feature__body {
@@ -644,15 +651,6 @@ strong { color: var(--ink); font-weight: 600; }
 @media (min-width: 960px) {
   .project-feature { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
   .project-feature__media { border-bottom: 0; border-right: 1px solid var(--line); }
-  /* Colonne étirée à la hauteur du texte : l'image la remplit, centrée sur la console. */
-  .project-feature__media.shot { aspect-ratio: auto; }
-  .project-feature__media.shot img {
-    position: static;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 25% top;
-  }
 }
 
 .project-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
@@ -888,28 +886,10 @@ strong { color: var(--ink); font-weight: 600; }
 }
 .cover img { width: 100%; }
 
-/* Captures de la démo WIIGA (1400 × 933) : on ne garde que la console, x 150 → 1250, en 16:10. */
-.shot {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-  background: #f6f2ea;
-}
-.shot img {
-  position: absolute;
-  top: 0;
-  left: -13.64%;
-  width: 127.28%;
-  max-width: none;
-  height: auto;
-  border: 0;
-  border-radius: 0;
-}
-.figure .shot { border: 1px solid var(--line); border-radius: var(--radius); }
 /* Logos : bandeau plus bas, image entière centrée sur sa couleur de fond. */
 .cover--logo img { aspect-ratio: 21 / 9; object-fit: contain; }
 .cover--yilga { background: #ece8dc; }
-.cover--sgkoom { background: #fcfcfc; }
+.cover--sgkoom { background: #fff; }
 
 .case {
   display: grid;
