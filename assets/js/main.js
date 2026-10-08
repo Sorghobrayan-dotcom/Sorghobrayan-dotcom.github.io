@@ -54,6 +54,22 @@
     });
   });
 
+  /* ---------- En-tête posé sur le bandeau d'accueil ---------- */
+
+  var header = document.querySelector(".site-header");
+  var hero = document.querySelector(".hero");
+
+  if (header && header.classList.contains("site-header--overlay")) {
+    if (hero && "IntersectionObserver" in window) {
+      // Transparent tant que le bandeau sombre est sous l'en-tête, blanc ensuite.
+      new IntersectionObserver(function (entries) {
+        header.classList.toggle("is-solid", !entries[0].isIntersecting);
+      }, { rootMargin: "-" + header.offsetHeight + "px 0px 0px 0px" }).observe(hero);
+    } else {
+      header.classList.add("is-solid");
+    }
+  }
+
   /* ---------- Menu mobile ---------- */
 
   var toggle = document.querySelector(".nav-toggle");
@@ -68,6 +84,7 @@
     var setOpen = function (open) {
       toggle.setAttribute("aria-expanded", String(open));
       nav.classList.toggle("is-open", open);
+      if (header) header.classList.toggle("is-menu-open", open);
       updateToggleLabel();
     };
 

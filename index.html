@@ -67,7 +67,7 @@
 <body>
   <a class="skip-link" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
 
-  <header class="site-header">
+  <header class="site-header site-header--overlay">
     <div class="container site-header__inner">
       <a class="brand" href="./" aria-label="Brayan Sorgho, retour à l’accueil" data-en-aria-label="Brayan Sorgho, back to home">
         <span class="brand__mark" aria-hidden="true">BS</span>
@@ -100,70 +100,57 @@
 
   <main id="contenu">
 
-    <!-- Ouverture -->
+    <!-- Ouverture : carte d'accueil en verre dépoli, à la manière d'un portail de connexion -->
     <section class="hero" id="accueil" aria-labelledby="titre-hero">
-      <div class="container hero__grid">
-        <div>
-          <p class="kicker"><span lang="fr">Étudiant ingénieur · Big Data et IA · UIR</span><span lang="en">Engineering student · Big Data &amp; AI · UIR</span></p>
-          <h1 class="hero__title" id="titre-hero">Brayan Sorgho<span class="hero__subtitle"><span lang="fr">Étudiant ingénieur en Big Data et intelligence artificielle.</span><span lang="en">Engineering student in Big Data &amp; Artificial Intelligence.</span></span></h1>
-          <p class="hero__lead" lang="fr">
-            Je conçois des projets qui mettent la donnée et l’intelligence artificielle au service de
-            besoins concrets — l’accès à l’eau, l’énergie, l’agriculture — de la modélisation jusqu’au
-            code, testé et documenté.
-          </p>
-          <p class="hero__lead" lang="en">
-            I build projects that put data and artificial intelligence to work on real needs — access
-            to water, energy, agriculture — from modelling all the way to tested, documented code.
+      <div class="hero__inner">
+        <img class="hero__portrait" src="assets/img/portrait.jpg" width="350" height="450"
+             alt="Portrait de Brayan Sorgho" data-en-alt="Portrait of Brayan Sorgho">
+
+        <div class="welcome-card">
+          <p class="welcome-card__hello"><span lang="fr">Bienvenue</span><span lang="en">Welcome</span></p>
+          <h1 class="welcome-card__name" id="titre-hero">Brayan Sorgho</h1>
+          <p class="welcome-card__role"><span lang="fr">Étudiant ingénieur en Big Data et intelligence artificielle</span><span lang="en">Engineering student in Big Data &amp; Artificial Intelligence</span></p>
+          <p class="welcome-card__meta">
+            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#graduation"></use></svg>
+            <span lang="fr">Université Internationale de Rabat, Maroc</span><span lang="en">International University of Rabat, Morocco</span>
           </p>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#projets">
-              <span lang="fr">Voir mes projets</span><span lang="en">See my projects</span>
-              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+          <div class="welcome-card__actions">
+            <a class="portal-btn portal-btn--solid" href="#projets">
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#grid"></use></svg>
+              <span class="portal-btn__label"><span lang="fr">Découvrir mes projets</span><span lang="en">Explore my projects</span></span>
+              <svg class="icon portal-btn__chevron" aria-hidden="true"><use href="assets/img/icons.svg#chevron-right"></use></svg>
             </a>
-            <a class="btn btn--secondary" href="cv.html">
+            <a class="portal-btn" href="cv.html">
               <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#file"></use></svg>
-              <span lang="fr">Consulter mon CV</span><span lang="en">View my CV</span>
+              <span class="portal-btn__label"><span lang="fr">Consulter mon CV</span><span lang="en">View my CV</span></span>
+              <svg class="icon portal-btn__chevron" aria-hidden="true"><use href="assets/img/icons.svg#chevron-right"></use></svg>
             </a>
           </div>
-
-          <ul class="hero__meta">
-            <li>
-              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#map-pin"></use></svg>
-              <span lang="fr">Rabat, Maroc</span><span lang="en">Rabat, Morocco</span>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#graduation"></use></svg>
-              <span lang="fr">Université Internationale de Rabat</span><span lang="en">International University of Rabat</span>
-            </li>
-          </ul>
         </div>
 
-        <div class="profile-card">
-          <img class="profile-card__photo" src="assets/img/portrait.jpg" width="350" height="450"
-               alt="Portrait de Brayan Sorgho" data-en-alt="Portrait of Brayan Sorgho">
-          <p class="profile-card__name">Brayan Sorgho</p>
-          <p class="profile-card__role"><span lang="fr">Cycle ingénieur Big Data et IA · UIR</span><span lang="en">Big Data &amp; AI engineering · UIR</span></p>
-
-          <ul class="profile-card__facts">
-            <li class="fact"><strong>3</strong><span lang="fr">projets portés</span><span lang="en">projects led</span></li>
-            <li class="fact"><strong>4</strong><span lang="fr">distinctions</span><span lang="en">awards</span></li>
-            <li class="fact"><strong>2</strong><span lang="fr">premiers prix</span><span lang="en">first prizes</span></li>
-          </ul>
-
-          <div class="profile-card__links">
-            <a class="icon-btn" href="mailto:sorghobrayan60@gmail.com" aria-label="Envoyer un e-mail" data-en-aria-label="Send an email">
+        <ul class="hero__social">
+          <li>
+            <a class="glass-btn" href="mailto:sorghobrayan60@gmail.com" aria-label="Envoyer un e-mail" data-en-aria-label="Send an email">
               <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#mail"></use></svg>
             </a>
-            <a class="icon-btn" href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener" aria-label="GitHub (nouvel onglet)" data-en-aria-label="GitHub (new tab)">
+          </li>
+          <li>
+            <a class="glass-btn" href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener" aria-label="GitHub (nouvel onglet)" data-en-aria-label="GitHub (new tab)">
               <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#github"></use></svg>
             </a>
-            <a class="icon-btn" href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener" aria-label="LinkedIn (nouvel onglet)" data-en-aria-label="LinkedIn (new tab)">
+          </li>
+          <li>
+            <a class="glass-btn" href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener" aria-label="LinkedIn (nouvel onglet)" data-en-aria-label="LinkedIn (new tab)">
               <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#linkedin"></use></svg>
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
+
+      <a class="hero__scroll" href="#profil" aria-label="Défiler vers le profil" data-en-aria-label="Scroll to profile">
+        <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#chevron-down"></use></svg>
+      </a>
     </section>
 
     <!-- Profil -->

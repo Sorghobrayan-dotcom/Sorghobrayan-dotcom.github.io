@@ -20,7 +20,7 @@ En ligne sur **https://sorghobrayan-dotcom.github.io/**
 assets/
   css/style.css   styles communs (variables, composants, mise en page)
   css/cv.css      mise en page A4 du CV, écran et impression
-  js/main.js      menu mobile, lien actif, apparition au défilement, impression
+  js/main.js      langue, menu mobile, en-tête de l’accueil, lien actif, apparition au défilement, impression
   img/            icônes (sprite SVG) et favicon
 ```
 
