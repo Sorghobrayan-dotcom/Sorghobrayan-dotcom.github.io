@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sorghobrayan-dotcom.github.io/sitemap.xml

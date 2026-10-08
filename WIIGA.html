@@ -1,60 +1,519 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr" class="no-js" data-title-en="WIIGA — AI-driven water pumping under power cuts · Brayan Sorgho">
 <head>
-  <meta charset="UTF-8">
-  <title>WIIGA — Water Intelligent Integrated Grid Application</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WIIGA — Pompage d’eau piloté par IA sous délestage · Brayan Sorgho</title>
+  <meta name="description" content="WIIGA : un agent d’apprentissage par renforcement (PPO) qui pilote une station de pompage soumise aux délestages. Jumeau numérique, résultats mesurés sur 365 jours, code open source.">
+  <meta name="author" content="Brayan Sorgho">
+  <meta name="theme-color" content="#0b2545">
+  <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/WIIGA.html">
+  <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/WIIGA.html">
+  <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/WIIGA.html?lang=en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Brayan Sorgho">
+  <meta property="og:title" content="WIIGA — l’eau là où elle est attendue, quand elle est attendue">
+  <meta property="og:description" content="Un agent PPO qui pilote le pompage d’eau d’une ville soumise aux délestages électriques.">
+  <meta property="og:url" content="https://sorghobrayan-dotcom.github.io/WIIGA.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Sorghobrayan-dotcom/WIIGA/main/captures/03-console-13h-solaire.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    // Langue choisie avant le premier affichage : aucun clignotement.
+    (function (d) {
+      var r = d.documentElement, l;
+      r.classList.replace("no-js", "js");
+      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
+      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
+      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
+    })(document);
+  </script>
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
 
-<header>
-  <div>
-    <img src="WIIGA.jpeg" alt="Photo professionnelle" width="120">
-    <h1>SORGHO Brayan — WIIGA</h1>
-    <p>Projet Deep Learning pour l’optimisation des réseaux d’eau</p>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./" aria-label="Brayan Sorgho, retour à l’accueil" data-en-aria-label="Brayan Sorgho, back to home">
+        <span class="brand__mark" aria-hidden="true">BS</span>
+        <span class="brand__name">Brayan Sorgho</span>
+      </a>
 
-<section id="project-hero">
-  <h2>WIIGA</h2>
-  <img src="assets/project3.jpg" alt="WIIGA" width="600">
-  <p><strong>Résumé :</strong> WIIGA (Water Intelligent Integrated Grid Application) est un projet développé durant ma deuxième année de prépa lors d’un ideathon en Deep Learning. Il permet d’optimiser la consommation énergétique et hydraulique des réseaux d’eau grâce à l’intelligence artificielle et aux données en temps réel.</p>
-</section>
+      <nav class="nav" id="nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="./#profil"><span lang="fr">Profil</span><span lang="en">Profile</span></a></li>
+          <li><a class="nav__link is-active" href="./#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
+          <li><a class="nav__link" href="./#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a></li>
+          <li><a class="nav__link" href="./#distinctions"><span lang="fr">Distinctions</span><span lang="en">Awards</span></a></li>
+          <li><a class="nav__link" href="./#contact">Contact</a></li>
+          <li class="nav__cta"><a class="btn btn--primary btn--sm" href="cv.html"><span lang="fr">Mon CV</span><span lang="en">My CV</span></a></li>
+        </ul>
+      </nav>
 
-<section id="project-problem">
-  <h2>Problème</h2>
-  <p>Les réseaux d’eau souffrent de pertes importantes, de surconsommation énergétique et d’inefficacité dans la distribution, causant des coûts élevés et une gestion peu durable des ressources.</p>
-</section>
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Langue / Language">
+          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+          <svg class="icon icon-open" aria-hidden="true"><use href="assets/img/icons.svg#menu"></use></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="assets/img/icons.svg#x"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<section id="project-solution">
-  <h2>Solution</h2>
-  <p>WIIGA utilise des algorithmes de Deep Learning pour prédire la demande en eau et ajuster automatiquement la distribution et la consommation énergétique. Le système analyse les données en temps réel et fournit des recommandations pour réduire les pertes et optimiser la performance du réseau.</p>
-</section>
+  <main id="contenu">
+    <section class="page-hero" id="haut" aria-labelledby="titre-projet">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d’Ariane" data-en-aria-label="Breadcrumb">
+          <ol>
+            <li><a href="./"><span lang="fr">Accueil</span><span lang="en">Home</span></a></li>
+            <li><a href="./#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
+            <li><span aria-current="page">WIIGA</span></li>
+          </ol>
+        </nav>
 
-<section id="project-role">
-  <h2>Mon rôle</h2>
-  <p>Conception  et développement de l'idée, collecte et traitement des données du réseau, création d’une interface de visualisation et d’alertes pour les opérateurs.</p>
-</section>
+        <div class="page-hero__head">
+          <p class="kicker"><span lang="fr">IA · Eau · Énergie</span><span lang="en">AI · Water · Energy</span></p>
+          <h1 class="page-hero__title" id="titre-projet">WIIGA</h1>
+          <p class="page-hero__lead" lang="fr">
+            Amener l’eau là où elle est attendue, quand elle est attendue, sur l’énergie la plus propre
+            disponible : un agent d’apprentissage par renforcement qui pilote une station de pompage
+            soumise aux délestages électriques.
+          </p>
+          <p class="page-hero__lead" lang="en">
+            Bringing water where it is needed, when it is needed, on the cleanest power available: a
+            reinforcement-learning agent that runs a pumping station through scheduled power cuts.
+          </p>
 
-<section id="project-tech">
-  <h2>Technologies utilisées</h2>
-  <ul>
-    <li>Python & bibliothèques Deep Learning (TensorFlow, PyTorch)</li>
-    <li>Analyse en temps réel des données IoT</li>
-    <li>Interface web pour supervision</li>
-    <li>Optimisation des flux et consommation énergétique</li>
-  </ul>
-</section>
+          <div class="page-hero__actions">
+            <a class="btn btn--primary" href="https://sorghobrayan-dotcom.github.io/WIIGA/" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#play"></use></svg>
+              <span lang="fr">Essayer la démo</span><span lang="en">Try the demo</span>
+            </a>
+            <a class="btn btn--secondary" href="https://github.com/Sorghobrayan-dotcom/WIIGA" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#github"></use></svg>
+              <span lang="fr">Code source</span><span lang="en">Source code</span>
+            </a>
+          </div>
+        </div>
 
-<section id="project-impact">
-  <h2>Impact</h2>
-  <p>Le projet a permis d’identifier et réduire les pertes d’eau et la consommation d’énergie sur un réseau pilote. WIIGA a été présenté lors de l’ideathon et a été reconnu pour son approche innovante en Deep Learning appliqué aux infrastructures hydrauliques.</p>
-</section>
+        <dl class="meta-grid">
+          <div><dt><span lang="fr">Rôle</span><span lang="en">Role</span></dt><dd><span lang="fr">Concepteur et développeur</span><span lang="en">Designer and developer</span></dd></div>
+          <div><dt><span lang="fr">Origine</span><span lang="en">Origin</span></dt><dd><span lang="fr">Ideathon Deep Learning, en prépa</span><span lang="en">Deep Learning ideathon, during prep school</span></dd></div>
+          <div><dt><span lang="fr">Technologies</span><span lang="en">Stack</span></dt><dd>Python · PPO · Gymnasium</dd></div>
+          <div><dt><span lang="fr">Licence</span><span lang="en">Licence</span></dt><dd>Open source (MIT)</dd></div>
+        </dl>
 
-<footer>
-  <a href="index.html">← Retour à l'accueil</a>
-</footer>
+        <figure class="cover shot">
+          <img src="https://raw.githubusercontent.com/Sorghobrayan-dotcom/WIIGA/main/captures/03-console-13h-solaire.png" width="1400" height="933" decoding="async"
+               alt="Console de la démo WIIGA à 13 h : les trois réservoirs se remplissent, les trois pompes tournent à 100 % sur le solaire."
+               data-en-alt="WIIGA demo console at 1 p.m.: the three tanks are filling, all three pumps run at 100% on solar power.">
+        </figure>
+      </div>
+    </section>
 
+    <div class="container case">
+      <nav class="toc" aria-label="Sommaire" data-en-aria-label="Contents" data-spy>
+        <p class="toc__title"><span lang="fr">Sommaire</span><span lang="en">Contents</span></p>
+        <a href="#en-bref"><span lang="fr">En bref</span><span lang="en">Overview</span></a>
+        <a href="#probleme"><span lang="fr">Le problème</span><span lang="en">The problem</span></a>
+        <a href="#solution"><span lang="fr">La solution</span><span lang="en">The solution</span></a>
+        <a href="#idees"><span lang="fr">Ce qui le distingue</span><span lang="en">What sets it apart</span></a>
+        <a href="#resultats"><span lang="fr">Résultats</span><span lang="en">Results</span></a>
+        <a href="#limites"><span lang="fr">Limites assumées</span><span lang="en">Stated limits</span></a>
+        <a href="#role"><span lang="fr">Mon rôle</span><span lang="en">My role</span></a>
+        <a href="#technique"><span lang="fr">Stack technique</span><span lang="en">Tech stack</span></a>
+        <a href="#reproduire"><span lang="fr">Reproduire</span><span lang="en">Reproduce</span></a>
+      </nav>
+
+      <div class="prose">
+        <section id="en-bref" aria-labelledby="h-en-bref">
+          <h2 id="h-en-bref"><span lang="fr">En bref</span><span lang="en">Overview</span></h2>
+          <p class="lead" lang="fr">
+            Dans la plupart des villes, les pompes à eau tournent, tout simplement : toutes, toute la
+            journée. WIIGA pose une autre question : et si l’on amenait l’eau là où elle est attendue,
+            quand elle est attendue, sur l’énergie la plus propre disponible à ce moment-là ?
+          </p>
+          <p class="lead" lang="en">
+            In most cities, the water pumps simply run — all of them, all day long. WIIGA asks a
+            different question: what if water were brought where it is needed, when it is needed, on
+            the cleanest power available at that moment?
+          </p>
+          <p lang="fr">
+            Le projet construit le jumeau numérique d’une station d’eau, puis décide chaque heure, pour
+            chaque quartier, quelle pompe tourne, à quelle puissance, pour remplir quel réservoir et sur
+            quelle source d’énergie : le solaire dès qu’il suffit, le réseau ensuite, le groupe diesel en
+            dernier recours.
+          </p>
+          <p lang="en">
+            The project builds a digital twin of a water station, then decides every hour, for every
+            district, which pump runs, at what power, filling which tank and on which energy source:
+            solar whenever it is enough, the grid next, the diesel generator as a last resort.
+          </p>
+          <p class="callout" lang="fr"><em>Wiiga</em> signifie « le puits » en mooré, la langue parlée à Ouagadougou.</p>
+          <p class="callout" lang="en"><em>Wiiga</em> means “the well” in Mooré, the language spoken in Ouagadougou.</p>
+        </section>
+
+        <section id="probleme" aria-labelledby="h-probleme">
+          <h2 id="h-probleme"><span lang="fr">Le problème</span><span lang="en">The problem</span></h2>
+          <p lang="fr">
+            À Ouagadougou, le réseau électrique a été délesté en moyenne <strong>14 heures par jour</strong>
+            en avril 2024, et surtout le soir — précisément quand les ménages rentrent et ont besoin
+            d’eau. Sans électricité, les pompes s’arrêtent, les réservoirs se vident et les robinets
+            sont à sec.
+          </p>
+          <p lang="en">
+            In Ouagadougou, the power grid was shed for an average of <strong>14 hours a day</strong> in
+            April 2024, mostly in the evening — exactly when households come home and need water. No
+            electricity means the pumps stop, the tanks empty and the taps run dry.
+          </p>
+          <p lang="fr">
+            La station applique un réglage fixe écrit il y a des années : pleine puissance la nuit, à
+            l’arrêt le jour. En simulation, ce réglage prive d’eau le quartier le plus mal servi
+            1,29 heure par jour, brûle 77 litres de gazole et reste la politique la plus coûteuse
+            mesurée.
+          </p>
+          <p lang="en">
+            The station runs a fixed setting written years ago: full power at night, idle by day. In
+            simulation, that setting leaves the worst-served district without water 1.29 hours a day,
+            burns 77 litres of diesel and is the most expensive policy measured.
+          </p>
+          <p lang="fr">
+            La décision est réellement difficile. Pour savoir s’il faut pomper <em>maintenant</em>,
+            l’opérateur doit tenir ensemble quatre horizons qui n’arrivent pas au même moment : le pic
+            de demande six heures plus tard, la course du soleil, le risque de coupure du soir et le
+            gazole restant. Personne ne fait cela bien à la main, vingt-quatre fois par jour.
+          </p>
+          <p lang="en">
+            The decision is genuinely hard. To know whether to pump <em>now</em>, the operator has to
+            weigh four horizons that never line up: the demand peak six hours ahead, the path of the
+            sun, the risk of an evening cut and the diesel left. Nobody does that well by hand,
+            twenty-four times a day.
+          </p>
+        </section>
+
+        <section id="solution" aria-labelledby="h-solution">
+          <h2 id="h-solution"><span lang="fr">La solution</span><span lang="en">The solution</span></h2>
+          <p lang="fr">
+            Un jumeau numérique d’une station desservant <strong>22 000 habitants</strong> : trois
+            quartiers, trois pompes, trois réservoirs, trois sources d’énergie, un réseau qui tombe en
+            panne et une demande qui suit la chaleur et le calendrier, calibré sur trois années de
+            relevés climatiques de Ouagadougou. Un agent <strong>PPO</strong> (Proximal Policy
+            Optimization) pilote ce jumeau, heure par heure.
+          </p>
+          <p lang="en">
+            A digital twin of a station serving <strong>22,000 people</strong>: three districts, three
+            pumps, three tanks, three energy sources, a grid that fails and a demand that follows heat
+            and the calendar, calibrated on three years of climate records for Ouagadougou. A
+            <strong>PPO</strong> (Proximal Policy Optimization) agent runs this twin, hour by hour.
+          </p>
+
+          <div class="flow" role="group" aria-label="Schéma de fonctionnement de WIIGA" data-en-aria-label="How WIIGA works">
+            <div class="flow__obs">
+              <p class="flow__label"><span lang="fr">Chaque heure, l’agent lit</span><span lang="en">Every hour, the agent reads</span></p>
+              <ul>
+                <li><span lang="fr">Niveau des 3 réservoirs</span><span lang="en">Level of the 3 tanks</span></li>
+                <li><span lang="fr">Demande à +6 h</span><span lang="en">Demand 6 h ahead</span></li>
+                <li><span lang="fr">Risque de coupure à +4 h</span><span lang="en">Outage risk 4 h ahead</span></li>
+                <li><span lang="fr">Gazole restant</span><span lang="en">Diesel left</span></li>
+                <li><span lang="fr">Confiance de la ville</span><span lang="en">The city’s trust</span></li>
+              </ul>
+            </div>
+            <div class="flow__down" aria-hidden="true"></div>
+            <div class="flow__row">
+              <div class="flow__col">
+                <p class="flow__label"><span lang="fr">Énergie</span><span lang="en">Energy</span></p>
+                <div class="node"><strong><span lang="fr">Solaire</span><span lang="en">Solar</span></strong><span lang="fr">gratuit, de 7 h à 17 h</span><span lang="en">free, 7 a.m. to 5 p.m.</span></div>
+                <div class="node"><strong><span lang="fr">Réseau</span><span lang="en">Grid</span></strong><span lang="fr">coupé 8,6 h/jour en saison chaude</span><span lang="en">down 8.6 h/day in the hot season</span></div>
+                <div class="node"><strong>Diesel</strong><span lang="fr">320 kWh/jour au plus</span><span lang="en">320 kWh/day at most</span></div>
+              </div>
+              <div class="flow__arrow" aria-hidden="true"></div>
+              <div class="flow__col">
+                <p class="flow__label"><span lang="fr">Pompes</span><span lang="en">Pumps</span></p>
+                <div class="node"><strong><span lang="fr">Pompe 1</span><span lang="en">Pump 1</span></strong><span lang="fr">de 0 à 100 %</span><span lang="en">0 to 100%</span></div>
+                <div class="node"><strong><span lang="fr">Pompe 2</span><span lang="en">Pump 2</span></strong><span lang="fr">de 0 à 100 %</span><span lang="en">0 to 100%</span></div>
+                <div class="node"><strong><span lang="fr">Pompe 3</span><span lang="en">Pump 3</span></strong><span lang="fr">de 0 à 100 %</span><span lang="en">0 to 100%</span></div>
+              </div>
+              <div class="flow__arrow" aria-hidden="true"></div>
+              <div class="flow__col">
+                <p class="flow__label"><span lang="fr">Réservoirs</span><span lang="en">Tanks</span></p>
+                <div class="node node--tank"><strong>120 m³</strong><span lang="fr">rempli au soleil</span><span lang="en">filled on sunshine</span></div>
+                <div class="node node--tank"><strong>240 m³</strong><span lang="fr">rempli au soleil</span><span lang="en">filled on sunshine</span></div>
+                <div class="node node--tank"><strong>80 m³</strong><span lang="fr">rempli au soleil</span><span lang="en">filled on sunshine</span></div>
+              </div>
+              <div class="flow__arrow" aria-hidden="true"></div>
+              <div class="flow__col">
+                <p class="flow__label"><span lang="fr">Quartiers</span><span lang="en">Districts</span></p>
+                <div class="node"><strong><span lang="fr">Marché</span><span lang="en">Market</span></strong><span lang="fr">6 000 hab. · pic à 6 h</span><span lang="en">6,000 people · peak 6 a.m.</span></div>
+                <div class="node"><strong><span lang="fr">Résidentiel</span><span lang="en">Residential</span></strong><span lang="fr">12 000 hab. · pic à 19 h</span><span lang="en">12,000 people · peak 7 p.m.</span></div>
+                <div class="node"><strong><span lang="fr">École + clinique</span><span lang="en">School + clinic</span></strong><span lang="fr">4 000 hab. · pic à 13 h</span><span lang="en">4,000 people · peak 1 p.m.</span></div>
+              </div>
+            </div>
+            <div class="flow__actions">
+              <div class="node node--action"><strong><span lang="fr">« Remplissez vos bidons »</span><span lang="en">“Fill your jerrycans”</span></strong><span lang="fr">Une action qui ne touche aucune pompe : prévenir la ville avant une coupure.</span><span lang="en">An action that touches no pump: warning the city before a cut.</span></div>
+              <div class="node node--action"><strong><span lang="fr">« Pas cette heure-ci »</span><span lang="en">“Not this hour”</span></strong><span lang="fr">Rendre la main au réglage de l’opérateur quand l’agent n’a rien à apporter.</span><span lang="en">Handing control back to the operator’s setting when the agent has nothing to add.</span></div>
+            </div>
+            <p class="flow__note" lang="fr">La récompense lit le quartier le plus mal servi, jamais la moyenne.</p>
+            <p class="flow__note" lang="en">The reward reads the worst-served district, never the average.</p>
+          </div>
+        </section>
+
+        <section id="idees" aria-labelledby="h-idees">
+          <h2 id="h-idees"><span lang="fr">Ce qui le distingue</span><span lang="en">What sets it apart</span></h2>
+          <div class="ideas">
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">1</span>
+              <div>
+                <h3><span lang="fr">Le réservoir est la batterie</span><span lang="en">The tank is the battery</span></h3>
+                <p lang="fr">
+                  À 13 h, le solaire est gratuit ; à 19 h, il a disparu. Plutôt que d’acheter des
+                  batteries, l’agent remplit les réservoirs à midi. Il ne stocke pas de l’électricité,
+                  il stocke du travail déjà fait — et le réservoir existe déjà.
+                </p>
+                <p lang="en">
+                  At 1 p.m. solar power is free; by 7 p.m. it is gone. Instead of buying batteries, the
+                  agent fills the tanks at midday. It does not store electricity, it stores work already
+                  done — and the tank is already there.
+                </p>
+              </div>
+            </div>
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">2</span>
+              <div>
+                <h3><span lang="fr">La récompense regarde le quartier le plus mal servi</span><span lang="en">The reward looks at the worst-served district</span></h3>
+                <p lang="fr">
+                  <code>min</code>, pas <code>mean</code>. Avec une moyenne, assécher un quartier pour
+                  en garder deux pleins serait une excellente politique — et une politique
+                  inacceptable. Une ligne de code qui porte tout le projet.
+                </p>
+                <p lang="en">
+                  <code>min</code>, not <code>mean</code>. With an average, draining one district to
+                  keep two full would score well — and be unacceptable. One line of code that carries
+                  the whole project.
+                </p>
+              </div>
+            </div>
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">3</span>
+              <div>
+                <h3><span lang="fr">L’agent peut parler à la ville</span><span lang="en">The agent can talk to the city</span></h3>
+                <p lang="fr">
+                  Prévenir les habitants de remplir leurs bidons avant une coupure ne coûte pas de
+                  carburant, mais de la crédibilité : +0,04 pour une alerte juste, −0,15 pour une
+                  fausse. L’agent apprend à ne parler qu’à bon escient : 0,70 alerte par jour, juste
+                  dans <strong>96 %</strong> des cas.
+                </p>
+                <p lang="en">
+                  Telling residents to fill their jerrycans before a cut costs no fuel, but it costs
+                  credibility: +0.04 for a correct warning, −0.15 for a false one. The agent learns to
+                  speak only when it matters: 0.70 warnings a day, right <strong>96%</strong> of the
+                  time.
+                </p>
+              </div>
+            </div>
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">4</span>
+              <div>
+                <h3><span lang="fr">Il sait rendre la main</span><span lang="en">It knows when to step aside</span></h3>
+                <p lang="fr">
+                  À 3 h du matin, il n’y a rien à arbitrer : l’agent rend la station au réglage de
+                  l’opérateur, en payant une pénalité, puis reprend la main à 8 h quand le soleil se
+                  lève. Un logiciel qui sait dire quand il n’a rien à apporter.
+                </p>
+                <p lang="en">
+                  At 3 a.m. there is nothing to trade off: the agent hands the station back to the
+                  operator’s setting, paying a penalty, and takes over again at 8 a.m. when the sun
+                  rises. Software that can say when it has nothing to add.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="resultats" aria-labelledby="h-resultats">
+          <h2 id="h-resultats"><span lang="fr">Résultats</span><span lang="en">Results</span></h2>
+          <p lang="fr">
+            365 jours simulés, un par jour de l’année, avec les mêmes graines aléatoires pour chaque
+            politique. Chaque chiffre est régénéré par une commande du dépôt.
+          </p>
+          <p lang="en">
+            365 simulated days, one for each day of the year, with the same random seeds for every
+            policy. Every figure is regenerated by a command in the repository.
+          </p>
+
+          <ul class="kpis">
+            <li class="kpi"><strong>−67 %</strong><span lang="fr">d’heures sans eau pour le quartier le plus exposé, face à la règle manuelle</span><span lang="en">dry hours for the worst-served district, compared with the hand-written rulebook</span></li>
+            <li class="kpi"><strong>−72 %</strong><span lang="fr">de coût d’exploitation face à la pratique actuelle</span><span lang="en">operating cost compared with current practice</span></li>
+            <li class="kpi"><strong>−48 %</strong><span lang="fr">d’émissions de CO₂ face à la pratique actuelle</span><span lang="en">CO₂ emissions compared with current practice</span></li>
+            <li class="kpi"><strong lang="fr">148 455</strong><strong lang="en">148,455</strong><span lang="fr">personnes-jours par an au-dessus du seuil OMS de 20 litres</span><span lang="en">person-days a year above the WHO threshold of 20 litres</span></li>
+          </ul>
+
+          <section class="table-wrap" aria-label="Comparaison des politiques de pompage" data-en-aria-label="Comparison of pumping policies" tabindex="0">
+            <table>
+              <caption class="visually-hidden"><span lang="fr">Comparaison des politiques de pompage sur 365 jours simulés</span><span lang="en">Pumping policies compared over 365 simulated days</span></caption>
+              <thead>
+                <tr>
+                  <th scope="col"><span lang="fr">Politique</span><span lang="en">Policy</span></th>
+                  <th scope="col" class="num"><span lang="fr">Heures sans eau / jour</span><span lang="en">Dry hours / day</span></th>
+                  <th scope="col" class="num"><span lang="fr">Coût / jour (FCFA)</span><span lang="en">Cost / day (FCFA)</span></th>
+                  <th scope="col" class="num"><span lang="fr">Gazole (L/jour)</span><span lang="en">Diesel (L/day)</span></th>
+                  <th scope="col" class="num"><span lang="fr">CO₂ (kg/jour)</span><span lang="en">CO₂ (kg/day)</span></th>
+                </tr>
+              </thead>
+              <tbody lang="fr">
+                <tr><th scope="row">Pratique actuelle</th><td class="num">2,48</td><td class="num">961 761</td><td class="num">77,0</td><td class="num">206,4</td></tr>
+                <tr><th scope="row">Source la moins chère</th><td class="num">0,40</td><td class="num">324 656</td><td class="num">61,2</td><td class="num">164,0</td></tr>
+                <tr><th scope="row">Règle manuelle</th><td class="num">0,33</td><td class="num">321 557</td><td class="num">62,8</td><td class="num">168,3</td></tr>
+                <tr class="is-highlight"><th scope="row">Agent WIIGA</th><td class="num">0,16</td><td class="num">268 745</td><td class="num">39,9</td><td class="num">106,8</td></tr>
+                <tr><th scope="row">WIIGA sans alertes</th><td class="num">0,23</td><td class="num">290 705</td><td class="num">47,4</td><td class="num">127,1</td></tr>
+              </tbody>
+              <tbody lang="en">
+                <tr><th scope="row">Current practice</th><td class="num">2.48</td><td class="num">961,761</td><td class="num">77.0</td><td class="num">206.4</td></tr>
+                <tr><th scope="row">Cheapest source</th><td class="num">0.40</td><td class="num">324,656</td><td class="num">61.2</td><td class="num">164.0</td></tr>
+                <tr><th scope="row">Hand-written rulebook</th><td class="num">0.33</td><td class="num">321,557</td><td class="num">62.8</td><td class="num">168.3</td></tr>
+                <tr class="is-highlight"><th scope="row">WIIGA agent</th><td class="num">0.16</td><td class="num">268,745</td><td class="num">39.9</td><td class="num">106.8</td></tr>
+                <tr><th scope="row">WIIGA without warnings</th><td class="num">0.23</td><td class="num">290,705</td><td class="num">47.4</td><td class="num">127.1</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <p class="table-note" lang="fr">Heures sans eau : somme sur les trois quartiers. Source : <code>resultats/comparaison.json</code>.</p>
+          <p class="table-note" lang="en">Dry hours: summed over the three districts. Source: <code>resultats/comparaison.json</code>.</p>
+
+          <h3><span lang="fr">Un résultat qui tient face aux objections</span><span lang="en">A result that survives the objections</span></h3>
+          <ul class="list">
+            <li lang="fr"><strong>Variance :</strong> trois entraînements sur trois graines battent tous la règle manuelle, de 37 % à 72 %.</li>
+            <li lang="en"><strong>Variance:</strong> three trainings on three seeds all beat the rulebook, by 37% to 72%.</li>
+            <li lang="fr"><strong>Méthode de référence :</strong> face à une commande prédictive (MPC) résolue par programmation linéaire, l’agent sert 82 % mieux — le MPC reste 48 % moins cher, et c’est écrit.</li>
+            <li lang="en"><strong>Reference method:</strong> against model predictive control (MPC) solved by linear programming, the agent serves 82% better — the MPC stays 48% cheaper, and that is stated.</li>
+            <li lang="fr"><strong>Demande imprévue :</strong> +30 % d’eau tirée sur un quartier sans prévenir l’agent, il garde 44 à 57 % d’avance.</li>
+            <li lang="en"><strong>Unexpected demand:</strong> with 30% more water drawn by one district and no warning to the agent, it keeps a 44–57% lead.</li>
+            <li lang="fr"><strong>Autres villes :</strong> sans réentraînement, il bat la règle à Chennai et Nairobi, et perd de peu à Sydney et Lima — son avantage suit la difficulté du terrain.</li>
+            <li lang="en"><strong>Other cities:</strong> without retraining, it beats the rulebook in Chennai and Nairobi and narrowly loses in Sydney and Lima — its edge tracks how hard the city is.</li>
+          </ul>
+
+          <figure class="figure">
+            <div class="shot">
+              <img src="https://raw.githubusercontent.com/Sorghobrayan-dotcom/WIIGA/main/captures/04-console-19h-regle.png" width="1400" height="933" loading="lazy" decoding="async"
+                   alt="Console de la démo à 19 h avec la règle manuelle : les pompes tournent au diesel et le réservoir résidentiel est descendu à 46 %."
+                   data-en-alt="Demo console at 7 p.m. with the rulebook: the pumps run on diesel and the residential tank is down to 46%.">
+            </div>
+            <figcaption>
+              <span lang="fr">La même journée vue avec la règle manuelle, à 19 h : les pompes tournent au diesel et le réservoir du quartier résidentiel est descendu à 46 %.</span>
+              <span lang="en">The same day under the hand-written rulebook, at 7 p.m.: the pumps run on diesel and the residential tank is down to 46%.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section id="limites" aria-labelledby="h-limites">
+          <h2 id="h-limites"><span lang="fr">Limites assumées</span><span lang="en">Stated limits</span></h2>
+          <p lang="fr">Un résultat sans frontière déclarée est un résultat auquel personne ne croit. Le dépôt publie ses échecs :</p>
+          <p lang="en">A result with no stated boundary is a result nobody believes. The repository publishes its failures:</p>
+          <ul class="list">
+            <li lang="fr">Au-delà de <strong>366 L de gazole par jour</strong>, l’avantage disparaît : le groupe couvre la ville et une règle simple suffit. WIIGA s’adresse aux régies contraintes.</li>
+            <li lang="en">Above <strong>366 L of diesel a day</strong>, the advantage disappears: the generator covers the city and a simple rule is enough. WIIGA is for constrained utilities.</li>
+            <li lang="fr">Sur le quartier du marché, l’agent fait moins bien que la règle (0,10 contre 0,01 h/jour) : l’objectif max-min resserre l’écart entre quartiers, il n’améliore pas chacun d’eux.</li>
+            <li lang="en">On the market district, the agent does worse than the rulebook (0.10 vs 0.01 h/day): the max-min objective narrows the gap between districts, it does not improve each of them.</li>
+            <li lang="fr">Une variante optimisant la CVaR (les 20 % de jours les pires) s’est effondrée ; le code reste dans le dépôt, à l’endroit où elle a échoué.</li>
+            <li lang="en">A variant optimising CVaR (the worst 20% of days) collapsed; the code stays in the repository, where it failed.</li>
+            <li lang="fr">Le simulateur modélise <strong>une station, pas toute la ville</strong>, avec des délestages plus doux que ceux mesurés en 2024.</li>
+            <li lang="en">The simulator models <strong>one station, not the whole city</strong>, with milder power cuts than those measured in 2024.</li>
+          </ul>
+        </section>
+
+        <section id="role" aria-labelledby="h-role">
+          <h2 id="h-role"><span lang="fr">Mon rôle</span><span lang="en">My role</span></h2>
+          <p lang="fr">J’ai conçu et développé le projet de bout en bout :</p>
+          <p lang="en">I designed and built the project end to end:</p>
+          <ul class="list">
+            <li lang="fr">formulation du problème et choix de l’objectif (max-min sur les quartiers) ;</li>
+            <li lang="en">framing the problem and choosing the objective (max-min across districts);</li>
+            <li lang="fr">modélisation du jumeau numérique : hydraulique, énergie, délestages, demande et tarifs ;</li>
+            <li lang="en">modelling the digital twin: hydraulics, energy, power cuts, demand and tariffs;</li>
+            <li lang="fr">entraînement et évaluation de l’agent PPO, comparaison à des références (règles manuelles, MPC) ;</li>
+            <li lang="en">training and evaluating the PPO agent against baselines (hand-written rules, MPC);</li>
+            <li lang="fr">démonstration web interactive, en un seul fichier statique, sans serveur ;</li>
+            <li lang="en">an interactive web demo, as a single static file with no server;</li>
+            <li lang="fr">tests, documentation et reproductibilité de chaque chiffre publié.</li>
+            <li lang="en">tests, documentation and reproducibility of every published figure.</li>
+          </ul>
+        </section>
+
+        <section id="technique" aria-labelledby="h-technique">
+          <h2 id="h-technique"><span lang="fr">Stack technique</span><span lang="en">Tech stack</span></h2>
+          <dl class="stack">
+            <div class="stack__row"><dt><span lang="fr">Langage</span><span lang="en">Language</span></dt><dd><span class="tags"><span class="tag">Python</span></span></dd></div>
+            <div class="stack__row"><dt><span lang="fr">Apprentissage</span><span lang="en">Learning</span></dt><dd><span class="tags"><span class="tag">Stable-Baselines3 (PPO)</span><span class="tag">PyTorch</span></span></dd></div>
+            <div class="stack__row"><dt>Simulation</dt><dd><span class="tags"><span class="tag">Gymnasium</span><span class="tag">NumPy</span></span></dd></div>
+            <div class="stack__row"><dt><span lang="fr">Optimisation</span><span lang="en">Optimisation</span></dt><dd><span class="tags"><span class="tag">SciPy</span><span class="tag"><span lang="fr">Programmation linéaire (MPC)</span><span lang="en">Linear programming (MPC)</span></span></span></dd></div>
+            <div class="stack__row"><dt><span lang="fr">Données</span><span lang="en">Data</span></dt><dd><span class="tags"><span class="tag">Open-Meteo</span><span class="tag"><span lang="fr">Réanalyse ERA5</span><span lang="en">ERA5 reanalysis</span></span></span></dd></div>
+            <div class="stack__row"><dt>Interface</dt><dd><span class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></span></dd></div>
+            <div class="stack__row"><dt><span lang="fr">Qualité</span><span lang="en">Quality</span></dt><dd><span class="tags"><span class="tag"><span lang="fr">Tests automatisés</span><span lang="en">Automated tests</span></span><span class="tag"><span lang="fr">Résultats versionnés (JSON)</span><span lang="en">Versioned results (JSON)</span></span><span class="tag"><span lang="fr">Licence MIT</span><span lang="en">MIT licence</span></span></span></dd></div>
+          </dl>
+        </section>
+
+        <section id="reproduire" aria-labelledby="h-reproduire">
+          <h2 id="h-reproduire"><span lang="fr">Reproduire</span><span lang="en">Reproduce</span></h2>
+          <p lang="fr">Pas de GPU, pas de clé d’API : un entraînement complet tient en une quinzaine de minutes sur le processeur d’un portable.</p>
+          <p lang="en">No GPU, no API key: a full training run takes about fifteen minutes on a laptop CPU.</p>
+<pre class="code" tabindex="0"><code>pip install -r requirements.txt
+
+<span class="c" lang="fr"># Régénère les tableaux de résultats (365 jours)
+</span><span class="c" lang="en"># Regenerate the results tables (365 days)
+</span>python -m wiiga.resultats --journees 365
+
+<span class="c" lang="fr"># Rejoue la journée de la démo, heure par heure
+</span><span class="c" lang="en"># Replay the demo day, hour by hour
+</span>python -m wiiga.journee
+
+<span class="c" lang="fr"># Applique le modèle à n’importe quelle ville
+</span><span class="c" lang="en"># Apply the model to any city
+</span>python -m wiiga.ville Chennai</code></pre>
+          <p>
+            <a class="btn btn--ghost" href="https://github.com/Sorghobrayan-dotcom/WIIGA" target="_blank" rel="noopener">
+              <span lang="fr">Voir le dépôt sur GitHub</span><span lang="en">View the repository on GitHub</span>
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+            </a>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <nav class="next-project" aria-label="Projet suivant" data-en-aria-label="Next project">
+      <div class="container next-project__inner">
+        <div>
+          <p class="next-project__label"><span lang="fr">Projet suivant</span><span lang="en">Next project</span></p>
+          <p class="next-project__title"><strong><span lang="fr">YILGA — Agrotech et IA</span><span lang="en">YILGA — Agritech &amp; AI</span></strong></p>
+        </div>
+        <a class="btn btn--primary" href="YILGA.html">
+          <span lang="fr">Découvrir</span><span lang="en">Explore</span>
+          <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+        </a>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-year>2026</span> Brayan Sorgho</p>
+      <ul class="site-footer__links">
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>

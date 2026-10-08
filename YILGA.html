@@ -1,61 +1,266 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr" class="no-js" data-title-en="YILGA — Agritech & AI · Brayan Sorgho">
 <head>
-  <meta charset="UTF-8">
-  <title>YILGA — Projet Agrotech & IA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YILGA — Agrotech et IA · Brayan Sorgho</title>
+  <meta name="description" content="YILGA : plateforme qui recommande aux agriculteurs la culture la plus rentable grâce à l’IA. Premier prix INGENOVA 72H des CPGE 2025.">
+  <meta name="author" content="Brayan Sorgho">
+  <meta name="theme-color" content="#0b2545">
+  <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/YILGA.html">
+  <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/YILGA.html">
+  <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/YILGA.html?lang=en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Brayan Sorgho">
+  <meta property="og:title" content="YILGA — choisir la culture la plus rentable grâce à l’IA">
+  <meta property="og:description" content="Plateforme agrotech primée qui croise données de terrain et prévisions de marché.">
+  <meta property="og:url" content="https://sorghobrayan-dotcom.github.io/YILGA.html">
+  <meta property="og:image" content="https://sorghobrayan-dotcom.github.io/YILGA.jpeg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    // Langue choisie avant le premier affichage : aucun clignotement.
+    (function (d) {
+      var r = d.documentElement, l;
+      r.classList.replace("no-js", "js");
+      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
+      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
+      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
+    })(document);
+  </script>
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
 
-<header>
-  <div>
-    <img src="YILGA.jpeg" alt="Photo professionnelle" width="120">
-    <h1>SORGHO Brayan — YILGA</h1>
-    <p>Projet Agrotech & IA — Optimisation de la rentabilité agricole</p>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./" aria-label="Brayan Sorgho, retour à l’accueil" data-en-aria-label="Brayan Sorgho, back to home">
+        <span class="brand__mark" aria-hidden="true">BS</span>
+        <span class="brand__name">Brayan Sorgho</span>
+      </a>
 
-<section id="project-hero">
-  <h2>YILGA</h2>
-  <img src="assets/project1.jpg" alt="YILGA" width="600">
-  <p><strong>Résumé :</strong> YILGA est une plateforme intelligente qui aide les agriculteurs à choisir la culture la plus rentable en combinant les données locales (sol, météo, capteurs) et les prévisions du marché local et international. L’IA calcule un score de rentabilité pour chaque culture afin de recommander la meilleure option.</p>
-</section>
+      <nav class="nav" id="nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="./#profil"><span lang="fr">Profil</span><span lang="en">Profile</span></a></li>
+          <li><a class="nav__link is-active" href="./#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
+          <li><a class="nav__link" href="./#parcours"><span lang="fr">Parcours</span><span lang="en">Background</span></a></li>
+          <li><a class="nav__link" href="./#distinctions"><span lang="fr">Distinctions</span><span lang="en">Awards</span></a></li>
+          <li><a class="nav__link" href="./#contact">Contact</a></li>
+          <li class="nav__cta"><a class="btn btn--primary btn--sm" href="cv.html"><span lang="fr">Mon CV</span><span lang="en">My CV</span></a></li>
+        </ul>
+      </nav>
 
-<section id="project-problem">
-  <h2>Problème</h2>
-  <p>Les agriculteurs manquent souvent d’informations précises sur la culture optimale à planter et sur la demande réelle du marché, ce qui limite leur rentabilité et leur capacité à vendre efficacement leurs produits.</p>
-</section>
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Langue / Language">
+          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+          <svg class="icon icon-open" aria-hidden="true"><use href="assets/img/icons.svg#menu"></use></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="assets/img/icons.svg#x"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<section id="project-solution">
-  <h2>Solution</h2>
-  <p>YILGA fournit une application qui analyse les données de production, les tendances du marché, le commerce local et international, et génère un score de rentabilité pour chaque culture. La culture ayant le score le plus élevé est recommandée à l’agriculteur, optimisant ainsi ses revenus.</p>
-</section>
+  <main id="contenu">
+    <section class="page-hero" id="haut" aria-labelledby="titre-projet">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d’Ariane" data-en-aria-label="Breadcrumb">
+          <ol>
+            <li><a href="./"><span lang="fr">Accueil</span><span lang="en">Home</span></a></li>
+            <li><a href="./#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
+            <li><span aria-current="page">YILGA</span></li>
+          </ol>
+        </nav>
 
-<section id="project-role">
-  <h2>Mon rôle</h2>
-  <p>createur, lead du projet Développement de l’architecture logicielle, intégration de l’IA et conception de l’interface utilisateur pour rendre l’application intuitive et fournir des recommandations claires et actionnables.</p>
-</section>
+        <div class="page-hero__head">
+          <p class="kicker"><span lang="fr">Agrotech · IA · Données</span><span lang="en">Agritech · AI · Data</span></p>
+          <h1 class="page-hero__title" id="titre-projet">YILGA</h1>
+          <p class="page-hero__lead" lang="fr">
+            Une plateforme intelligente qui aide les agriculteurs à choisir la culture la plus rentable,
+            en croisant les données du terrain et les prévisions des marchés.
+          </p>
+          <p class="page-hero__lead" lang="en">
+            A smart platform that helps farmers choose the most profitable crop by combining field data
+            with market forecasts.
+          </p>
+        </div>
 
-<section id="project-tech">
-  <h2>Technologies utilisées</h2>
-  <ul>
-    <li>Python & bibliothèques IA (TensorFlow, scikit-learn)</li>
-    <li>JavaScript / HTML / CSS pour l’interface</li>
-    <li>Capteurs IoT pour le suivi du sol</li>
-    <li>API météo et marché agricole</li>
-    <li>Algorithmes de scoring de rentabilité pour cultures</li>
-  </ul>
-</section>
+        <dl class="meta-grid">
+          <div><dt><span lang="fr">Rôle</span><span lang="en">Role</span></dt><dd><span lang="fr">Créateur et chef de projet</span><span lang="en">Founder and project lead</span></dd></div>
+          <div><dt><span lang="fr">Domaine</span><span lang="en">Field</span></dt><dd><span lang="fr">Agriculture et intelligence artificielle</span><span lang="en">Agriculture and artificial intelligence</span></dd></div>
+          <div><dt><span lang="fr">Distinctions</span><span lang="en">Awards</span></dt><dd><span lang="fr">1er prix INGENOVA 72H · Prix spécial Incub UO</span><span lang="en">1st prize INGENOVA 72H · Special prize Incub UO</span></dd></div>
+          <div><dt><span lang="fr">Année</span><span lang="en">Year</span></dt><dd>2025</dd></div>
+        </dl>
 
-<section id="project-impact">
-  <h2>Impact</h2>
-  <p>Testé sur plusieurs fermes pilotes, YILGA a permis d’augmenter la rentabilité de 25 à 30% et a été reconnu par plusieurs concours d’innovation pour son approche intégrée production + marché.</p>
-</section>
+        <figure class="cover cover--logo cover--yilga">
+          <img src="YILGA.jpeg" width="512" height="512" decoding="async" alt="Logo de YILGA" data-en-alt="YILGA logo">
+        </figure>
+      </div>
+    </section>
 
-<footer>
-  <a href="index.html">← Retour à l'accueil</a>
-</footer>
+    <div class="container case">
+      <nav class="toc" aria-label="Sommaire" data-en-aria-label="Contents" data-spy>
+        <p class="toc__title"><span lang="fr">Sommaire</span><span lang="en">Contents</span></p>
+        <a href="#en-bref"><span lang="fr">En bref</span><span lang="en">Overview</span></a>
+        <a href="#probleme"><span lang="fr">Le problème</span><span lang="en">The problem</span></a>
+        <a href="#solution"><span lang="fr">La solution</span><span lang="en">The solution</span></a>
+        <a href="#role"><span lang="fr">Mon rôle</span><span lang="en">My role</span></a>
+        <a href="#technique"><span lang="fr">Technologies</span><span lang="en">Technology</span></a>
+        <a href="#impact">Impact</a>
+      </nav>
 
+      <div class="prose">
+        <section id="en-bref" aria-labelledby="h-en-bref">
+          <h2 id="h-en-bref"><span lang="fr">En bref</span><span lang="en">Overview</span></h2>
+          <p class="lead" lang="fr">
+            YILGA combine les données locales — sol, météo, capteurs — et les prévisions des marchés
+            local et international. Une IA calcule un score de rentabilité pour chaque culture afin de
+            recommander la meilleure option à l’agriculteur.
+          </p>
+          <p class="lead" lang="en">
+            YILGA combines local data — soil, weather, sensors — with local and international market
+            forecasts. An AI computes a profitability score for each crop and recommends the best option
+            to the farmer.
+          </p>
+        </section>
+
+        <section id="probleme" aria-labelledby="h-probleme">
+          <h2 id="h-probleme"><span lang="fr">Le problème</span><span lang="en">The problem</span></h2>
+          <p lang="fr">
+            Les agriculteurs manquent souvent d’informations précises sur la culture la plus adaptée à
+            leur parcelle et sur la demande réelle du marché. Ils plantent sans visibilité, ce qui
+            limite leur rentabilité et leur capacité à vendre efficacement leur production.
+          </p>
+          <p lang="en">
+            Farmers often lack reliable information on which crop best suits their land and on what the
+            market actually demands. They plant blind, which limits their income and their ability to
+            sell their harvest.
+          </p>
+        </section>
+
+        <section id="solution" aria-labelledby="h-solution">
+          <h2 id="h-solution"><span lang="fr">La solution</span><span lang="en">The solution</span></h2>
+          <p lang="fr">
+            Une application qui analyse les données de production, les tendances du marché et les flux
+            du commerce local et international, puis attribue un score de rentabilité à chaque culture.
+            La culture la mieux notée est recommandée, avec des explications claires et des actions
+            concrètes.
+          </p>
+          <p lang="en">
+            An application that analyses production data, market trends and local and international
+            trade flows, then gives each crop a profitability score. The best-scoring crop is
+            recommended, with clear explanations and concrete next steps.
+          </p>
+          <div class="ideas">
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">1</span>
+              <div>
+                <h3><span lang="fr">Collecter</span><span lang="en">Collect</span></h3>
+                <p lang="fr">Données de sol et de météo, relevés de capteurs installés sur la parcelle.</p>
+                <p lang="en">Soil and weather data, readings from sensors installed in the field.</p>
+              </div>
+            </div>
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">2</span>
+              <div>
+                <h3><span lang="fr">Croiser</span><span lang="en">Combine</span></h3>
+                <p lang="fr">Prévisions des marchés local et international, tendances de prix et de demande.</p>
+                <p lang="en">Local and international market forecasts, price and demand trends.</p>
+              </div>
+            </div>
+            <div class="idea">
+              <span class="idea__num" aria-hidden="true">3</span>
+              <div>
+                <h3><span lang="fr">Recommander</span><span lang="en">Recommend</span></h3>
+                <p lang="fr">Un score de rentabilité par culture et une recommandation lisible par l’agriculteur.</p>
+                <p lang="en">A profitability score for each crop and a recommendation the farmer can act on.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="role" aria-labelledby="h-role">
+          <h2 id="h-role"><span lang="fr">Mon rôle</span><span lang="en">My role</span></h2>
+          <p lang="fr">Créateur et chef de projet, j’ai porté YILGA de l’idée à la présentation devant les jurys :</p>
+          <p lang="en">As founder and project lead, I took YILGA from the first idea to the competition juries:</p>
+          <ul class="list">
+            <li lang="fr">conception de l’architecture logicielle ;</li>
+            <li lang="en">designing the software architecture;</li>
+            <li lang="fr">intégration des modèles d’IA et de l’algorithme de score de rentabilité ;</li>
+            <li lang="en">integrating the AI models and the profitability-scoring algorithm;</li>
+            <li lang="fr">conception d’une interface intuitive, qui rend les recommandations claires et actionnables ;</li>
+            <li lang="en">designing an intuitive interface that makes recommendations clear and actionable;</li>
+            <li lang="fr">coordination de l’équipe et présentation du projet en concours.</li>
+            <li lang="en">coordinating the team and pitching the project in competitions.</li>
+          </ul>
+        </section>
+
+        <section id="technique" aria-labelledby="h-technique">
+          <h2 id="h-technique"><span lang="fr">Technologies</span><span lang="en">Technology</span></h2>
+          <dl class="stack">
+            <div class="stack__row"><dt><span lang="fr">IA et données</span><span lang="en">AI &amp; data</span></dt><dd><span class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span></span></dd></div>
+            <div class="stack__row"><dt>Interface</dt><dd><span class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></span></dd></div>
+            <div class="stack__row"><dt><span lang="fr">Terrain</span><span lang="en">Field</span></dt><dd><span class="tags"><span class="tag"><span lang="fr">Capteurs IoT</span><span lang="en">IoT sensors</span></span><span class="tag"><span lang="fr">Suivi du sol</span><span lang="en">Soil monitoring</span></span></span></dd></div>
+            <div class="stack__row"><dt><span lang="fr">Sources externes</span><span lang="en">External sources</span></dt><dd><span class="tags"><span class="tag"><span lang="fr">API météo</span><span lang="en">Weather API</span></span><span class="tag"><span lang="fr">Données de marché agricole</span><span lang="en">Agricultural market data</span></span></span></dd></div>
+            <div class="stack__row"><dt><span lang="fr">Décision</span><span lang="en">Decision</span></dt><dd><span class="tags"><span class="tag"><span lang="fr">Score de rentabilité par culture</span><span lang="en">Per-crop profitability score</span></span></span></dd></div>
+          </dl>
+        </section>
+
+        <section id="impact" aria-labelledby="h-impact">
+          <h2 id="h-impact">Impact</h2>
+          <p lang="fr">
+            Lors des essais menés sur des fermes pilotes, YILGA a permis d’augmenter la rentabilité de
+            25 à 30 %. Le projet a été distingué à deux reprises en 2025 pour son approche qui relie
+            production et marché.
+          </p>
+          <p lang="en">
+            In trials on pilot farms, YILGA raised profitability by 25 to 30%. The project received two
+            awards in 2025 for its approach linking production to the market.
+          </p>
+          <ul class="kpis">
+            <li class="kpi"><strong><span lang="fr">1er prix</span><span lang="en">1st prize</span></strong><span lang="fr">Concours INGENOVA 72H des CPGE, 2025</span><span lang="en">INGENOVA 72H competition for preparatory classes, 2025</span></li>
+            <li class="kpi"><strong><span lang="fr">Prix spécial</span><span lang="en">Special prize</span></strong><span lang="fr">Camp d’idéation Incub UO, avec le centre d’excellence en IA CITADEL, 2025</span><span lang="en">Incub UO ideation camp, with the CITADEL AI centre of excellence, 2025</span></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <nav class="next-project" aria-label="Projet suivant" data-en-aria-label="Next project">
+      <div class="container next-project__inner">
+        <div>
+          <p class="next-project__label"><span lang="fr">Projet suivant</span><span lang="en">Next project</span></p>
+          <p class="next-project__title"><strong><span lang="fr">SG-KOOM — Assainissement des eaux grises</span><span lang="en">SG-KOOM — Greywater treatment</span></strong></p>
+        </div>
+        <a class="btn btn--primary" href="SG-KOOM.html">
+          <span lang="fr">Découvrir</span><span lang="en">Explore</span>
+          <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#arrow-right"></use></svg>
+        </a>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-year>2026</span> Brayan Sorgho</p>
+      <ul class="site-footer__links">
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
