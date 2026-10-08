@@ -17,7 +17,7 @@
 
   /* ---------- Langue : bascule instantanée FR ⇄ EN, sans rechargement ---------- */
 
-  const I18N_ATTRS = ["alt", "aria-label"];
+  const I18N_ATTRS = ["alt", "aria-label", "placeholder"];
   const titles = { fr: document.title, en: root.getAttribute("data-title-en") || document.title };
   const labels = {
     fr: { open: "Ouvrir le menu", close: "Fermer le menu" },
@@ -97,7 +97,7 @@
 
   function startRain(canvas) {
     const ctx = canvas.getContext("2d");
-    const size = window.innerWidth < 600 ? 14 : 18;
+    const size = window.innerWidth < 600 ? 17 : 22;
     let drops = [];
     let speeds = [];
     let dpr = 1;
@@ -124,16 +124,16 @@
       if (time - last < 38) return; // environ 26 images par seconde, l'allure des films
       last = time;
       ctx.shadowBlur = 0;
-      ctx.fillStyle = "rgba(3, 6, 3, 0.14)";
+      ctx.fillStyle = "rgba(3, 6, 3, 0.1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.shadowColor = "#3cff74";
       ctx.shadowBlur = 8 * dpr;
       for (let i = 0; i < drops.length; i++) {
         const x = i * size * dpr;
         const y = drops[i] * size * dpr;
-        ctx.fillStyle = "#1fd35a";
+        ctx.fillStyle = "#2be36a";
         ctx.fillText(Math.random() < 0.5 ? "0" : "1", x, y - size * dpr);
-        ctx.fillStyle = "#d4ffe0";
+        ctx.fillStyle = "#e6ffec";
         ctx.fillText(Math.random() < 0.5 ? "0" : "1", x, y);
         drops[i] += speeds[i];
         if (y > canvas.height && Math.random() > 0.965) drops[i] = Math.random() * -12;
@@ -176,27 +176,35 @@
     const stopRain = startRain($(".intro__rain", intro));
     const timers = [];
     let finished = false;
+    const at = (ms, fn) => timers.push(setTimeout(fn, ms));
 
     function finish() {
       if (finished) return;
       finished = true;
       timers.forEach(clearTimeout);
+      stopRain();
       store("sessionStorage", "intro", "1");
+      // Le rideau remonte ; le visage prend sa place, puis le reste du site apparaît.
+      root.classList.add("from-intro");
       intro.classList.add("is-leaving");
       onDone();
       setTimeout(() => {
-        stopRain();
         root.classList.remove("intro-on");
         intro.remove();
       }, 1150);
     }
 
-    timers.push(setTimeout(() => {
+    // 1. Pluie de 0 et de 1 sur tout l'écran.
+    // 2. La pluie s'arrête : plus aucun chiffre ne tombe.
+    at(3200, () => { stopRain(); intro.classList.add("is-stopped"); });
+    // 3. Le nom se décode lettre par lettre.
+    at(3700, () => {
       intro.classList.add("is-name");
-      $$("[data-text]", intro).forEach((el, i) => setTimeout(() => scramble(el, 1100), i * 220));
-    }, 2300));
-    timers.push(setTimeout(() => intro.classList.add("is-photo"), 4000));
-    timers.push(setTimeout(finish, 5500));
+      $$("[data-text]", intro).forEach((el, i) => setTimeout(() => scramble(el, i ? 1300 : 800), i * 260));
+    });
+    // 4. Le nom s'efface et le site s'ouvre sur le visage.
+    at(6000, () => intro.classList.add("is-name-out"));
+    at(6400, finish);
 
     const skip = $(".intro__skip", intro);
     if (skip) skip.addEventListener("click", finish);
@@ -453,6 +461,44 @@
       });
     }, { rootMargin: "-40% 0px -55% 0px" });
     $$("main section[id]").forEach((section) => spy.observe(section));
+  }
+
+  /* ---------- Projets : filtres et vue liste ou grille ---------- */
+
+  const views = $("[data-views]");
+  if (views) {
+    $$("[data-view-btn]").forEach((button) => {
+      button.addEventListener("click", () => {
+        views.setAttribute("data-view", button.getAttribute("data-view-btn"));
+        $$("[data-view-btn]").forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
+      });
+    });
+    $$("[data-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter");
+        $$("[data-filter]").forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
+        $$("[data-tags]", views).forEach((item) => {
+          item.hidden = filter !== "all" && !item.getAttribute("data-tags").split(" ").includes(filter);
+        });
+      });
+    });
+  }
+
+  /* ---------- Contact : le formulaire ouvre la messagerie avec le message prêt ---------- */
+
+  const form = $("[data-mailto-form]");
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const get = (key) => String(data.get(key) || "").trim();
+      const fr = currentLang() === "fr";
+      const subject = `${fr ? "Prise de contact : " : "Getting in touch: "}${get("name") || "Portfolio"}`;
+      const body = [get("message"), "", get("name"), get("email"), get("organisation")].filter((line, i) => i < 2 || line).join("\n");
+      window.location.href = `mailto:${form.getAttribute("data-mailto-form")}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const status = $(".form-status", form);
+      if (status) status.hidden = false;
+    });
   }
 
   /* ---------- Heure locale à Rabat, année, impression ---------- */

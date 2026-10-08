@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr" class="no-js" data-title-en="About | Brayan Sorgho">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos | Brayan Sorgho</title>
+  <meta name="description" content="Brayan Sorgho, étudiant ingénieur en Big Data et IA à l’UIR : parcours, qualités, compétences et distinctions.">
+  <meta name="author" content="Brayan Sorgho">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://sorghobrayan-dotcom.github.io/a-propos.html">
+  <link rel="alternate" hreflang="fr" href="https://sorghobrayan-dotcom.github.io/a-propos.html">
+  <link rel="alternate" hreflang="en" href="https://sorghobrayan-dotcom.github.io/a-propos.html?lang=en">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Brayan Sorgho">
+  <meta property="og:title" content="À propos | Brayan Sorgho">
+  <meta property="og:description" content="Parcours, qualités, compétences et distinctions.">
+  <meta property="og:url" content="https://sorghobrayan-dotcom.github.io/a-propos.html">
+  <meta property="og:image" content="https://sorghobrayan-dotcom.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    // Avant le premier affichage : langue, intro (une fois par session) et rideau de transition.
+    (function (d) {
+      var r = d.documentElement, l;
+      r.classList.replace("no-js", "js");
+      try { l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang"); } catch (e) {}
+      if (!l) l = /^en/i.test(navigator.language || "") ? "en" : "fr";
+      if (l === "en") { r.setAttribute("data-lang", "en"); r.lang = "en"; }
+      try {
+        if (sessionStorage.getItem("curtain")) { r.classList.add("curtain-in"); sessionStorage.removeItem("curtain"); }
+        else if (r.hasAttribute("data-intro") && !sessionStorage.getItem("intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) r.classList.add("intro-on");
+      } catch (e) {}
+    })(document);
+  </script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
+
+  <div class="curtain" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="./" aria-label="Brayan Sorgho, accueil" data-en-aria-label="Brayan Sorgho, home">
+        <span class="logo__copy" aria-hidden="true">©</span>
+        <span class="logo__roll" aria-hidden="true">
+          <span class="logo__a"><span lang="fr">Codé par Brayan</span><span lang="en">Code by Brayan</span></span>
+          <span class="logo__b">Brayan Sorgho</span>
+        </span>
+      </a>
+      <nav class="header__nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
+        <ul>
+          <li><a class="link-dot" href="projets.html"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
+          <li><a class="link-dot is-active" href="a-propos.html" aria-current="page"><span lang="fr">À propos</span><span lang="en">About</span></a></li>
+          <li><a class="link-dot" href="contact.html">Contact</a></li>
+          <li><a class="link-dot" href="cv.html">CV</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch header__lang" role="group" aria-label="Langue / Language">
+          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+    </div>
+  </header>
+
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+    <span class="menu-btn__lines" aria-hidden="true"></span>
+  </button>
+
+  <div class="menu" id="menu" inert>
+    <div class="menu__backdrop"></div>
+    <nav class="menu__panel" aria-label="Menu">
+      <span class="menu__curve" aria-hidden="true"></span>
+      <p class="menu__label">Navigation</p>
+      <ul class="menu__links">
+        <li><a href="./"><span lang="fr">Accueil</span><span lang="en">Home</span></a></li>
+        <li><a href="projets.html"><span lang="fr">Projets</span><span lang="en">Work</span></a></li>
+        <li><a href="a-propos.html"><span lang="fr">À propos</span><span lang="en">About</span></a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+      <div class="menu__foot">
+        <div>
+          <p class="contact__label"><span lang="fr">Réseaux</span><span lang="en">Socials</span></p>
+          <ul>
+            <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="mailto:sorghobrayan60@gmail.com">E-mail</a></li>
+          </ul>
+        </div>
+        <div class="lang-switch lang-switch--dark" role="group" aria-label="Langue / Language">
+          <button class="lang-switch__btn" type="button" data-set-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+          <button class="lang-switch__btn" type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main id="contenu">
+    <section class="page-head" id="haut" aria-labelledby="titre-page">
+      <div class="container">
+        <p class="kicker"><span lang="fr">À propos</span><span lang="en">About</span></p>
+        <h1 class="page-head__title" id="titre-page"><span lang="fr">La donnée et l’IA au service du terrain</span><span lang="en">Data and AI at the service of real life</span></h1>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Présentation" data-en-aria-label="Introduction">
+      <div class="container about-intro">
+        <div class="about-intro__text reveal">
+          <p class="about-intro__lead" lang="fr">Étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat, je construis des solutions qui partent du terrain.</p>
+          <p class="about-intro__lead" lang="en">A Big Data and Artificial Intelligence engineering student at the International University of Rabat, I build solutions that start from real life.</p>
+          <p lang="fr">Après deux années de classes préparatoires MPI (mathématiques, physique, informatique) à 2iE, à Ouagadougou, je suis entré le 7 septembre 2026 en première année du cycle ingénieur à l’UIR, ma troisième année d’études supérieures.</p>
+          <p lang="en">After two years of MPI preparatory classes (mathematics, physics, computer science) at 2iE in Ouagadougou, I started the engineering programme at UIR on 7 September 2026, my third year of higher education.</p>
+          <p lang="fr">J’ai conçu et porté trois projets qui mêlent ingénierie, IA et développement durable, récompensés à plusieurs reprises. J’aime donner du sens aux idées : transformer un problème complexe en une solution claire, mesurable et utile à ceux qui le vivent.</p>
+          <p lang="en">I have designed and led three award-winning projects that combine engineering, AI and sustainability. I like giving ideas a purpose: turning a complex problem into a clear, measurable solution that helps the people who live with it.</p>
+          <a class="round-btn" href="cv.html" data-magnetic>
+            <span class="round-btn__fill" aria-hidden="true"></span>
+            <span class="round-btn__label"><span lang="fr">Mon CV</span><span lang="en">My CV</span></span>
+          </a>
+        </div>
+        <figure class="about-photo reveal">
+          <img src="assets/img/portrait.jpg" width="350" height="450" loading="lazy" alt="Portrait de Brayan Sorgho" data-en-alt="Portrait of Brayan Sorgho">
+          <figcaption>
+            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#map-pin"></use></svg>
+            <span lang="fr">Rabat, Maroc</span><span lang="en">Rabat, Morocco</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="titre-qualites">
+      <div class="container">
+        <h2 class="eyebrow" id="titre-qualites"><span lang="fr">Ce que j’apporte</span><span lang="en">What I bring</span></h2>
+        <ol class="services__grid">
+          <li class="service reveal">
+            <span class="service__num">01</span>
+            <h3><span lang="fr">Rigueur</span><span lang="en">Rigour</span></h3>
+            <p lang="fr">Chaque résultat est mesuré, testé et reproductible. Les limites sont écrites, pas cachées.</p>
+            <p lang="en">Every result is measured, tested and reproducible. Limits are written down, not hidden.</p>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">02</span>
+            <h3>Impact</h3>
+            <p lang="fr">L’eau, l’énergie, l’agriculture : je pars de problèmes réels, vécus au Burkina Faso.</p>
+            <p lang="en">Water, energy, agriculture: I start from real problems, lived in Burkina Faso.</p>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">03</span>
+            <h3>Leadership</h3>
+            <p lang="fr">Président d’un club d’art oratoire et chef de projet sur trois projets primés.</p>
+            <p lang="en">President of a public-speaking club and project lead on three award-winning projects.</p>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">04</span>
+            <h3><span lang="fr">Persévérance</span><span lang="en">Persistence</span></h3>
+            <p lang="fr">Je m’investis sur le long terme, de la première idée au prototype qui fonctionne.</p>
+            <p lang="en">I commit for the long run, from the first idea to a prototype that works.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--paper" aria-labelledby="titre-competences">
+      <div class="container">
+        <h2 class="eyebrow" id="titre-competences"><span lang="fr">Compétences</span><span lang="en">Skills</span></h2>
+        <ul class="services__grid">
+          <li class="service reveal">
+            <span class="service__num">01</span>
+            <h3><span lang="fr">IA et données</span><span lang="en">AI &amp; data</span></h3>
+            <ul class="tags"><li class="tag">Python</li><li class="tag">NumPy</li><li class="tag">PyTorch</li><li class="tag">Stable-Baselines3</li><li class="tag">Gymnasium</li><li class="tag">scikit-learn</li><li class="tag">TensorFlow</li><li class="tag"><span lang="fr">Programmation linéaire</span><span lang="en">Linear programming</span></li></ul>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">02</span>
+            <h3><span lang="fr">Développement</span><span lang="en">Development</span></h3>
+            <ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li><li class="tag">Git &amp; GitHub</li><li class="tag"><span lang="fr">Visualisation de données</span><span lang="en">Data visualisation</span></li><li class="tag"><span lang="fr">Tests</span><span lang="en">Testing</span></li></ul>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">03</span>
+            <h3><span lang="fr">Ingénierie</span><span lang="en">Engineering</span></h3>
+            <ul class="tags"><li class="tag"><span lang="fr">Jumeau numérique</span><span lang="en">Digital twin</span></li><li class="tag">Simulation</li><li class="tag"><span lang="fr">Traitement de l’eau</span><span lang="en">Water treatment</span></li><li class="tag"><span lang="fr">Capteurs et IoT</span><span lang="en">Sensors &amp; IoT</span></li><li class="tag"><span lang="fr">Domotique</span><span lang="en">Home automation</span></li><li class="tag"><span lang="fr">Prototypage</span><span lang="en">Prototyping</span></li></ul>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">04</span>
+            <h3><span lang="fr">Savoir-être</span><span lang="en">Soft skills</span></h3>
+            <ul class="tags"><li class="tag"><span lang="fr">Art oratoire</span><span lang="en">Public speaking</span></li><li class="tag">Leadership</li><li class="tag"><span lang="fr">Gestion de projet</span><span lang="en">Project management</span></li><li class="tag"><span lang="fr">Travail en équipe</span><span lang="en">Teamwork</span></li><li class="tag">Pitch</li></ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="parcours" aria-labelledby="titre-parcours">
+      <div class="container">
+        <h2 class="section-title" id="titre-parcours" data-words><span lang="fr">Parcours</span><span lang="en">Journey</span></h2>
+
+        <h3 class="eyebrow"><span lang="fr">Formation</span><span lang="en">Education</span></h3>
+        <ul class="rows">
+          <li class="row reveal">
+            <span class="row__main"><span lang="fr">Cycle ingénieur en Big Data et intelligence artificielle</span><span lang="en">Engineering degree in Big Data &amp; Artificial Intelligence</span></span>
+            <span class="row__sub"><span lang="fr">Université Internationale de Rabat (UIR), Maroc</span><span lang="en">International University of Rabat (UIR), Morocco</span></span>
+            <span class="row__end"><span lang="fr">Depuis le 7 sept. 2026</span><span lang="en">Since 7 Sept. 2026</span></span>
+          </li>
+          <li class="row reveal">
+            <span class="row__main"><span lang="fr">Classes préparatoires MPI</span><span lang="en">MPI preparatory classes</span></span>
+            <span class="row__sub"><span lang="fr">2iE, Ouagadougou : mathématiques, physique, informatique</span><span lang="en">2iE, Ouagadougou: mathematics, physics, computer science</span></span>
+            <span class="row__end">2024 - 2026</span>
+          </li>
+        </ul>
+
+        <h3 class="eyebrow"><span lang="fr">Responsabilités</span><span lang="en">Responsibilities</span></h3>
+        <ul class="rows">
+          <li class="row reveal">
+            <span class="row__main"><span lang="fr">Président du club d’art oratoire</span><span lang="en">President of the public-speaking club</span></span>
+            <span class="row__sub"><span lang="fr">Séances, encadrement des membres, compétitions</span><span lang="en">Sessions, mentoring, competitions</span></span>
+            <span class="row__end"><span lang="fr">Vie associative</span><span lang="en">Student life</span></span>
+          </li>
+          <li class="row reveal">
+            <span class="row__main"><span lang="fr">Cofondateur du projet LA Salliens</span><span lang="en">Co-founder of the LA Salliens project</span></span>
+            <span class="row__sub"><span lang="fr">Un service de bus pour les élèves de mon ancien collège</span><span lang="en">A bus service for pupils of my former school</span></span>
+            <span class="row__end"><span lang="fr">Entrepreneuriat</span><span lang="en">Entrepreneurship</span></span>
+          </li>
+          <li class="row reveal">
+            <span class="row__main"><span lang="fr">Responsable technique : YILGA, SG‑KOOM, WIIGA</span><span lang="en">Technical lead: YILGA, SG‑KOOM, WIIGA</span></span>
+            <span class="row__sub"><span lang="fr">Développement et choix technologiques</span><span lang="en">Development and technology choices</span></span>
+            <span class="row__end"><span lang="fr">Projets</span><span lang="en">Projects</span></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="distinctions" aria-labelledby="titre-distinctions">
+      <div class="container">
+        <h2 class="section-title" id="titre-distinctions" data-words><span lang="fr">Distinctions</span><span lang="en">Awards</span></h2>
+        <ul class="rows">
+          <li class="row reveal">
+            <span class="row__main"><span lang="fr">Premier prix avec YILGA</span><span lang="en">First prize with YILGA</span></span>
+            <span class="row__sub"><span lang="fr">Concours INGENOVA 72H des CPGE</span><span lang="en">INGENOVA 72H competition for preparatory classes</span></span>
+            <span class="row__end">2025</span>
+          </li>
+          <li class="row reveal">
+            <span class="row__main"><span lang="fr">Premier prix avec SG‑KOOM</span><span lang="en">First prize with SG‑KOOM</span></span>
+            <span class="row__sub"><span lang="fr">Parcours Entrepreneurs 2iE</span><span lang="en">2iE Entrepreneurs Programme</span></span>
+            <span class="row__end">2025</span>
+          </li>
+          <li class="row reveal">
+            <span class="row__main"><span lang="fr">Prix spécial avec YILGA</span><span lang="en">Special prize with YILGA</span></span>
+            <span class="row__sub"><span lang="fr">Camp d’idéation Incub UO, avec le centre d’excellence en IA CITADEL</span><span lang="en">Incub UO ideation camp, with the CITADEL AI centre of excellence</span></span>
+            <span class="row__end">2025</span>
+          </li>
+          <li class="row reveal">
+            <span class="row__main"><span lang="fr">Lauréat</span><span lang="en">Laureate</span></span>
+            <span class="row__sub"><span lang="fr">Concours Eco Green</span><span lang="en">Eco Green competition</span></span>
+            <span class="row__end">2023</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact contact--after-paper" id="contact" aria-labelledby="titre-contact">
+    <div class="contact__curve" aria-hidden="true"><span></span></div>
+    <div class="container">
+      <div class="contact__head">
+        <img class="contact__avatar" src="assets/img/portrait-square.jpg" width="350" height="350" loading="lazy" alt="">
+        <h2 class="contact__title" id="titre-contact"><span lang="fr">Travaillons<br>ensemble</span><span lang="en">Let’s work<br>together</span></h2>
+      </div>
+
+      <div class="contact__line">
+        <div class="contact__cta">
+          <a class="round-btn round-btn--light" href="contact.html" data-magnetic>
+            <span class="round-btn__fill" aria-hidden="true"></span>
+            <span class="round-btn__label"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact__pills">
+        <a class="pill" href="mailto:sorghobrayan60@gmail.com">sorghobrayan60@gmail.com</a>
+        <a class="pill" href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="contact__bottom">
+        <div>
+          <p class="contact__label">Version</p>
+          <p><span data-year>2026</span> © Brayan Sorgho</p>
+        </div>
+        <div>
+          <p class="contact__label"><span lang="fr">Heure locale à Rabat</span><span lang="en">Local time in Rabat</span></p>
+          <p data-clock>GMT+1</p>
+        </div>
+        <div class="contact__socials">
+          <p class="contact__label"><span lang="fr">Réseaux</span><span lang="en">Socials</span></p>
+          <ul>
+            <li><a href="https://github.com/Sorghobrayan-dotcom" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/brayan-sorgho-1134b5328" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
