@@ -7,6 +7,17 @@
 #   ruban: false → pas dans les bandeaux défilants de l'accueil
 # ---------------------------------------------------------------
 
+- groupe_fr: Finance quantitative
+  groupe_en: Quantitative finance
+  items:
+    - { nom: Backtesting, icone: graphique }
+    - { nom: Probabilités et statistiques, nom_en: Probability & statistics, icone: maths }
+    - { nom: Séries temporelles, nom_en: Time series, icone: simulation, ruban: false }
+    - { nom: pandas, icone: pandas }
+    - { nom: DuckDB, icone: duckdb }
+    - { nom: LightGBM, icone: ia }
+    - { nom: SHAP, icone: test, ruban: false }
+
 - groupe_fr: IA et données
   groupe_en: AI & data
   items:

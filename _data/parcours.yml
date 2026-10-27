@@ -45,7 +45,17 @@ formation:
 #    detail_en: What you did, in one or two sentences.
 #    afficher: true
 #    cv: true
-experiences: []
+experiences:
+  - titre_fr: Sika Invest Challenge
+    titre_en: Sika Invest Challenge
+    lieu_fr: Simulation boursière sur la BRVM, portefeuille virtuel de 20 millions FCFA
+    lieu_en: Stock-market simulation on the BRVM, 20 million FCFA virtual portfolio
+    date_fr: Concours
+    date_en: Competition
+    detail_fr: Gestion d’un portefeuille d’actions de la Bourse régionale des valeurs mobilières d’Afrique de l’Ouest.
+    detail_en: Managing a stock portfolio on the West African regional stock exchange.
+    afficher: true
+    cv: true
 
 responsabilites:
   - titre_fr: Président du club d’art oratoire

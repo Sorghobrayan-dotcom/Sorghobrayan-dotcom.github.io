@@ -48,11 +48,11 @@ cv_titre_en: "WIIGA: AI-driven water pumping"
 cv_date: Open source
 cv_sous_titre_fr: Python · Stable-Baselines3 (PPO) · Gymnasium · NumPy · SciPy
 cv_points_fr:
-  - Agent d’apprentissage par renforcement qui décide chaque heure quelle pompe tourne, à quelle puissance et sur quelle énergie, dans une ville soumise aux délestages.
+  - "Décision séquentielle sous incertitude : agent d’apprentissage par renforcement (PPO) qui arbitre chaque heure entre coût de l’énergie, risque de pénurie et délestages."
   - Jumeau numérique d’une station de 22 000 habitants, calibré sur trois années de données climatiques.
   - "Sur 365 jours simulés : 67 % d’heures sans eau en moins pour le quartier le plus exposé face à la règle manuelle, et 48 % de CO₂ en moins face à la pratique actuelle."
 cv_points_en:
-  - Reinforcement-learning agent that decides every hour which pump runs, at what power and on which energy source, in a city facing scheduled power cuts.
+  - "Sequential decision-making under uncertainty: a PPO reinforcement-learning agent that trades off energy cost, shortage risk and power cuts every hour."
   - Digital twin of a station serving 22,000 people, calibrated on three years of climate data.
   - "Over 365 simulated days: 67% fewer dry hours for the worst-served district than the hand-written rulebook, 48% less CO₂ than current practice."
 seo_titre_fr: "WIIGA : pompage d’eau piloté par IA sous délestage"

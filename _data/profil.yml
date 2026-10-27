@@ -28,34 +28,76 @@ linkedin: https://www.linkedin.com/in/brayan-sorgho-1134b5328
 # Pastille d'annonce sur l'accueil et le CV (recherche de stage, disponibilité…).
 # Mets « afficher: true » pour l'allumer, « false » pour l'éteindre.
 annonce:
-  afficher: false
-  fr: Je recherche un stage d’été en data ou en IA
-  en: Looking for a summer internship in data or AI
+  afficher: true
+  fr: Je recherche un stage en IA ou en finance quantitative
+  en: Looking for an internship in AI or quantitative finance
+
+# ---------------------------------------------------------------
+# CV par cible. Chaque cible a sa page : /cv-ia.html, /cv-finance.html,
+# /cv-quant.html. /cv.html affiche la cible choisie ici :
+cible: ia
+#   titre        titre sous le nom
+#   annonce      pastille (laisser vide pour ne rien afficher)
+#   resume       paragraphe « Profil »
+#   projets      projets du CV, dans l'ordre (nom du fichier sans .md)
+#   competences  familles de compétences du CV, dans l'ordre
+# ---------------------------------------------------------------
+cibles:
+  ia:
+    nom: Ingénieur IA
+    titre_fr: Étudiant ingénieur en Big Data et intelligence artificielle
+    titre_en: Big Data & Artificial Intelligence engineering student
+    annonce_fr: Je recherche un stage d’ingénieur IA
+    annonce_en: Looking for an AI engineering internship
+    resume_fr: "Étudiant en première année du cycle ingénieur Big Data et IA à l’UIR, après deux années de classes préparatoires MPI. Je conçois des systèmes d’IA complets, du modèle au déploiement : apprentissage par renforcement, machine learning, applications web et contraintes réelles (hors ligne, faible coût). Évaluations honnêtes, résultats mesurés."
+    resume_en: "First-year Big Data & AI engineering student at UIR, after two years of MPI preparatory classes. I design end-to-end AI systems, from model to deployment: reinforcement learning, machine learning, web applications and real constraints (offline, low cost). Honest evaluation, measured results."
+    projets: [WIIGA, SkillBadge, Sniper-Solana]
+    competences: [IA et données, Développement, Finance quantitative, Savoir-être]
+  finance:
+    nom: Ingénieur IA en finance
+    titre_fr: Étudiant ingénieur Big Data et IA, orienté IA pour la finance
+    titre_en: Big Data & AI engineering student, focused on AI for finance
+    annonce_fr: Je recherche un stage en IA appliquée à la finance
+    annonce_en: Looking for an internship in AI for finance
+    resume_fr: "Étudiant en première année du cycle ingénieur Big Data et IA à l’UIR, après deux années de classes préparatoires MPI. Je me spécialise dans l’IA appliquée à la finance : modèles prédictifs sur de gros volumes de données, backtests réalistes et décision sous incertitude, avec des systèmes qui vont jusqu’à la production."
+    resume_en: "First-year Big Data & AI engineering student at UIR, after two years of MPI preparatory classes. I specialise in AI for finance: predictive models on large datasets, realistic backtests and decisions under uncertainty, with systems that reach production."
+    projets: [Sniper-Solana, WIIGA, SkillBadge]
+    competences: [Finance quantitative, IA et données, Développement, Savoir-être]
+  quant:
+    nom: Quant
+    titre_fr: Étudiant ingénieur Big Data et IA, orienté recherche quantitative
+    titre_en: Big Data & AI engineering student, focused on quantitative research
+    annonce_fr: Je recherche un stage en recherche quantitative
+    annonce_en: Looking for a quantitative research internship
+    resume_fr: "Étudiant en première année du cycle ingénieur Big Data et IA à l’UIR, après deux années de classes préparatoires MPI (mathématiques, physique, informatique). Je cherche des signaux dans les données de marché et je les teste sans tricher : hors échantillon, coûts d’exécution réels, aucune fuite d’information."
+    resume_en: "First-year Big Data & AI engineering student at UIR, after two years of MPI preparatory classes (mathematics, physics, computer science). I look for signals in market data and test them without cheating: out of sample, real execution costs, no leakage."
+    projets: [Sniper-Solana, WIIGA, YILGA]
+    competences: [Finance quantitative, IA et données, Développement]
 
 # Phrase d'accroche de l'accueil (grand texte animé).
-accroche_fr: "Je transforme la donnée en décisions utiles. Des projets concrets, mesurés et pensés pour ceux qui les vivent : l’eau, l’énergie, l’agriculture."
-accroche_en: "I turn data into decisions that matter. Concrete, measured projects built for the people who live with them: water, energy, agriculture."
+accroche_fr: "Je transforme la donnée en décisions mesurées. Modéliser l’incertitude, tester sans tricher, décider sous contraintes : des réseaux d’eau aux marchés financiers."
+accroche_en: "I turn data into measured decisions. Modelling uncertainty, testing without cheating, deciding under constraints: from water networks to financial markets."
 
 # Courte présentation à côté de l'accroche.
-presentation_fr: Étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat, j’allie modélisation, code et sens du terrain pour résoudre des problèmes réels.
-presentation_en: A Big Data and Artificial Intelligence engineering student at the International University of Rabat, I combine modelling, code and field sense to solve real problems.
+presentation_fr: "Étudiant ingénieur en Big Data et IA à l’Université Internationale de Rabat, je conçois des systèmes d’IA qui décident sous incertitude, des infrastructures aux marchés financiers, et je les mesure sans complaisance."
+presentation_en: "A Big Data and AI engineering student at the International University of Rabat, I design AI systems that decide under uncertainty, from infrastructure to financial markets, and I measure them honestly."
 
 # Page À propos : premier paragraphe en grand, puis les suivants.
 a_propos_fr:
-  - Étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat, je construis des solutions qui partent du terrain.
+  - Étudiant ingénieur en Big Data et intelligence artificielle à l’Université Internationale de Rabat, je me prépare aux métiers d’ingénieur IA, d’ingénieur IA en finance et de chercheur quantitatif.
   - Après deux années de classes préparatoires MPI (mathématiques, physique, informatique) à 2iE, à Ouagadougou, je suis entré le 7 septembre 2026 en première année du cycle ingénieur à l’UIR, ma troisième année d’études supérieures.
-  - "J’ai conçu et porté plusieurs projets qui mêlent ingénierie, IA et développement durable, récompensés à plusieurs reprises. J’aime donner du sens aux idées : transformer un problème complexe en une solution claire, mesurable et utile à ceux qui le vivent."
+  - "Mes projets ont un point commun : décider sous incertitude, et le prouver par des mesures honnêtes. Piloter des pompes sous délestage par apprentissage par renforcement, ou rétro-concevoir une stratégie de trading à partir de 41,5 Go de données on-chain, c’est le même métier : un modèle n’a de valeur que s’il survit aux coûts réels et aux données qu’il n’a jamais vues."
 a_propos_en:
-  - A Big Data and Artificial Intelligence engineering student at the International University of Rabat, I build solutions that start from real life.
+  - A Big Data and Artificial Intelligence engineering student at the International University of Rabat, preparing for roles as an AI engineer, an AI engineer in finance or a quantitative researcher.
   - After two years of MPI preparatory classes (mathematics, physics, computer science) at 2iE in Ouagadougou, I started the engineering programme at UIR on 7 September 2026, my third year of higher education.
-  - "I have designed and led several award-winning projects that combine engineering, AI and sustainability. I like giving ideas a purpose: turning a complex problem into a clear, measurable solution that helps the people who live with it."
+  - "My projects share one thread: deciding under uncertainty, and proving it with honest measurements. Running pumps through power cuts with reinforcement learning, or reverse-engineering a trading strategy from 41.5 GB of on-chain data, is the same craft: a model is only worth something if it survives real costs and data it has never seen."
 
 # Résumé en tête du CV.
-cv_profil_fr: "Étudiant en première année du cycle ingénieur Big Data et IA à l’UIR, après deux années de classes préparatoires MPI. Je conçois des projets qui mettent la donnée et l’intelligence artificielle au service de besoins concrets : l’eau, l’énergie, l’agriculture."
-cv_profil_en: "First-year Big Data & AI engineering student at UIR, after two years of MPI preparatory classes. I build projects that put data and artificial intelligence to work on real needs: water, energy and agriculture."
+cv_profil_fr: "Étudiant en première année du cycle ingénieur Big Data et IA à l’UIR, après deux années de classes préparatoires MPI. Je conçois des systèmes d’IA qui décident sous incertitude, de l’apprentissage par renforcement à la modélisation financière, avec des évaluations honnêtes : données hors échantillon, coûts réels, aucune fuite."
+cv_profil_en: "First-year Big Data & AI engineering student at UIR, after two years of MPI preparatory classes. I design AI systems that decide under uncertainty, from reinforcement learning to financial modelling, with honest evaluation: out-of-sample data, real costs, no leakage."
 
-interets_fr: Big Data, intelligence artificielle, cybersécurité, innovation à impact, art et prise de parole en public.
-interets_en: Big Data, artificial intelligence, cybersecurity, impact-driven innovation, art and public speaking.
+interets_fr: Marchés financiers, finance quantitative, raisonnement des IA (ARC-AGI), innovation à impact, prise de parole en public.
+interets_en: Financial markets, quantitative finance, AI reasoning (ARC-AGI), impact-driven innovation, public speaking.
 
 # Les qualités de la page À propos.
 qualites:
@@ -63,9 +105,10 @@ qualites:
     titre_en: Rigour
     texte_fr: Chaque résultat est mesuré, testé et reproductible. Les limites sont écrites, pas cachées.
     texte_en: Every result is measured, tested and reproducible. Limits are written down, not hidden.
-  - titre_fr: Impact
-    texte_fr: "L’eau, l’énergie, l’agriculture : je pars de problèmes réels, vécus au Burkina Faso."
-    texte_en: "Water, energy, agriculture: I start from real problems, lived in Burkina Faso."
+  - titre_fr: Honnêteté des résultats
+    titre_en: Honest results
+    texte_fr: "Coûts réels, données hors échantillon, aucune fuite d’information : un backtest qui triche ne prouve rien."
+    texte_en: "Real costs, out-of-sample data, no leakage: a backtest that cheats proves nothing."
   - titre_fr: Leadership
     texte_fr: Président d’un club d’art oratoire et chef de projet sur des projets primés.
     texte_en: President of a public-speaking club and project lead on award-winning projects.

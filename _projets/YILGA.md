@@ -3,7 +3,7 @@ titre: YILGA
 afficher: true
 cv: true
 a_la_une: true
-ordre: 3
+ordre: 4
 annee: 2025
 filtres: [ia, agriculture]
 domaine_fr: Agrotech · IA

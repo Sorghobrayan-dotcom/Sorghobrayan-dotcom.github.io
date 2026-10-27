@@ -3,7 +3,7 @@ titre: SkillBadge
 afficher: true
 cv: true
 a_la_une: true
-ordre: 2
+ordre: 3
 annee: 2026
 filtres: [web, blockchain]
 domaine_fr: Blockchain · Web

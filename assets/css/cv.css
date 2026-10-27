@@ -122,6 +122,8 @@
 
 .cv-awards li { margin-bottom: 8px; font-size: 9.5pt; line-height: 1.4; }
 .cv-awards span { display: block; color: var(--ink-2); font-size: 8pt; font-weight: 700; letter-spacing: .06em; }
+.cv-awards--plain li { margin-bottom: 4px; }
+.cv-awards--plain span { display: inline; color: inherit; font-size: inherit; font-weight: inherit; letter-spacing: 0; }
 
 /* Écrans étroits : une seule colonne, la feuille prend toute la largeur. */
 @media (max-width: 440px) {

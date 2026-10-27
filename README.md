@@ -117,6 +117,23 @@ Markdown (`**gras**`, listes avec `-`, liens `[texte](adresse)`).
 Chaque modification est enregistrée dans l’historique de GitHub : pour revenir en arrière, ouvre
 le fichier sur github.com, clique sur *History* et recopie l’ancienne version.
 
+### Un CV par type de poste
+
+Trois CV sont générés en permanence, chacun avec son titre, son résumé, ses projets et l’ordre
+de ses compétences :
+
+| Adresse | Pour quel poste |
+|---|---|
+| `/cv-ia.html` | Ingénieur IA, AI architect |
+| `/cv-finance.html` | Ingénieur IA en finance |
+| `/cv-quant.html` | Quant (recherche quantitative) |
+
+Tout se règle dans `_data/profil.yml`, section `cibles:`. Pour chaque cible : `titre`, `annonce`
+(laisser vide pour la masquer), `resume`, `projets` (noms des fichiers de `_projets/`, dans
+l’ordre) et `competences` (familles de `_data/competences.yml`, dans l’ordre). La ligne
+`cible:` choisit la version affichée par `/cv.html`. Garde trois projets par CV pour tenir sur
+une page.
+
 ### Ajouter une compétence et son badge
 
 Dans `_data/competences.yml`, ajoute une ligne dans la bonne famille :

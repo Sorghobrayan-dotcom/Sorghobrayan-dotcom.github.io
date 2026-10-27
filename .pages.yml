@@ -154,7 +154,7 @@ content:
         type: select
         options:
           multiple: true
-          values: [ia, data, eau, energie, agriculture, web, blockchain, social]
+          values: [finance, ia, data, eau, energie, agriculture, web, blockchain, social]
       - { name: domaine_fr, label: Domaine (FR), type: string, description: "Ex. : IA · Eau · Énergie" }
       - { name: domaine_en, label: Domaine (EN), type: string }
       - { name: surtitre_fr, label: Surtitre de la page (FR), type: string, description: "Facultatif. Par défaut : le domaine." }

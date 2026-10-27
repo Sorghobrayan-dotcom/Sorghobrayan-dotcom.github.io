@@ -1,0 +1,198 @@
+{%- comment -%}
+  Gabarit commun des CV (paramètre : cible). Le CV se remplit tout seul à partir de _data/ et de _projets/.
+  Pour retirer un élément du CV sans le retirer du site : « cv: false ».
+{%- endcomment %}
+{%- assign profil = site.data.profil %}
+{%- assign parcours = site.data.parcours %}
+{%- assign formation = parcours.formation | where_exp: "l", "l.cv != false" | where_exp: "l", "l.afficher != false" %}
+{%- assign experiences = parcours.experiences | where_exp: "l", "l.cv != false" | where_exp: "l", "l.afficher != false" %}
+{%- assign responsabilites = parcours.responsabilites | where_exp: "l", "l.cv != false" | where_exp: "l", "l.afficher != false" %}
+{%- assign cible_id = include.cible | default: profil.cible | default: "ia" %}
+{%- assign cible = profil.cibles[cible_id] %}
+{%- if cible.projets %}
+  {%- assign projets = "" | split: "" %}
+  {%- for nom in cible.projets %}
+    {%- assign trouve = site.projets | where: "slug", nom | first %}
+    {%- if trouve and trouve.afficher != false %}{% assign projets = projets | push: trouve %}{% endif %}
+  {%- endfor %}
+{%- else %}
+  {%- assign projets = site.projets | where_exp: "p", "p.cv != false" | where_exp: "p", "p.afficher != false" | sort: "ordre", "last" %}
+{%- endif %}
+{%- if cible.competences %}
+  {%- assign familles = "" | split: "" %}
+  {%- for nom in cible.competences %}
+    {%- assign g = site.data.competences | where: "groupe_fr", nom | first %}
+    {%- if g %}{% assign familles = familles | push: g %}{% endif %}
+  {%- endfor %}
+{%- else %}
+  {%- assign familles = site.data.competences %}
+{%- endif %}
+{%- assign cv_titre_fr = cible.titre_fr | default: profil.titre_fr %}
+{%- assign cv_titre_en = cible.titre_en | default: profil.titre_en %}
+{%- assign cv_resume_fr = cible.resume_fr | default: profil.cv_profil_fr %}
+{%- assign cv_resume_en = cible.resume_en | default: profil.cv_profil_en %}
+{%- if cible %}{% assign cv_annonce_fr = cible.annonce_fr %}{% assign cv_annonce_en = cible.annonce_en %}{% elsif profil.annonce.afficher %}{% assign cv_annonce_fr = profil.annonce.fr %}{% assign cv_annonce_en = profil.annonce.en %}{% endif %}
+{%- assign distinctions = site.data.distinctions | where_exp: "d", "d.cv != false" | where_exp: "d", "d.afficher != false" %}
+{%- assign icones = '/assets/img/icons.svg' | relative_url %}
+
+  <header class="cv-toolbar">
+    <div class="cv-toolbar__inner">
+      <a class="btn btn--ghost btn--sm" href="{{ '/' | relative_url }}">
+        <svg class="icon" aria-hidden="true"><use href="{{ icones }}#arrow-left"></use></svg>
+        <span lang="fr">Retour<span class="cv-toolbar__more"> au portfolio</span></span><span lang="en">Back<span class="cv-toolbar__more"> to portfolio</span></span>
+      </a>
+      <div class="cv-toolbar__end">
+        {% include langue.html %}
+        <button class="btn btn--primary btn--sm" type="button" data-print>
+          <svg class="icon" aria-hidden="true"><use href="{{ icones }}#download"></use></svg>
+          <span lang="fr"><span class="cv-toolbar__more">Télécharger en </span>PDF</span><span lang="en"><span class="cv-toolbar__more">Download </span>PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="cv" id="cv">
+    <header class="cv__header">
+      <div>
+        <h1 class="cv__name">{{ profil.nom_complet }}</h1>
+        <p class="cv__title">
+          <span lang="fr">{% include fr.html t=cv_titre_fr %} · {{ profil.ecole_fr }}</span>
+          <span lang="en">{% include en.html t=cv_titre_en %} · {{ profil.ecole_en }}</span>
+        </p>
+{%- if cv_annonce_fr and cv_annonce_fr != "" %}
+        <p class="cv__announce">{% include t.html fr=cv_annonce_fr en=cv_annonce_en %}</p>
+{%- endif %}
+        <ul class="cv__contact">
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#mail"></use></svg>
+            <a href="mailto:{{ profil.email }}">{{ profil.email }}</a>
+          </li>
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#map-pin"></use></svg>
+            {% include t.html fr=profil.ville_fr en=profil.ville_en %}
+          </li>
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#github"></use></svg>
+            <a href="{{ profil.github }}">{{ profil.github | remove: "https://" }}</a>
+          </li>
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#linkedin"></use></svg>
+            <a href="{{ profil.linkedin }}">{{ profil.linkedin | remove: "https://www." }}</a>
+          </li>
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="{{ icones }}#globe"></use></svg>
+            <a href="{{ '/' | absolute_url }}">{{ site.url | remove: "https://" }}</a>
+          </li>
+        </ul>
+      </div>
+      <img class="cv__photo" src="{{ '/assets/img/portrait.jpg' | relative_url }}" width="350" height="450" alt="Portrait de {{ profil.nom }}" data-en-alt="Portrait of {{ profil.nom }}">
+    </header>
+
+    <div class="cv__body">
+      <div class="cv__main">
+        <section class="cv-section" aria-labelledby="cv-profil">
+          <h2 class="cv-section__title" id="cv-profil">{% include t.html fr="Profil" en="Profile" %}</h2>
+          {% include p.html fr=cv_resume_fr en=cv_resume_en %}
+        </section>
+
+        <section class="cv-section" aria-labelledby="cv-formation">
+          <h2 class="cv-section__title" id="cv-formation">{% include t.html fr="Formation" en="Education" %}</h2>
+{%- for l in formation %}{% include cv-item.html l=l date=true lieu=true %}{% endfor %}
+        </section>
+{%- if experiences.size > 0 %}
+
+        <section class="cv-section" aria-labelledby="cv-experiences">
+          <h2 class="cv-section__title" id="cv-experiences">{% include t.html fr="Expériences" en="Experience" %}</h2>
+{%- for l in experiences %}{% include cv-item.html l=l date=true lieu=true %}{% endfor %}
+        </section>
+{%- endif %}
+
+        <section class="cv-section" aria-labelledby="cv-projets">
+          <h2 class="cv-section__title" id="cv-projets">{% include t.html fr="Projets" en="Projects" %}</h2>
+{%- for p in projets %}
+  {%- assign p_titre_fr = p.cv_titre_fr | default: p.titre %}
+  {%- assign p_titre_en = p.cv_titre_en | default: p_titre_fr %}
+  {%- if p.cv_sous_titre_fr %}
+    {%- assign p_sous_fr = p.cv_sous_titre_fr %}
+    {%- assign p_sous_en = p.cv_sous_titre_en | default: p.cv_sous_titre_fr %}
+  {%- else %}
+    {%- assign p_sous_fr = p.role_fr %}
+    {%- assign p_sous_en = p.role_en | default: p.role_fr %}
+  {%- endif %}
+  {%- assign p_points_en = p.cv_points_en | default: p.cv_points_fr %}
+          <article class="cv-item">
+            <div class="cv-item__head">
+              <h3>{% include t.html fr=p_titre_fr en=p_titre_en %}</h3>
+              <span class="cv-item__date">{{ p.cv_date | default: p.annee }}</span>
+            </div>
+{%- if p_sous_fr %}
+            <p class="cv-item__sub">{% include t.html fr=p_sous_fr en=p_sous_en %}</p>
+{%- endif %}
+{%- if p.cv_points_fr %}
+            <ul lang="fr">
+{%- for x in p.cv_points_fr %}
+              <li>{% include fr.html t=x %}</li>
+{%- endfor %}
+            </ul>
+            <ul lang="en">
+{%- for x in p_points_en %}
+              <li>{% include en.html t=x %}</li>
+{%- endfor %}
+            </ul>
+{%- elsif p.resume_fr %}
+            {% include p.html fr=p.resume_fr en=p.resume_en %}
+{%- endif %}
+          </article>
+{%- endfor %}
+        </section>
+
+      </div>
+
+      <aside class="cv__side">
+        <section class="cv-section" aria-labelledby="cv-competences">
+          <h2 class="cv-section__title" id="cv-competences">{% include t.html fr="Compétences" en="Skills" %}</h2>
+{%- for g in familles %}
+  {%- assign items = g.items | where_exp: "s", "s.cv != false" %}
+  {%- if items.size > 0 %}
+          <h3 class="cv-side__label">{% include t.html fr=g.groupe_fr en=g.groupe_en %}</h3>
+          <p lang="fr">{% for s in items %}{% capture s_nom %}{% include fr.html t=s.nom %}{% endcapture %}{{ s_nom | replace: "-", "‑" }}{% unless forloop.last %}&nbsp;· {% endunless %}{% endfor %}</p>
+          <p lang="en">{% for s in items %}{% assign s_en = s.nom_en | default: s.nom %}{% capture s_nom %}{% include en.html t=s_en %}{% endcapture %}{{ s_nom | replace: "-", "‑" }}{% unless forloop.last %}&nbsp;· {% endunless %}{% endfor %}</p>
+  {%- endif %}
+{%- endfor %}
+        </section>
+
+        <section class="cv-section" aria-labelledby="cv-distinctions">
+          <h2 class="cv-section__title" id="cv-distinctions">{% include t.html fr="Distinctions" en="Awards" %}</h2>
+          <ul class="cv-awards" lang="fr">
+{%- for d in distinctions %}
+  {%- assign d_court_fr = d.court_fr | default: d.evenement_fr %}
+            <li><span>{{ d.annee }}</span>{% include fr.html t=d.prix_fr %}, {% include fr.html t=d_court_fr %}{% if d.projet %} ({% include nom.html t=d.projet %}){% endif %}</li>
+{%- endfor %}
+          </ul>
+          <ul class="cv-awards" lang="en">
+{%- for d in distinctions %}
+  {%- assign d_prix_en = d.prix_en | default: d.prix_fr %}
+  {%- assign d_court_en = d.court_en | default: d.evenement_en | default: d.court_fr | default: d.evenement_fr %}
+            <li><span>{{ d.annee }}</span>{% include en.html t=d_prix_en %}, {% include en.html t=d_court_en %}{% if d.projet %} ({% include nom.html t=d.projet %}){% endif %}</li>
+{%- endfor %}
+          </ul>
+        </section>
+
+{%- if responsabilites.size > 0 %}
+        <section class="cv-section" aria-labelledby="cv-engagements">
+          <h2 class="cv-section__title" id="cv-engagements">{% include t.html fr="Responsabilités" en="Responsibilities" %}</h2>
+          <ul class="cv-awards cv-awards--plain">
+{%- for l in responsabilites %}
+            <li>{% include t.html fr=l.titre_fr en=l.titre_en %}</li>
+{%- endfor %}
+          </ul>
+        </section>
+
+{%- endif %}
+        <section class="cv-section" aria-labelledby="cv-interets">
+          <h2 class="cv-section__title" id="cv-interets">{% include t.html fr="Centres d’intérêt" en="Interests" %}</h2>
+          {% include p.html fr=profil.interets_fr en=profil.interets_en %}
+        </section>
+      </aside>
+    </div>
+  </main>

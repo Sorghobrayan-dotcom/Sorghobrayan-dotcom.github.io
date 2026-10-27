@@ -1,9 +1,9 @@
 ---
 titre: SG-KOOM
 afficher: true
-cv: true
+cv: false
 a_la_une: true
-ordre: 4
+ordre: 5
 annee: 2025
 filtres: [eau]
 domaine_fr: Eau · Assainissement
